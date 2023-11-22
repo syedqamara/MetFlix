@@ -1,0 +1,879 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B42B0E5BB100323E71 /* MetFlixApp.swift */; };
+		186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B62B0E5BB100323E71 /* AppCommands.swift */; };
+		186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950B82B0E5BB300323E71 /* Assets.xcassets */; };
+		186950BC2B0E5BB300323E71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */; };
+		186950C62B0E5BB300323E71 /* MetFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950C52B0E5BB300323E71 /* MetFlixTests.swift */; };
+		186950D02B0E5BB300323E71 /* MetFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950CF2B0E5BB300323E71 /* MetFlixUITests.swift */; };
+		186950D22B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950D12B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift */; };
+		186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950EF2B0E5F0800323E71 /* AppFactory.swift */; };
+		186950F52B0E614300323E71 /* core_architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 186950F42B0E614300323E71 /* core_architecture */; };
+		186950F72B0E614300323E71 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = 186950F62B0E614300323E71 /* Debugger */; };
+		186950F92B0E614300323E71 /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 186950F82B0E614300323E71 /* DebuggerUI */; };
+		186950FB2B0E614300323E71 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 186950FA2B0E614300323E71 /* Network */; };
+		186950FD2B0E7EF300323E71 /* App+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950FC2B0E7EF300323E71 /* App+Dependencies.swift */; };
+		186951002B0E835200323E71 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950FF2B0E835200323E71 /* MovieService.swift */; };
+		186951022B0E845D00323E71 /* AppNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951012B0E845D00323E71 /* AppNetworking.swift */; };
+		186951042B0E857F00323E71 /* LaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951032B0E857F00323E71 /* LaunchConfiguration.swift */; };
+		186951072B0E8AC500323E71 /* Debugger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951062B0E8AC500323E71 /* Debugger+Extensions.swift */; };
+		186951092B0E8CAA00323E71 /* Shake+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951082B0E8CAA00323E71 /* Shake+Extensions.swift */; };
+		1869510B2B0E94E800323E71 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869510A2B0E94E800323E71 /* Movie.swift */; };
+		1869510D2B0E95A900323E71 /* PopularMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869510C2B0E95A900323E71 /* PopularMoviesRequest.swift */; };
+		1869510F2B0E96E200323E71 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869510E2B0E96E200323E71 /* Internet.swift */; };
+		186951142B0EBDD700323E71 /* MovieDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951132B0EBDD700323E71 /* MovieDetailRequest.swift */; };
+		186951172B0EBED600323E71 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951162B0EBED600323E71 /* CacheManager.swift */; };
+		186951192B0EBFBC00323E71 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951182B0EBFBC00323E71 /* Cache.swift */; };
+		1869511B2B0EC36D00323E71 /* AppRemoteAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869511A2B0EC36D00323E71 /* AppRemoteAssets.swift */; };
+		1869511E2B0EC53C00323E71 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1869511D2B0EC53C00323E71 /* SDWebImageSwiftUI */; };
+		186951212B0EC56000323E71 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 186951202B0EC56000323E71 /* Lottie */; };
+		186951242B0EC58F00323E71 /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951232B0EC58F00323E71 /* AnimatedView.swift */; };
+		186951262B0EC62700323E71 /* image_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 186951252B0EC62700323E71 /* image_loading.json */; };
+		186951282B0EC82D00323E71 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951272B0EC82D00323E71 /* MovieDetail.swift */; };
+		1869513F2B0EC92A00323E71 /* Home+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951362B0EC92A00323E71 /* Home+Dependencies.swift */; };
+		186951402B0EC92A00323E71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951372B0EC92A00323E71 /* HomeViewModel.swift */; };
+		186951412B0EC92A00323E71 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951382B0EC92A00323E71 /* HomeView.swift */; };
+		186951422B0EC92A00323E71 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951392B0EC92A00323E71 /* HomeModule.swift */; };
+		186951432B0EC92A00323E71 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869513B2B0EC92A00323E71 /* MovieDetailView.swift */; };
+		186951442B0EC92A00323E71 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869513C2B0EC92A00323E71 /* MovieDetailViewModel.swift */; };
+		186951452B0EC92A00323E71 /* MovieDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869513D2B0EC92A00323E71 /* MovieDetailModule.swift */; };
+		186951462B0EC92A00323E71 /* MovieDetail+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869513E2B0EC92A00323E71 /* MovieDetail+Dependencies.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		186950C22B0E5BB300323E71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186950A92B0E5BB100323E71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 186950B02B0E5BB100323E71;
+			remoteInfo = MetFlix;
+		};
+		186950CC2B0E5BB300323E71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186950A92B0E5BB100323E71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 186950B02B0E5BB100323E71;
+			remoteInfo = MetFlix;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		186950B12B0E5BB100323E71 /* MetFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		186950B42B0E5BB100323E71 /* MetFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixApp.swift; sourceTree = "<group>"; };
+		186950B62B0E5BB100323E71 /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
+		186950B82B0E5BB300323E71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		186950C12B0E5BB300323E71 /* MetFlixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetFlixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		186950C52B0E5BB300323E71 /* MetFlixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixTests.swift; sourceTree = "<group>"; };
+		186950CB2B0E5BB300323E71 /* MetFlixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetFlixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		186950CF2B0E5BB300323E71 /* MetFlixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixUITests.swift; sourceTree = "<group>"; };
+		186950D12B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		186950EF2B0E5F0800323E71 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		186950FC2B0E7EF300323E71 /* App+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Dependencies.swift"; sourceTree = "<group>"; };
+		186950FF2B0E835200323E71 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		186951012B0E845D00323E71 /* AppNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetworking.swift; sourceTree = "<group>"; };
+		186951032B0E857F00323E71 /* LaunchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfiguration.swift; sourceTree = "<group>"; };
+		186951062B0E8AC500323E71 /* Debugger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debugger+Extensions.swift"; sourceTree = "<group>"; };
+		186951082B0E8CAA00323E71 /* Shake+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shake+Extensions.swift"; sourceTree = "<group>"; };
+		1869510A2B0E94E800323E71 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1869510C2B0E95A900323E71 /* PopularMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesRequest.swift; sourceTree = "<group>"; };
+		1869510E2B0E96E200323E71 /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
+		186951132B0EBDD700323E71 /* MovieDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRequest.swift; sourceTree = "<group>"; };
+		186951162B0EBED600323E71 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		186951182B0EBFBC00323E71 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		1869511A2B0EC36D00323E71 /* AppRemoteAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRemoteAssets.swift; sourceTree = "<group>"; };
+		186951232B0EC58F00323E71 /* AnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
+		186951252B0EC62700323E71 /* image_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image_loading.json; sourceTree = "<group>"; };
+		186951272B0EC82D00323E71 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		186951362B0EC92A00323E71 /* Home+Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Home+Dependencies.swift"; sourceTree = "<group>"; };
+		186951372B0EC92A00323E71 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		186951382B0EC92A00323E71 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		186951392B0EC92A00323E71 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		1869513B2B0EC92A00323E71 /* MovieDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		1869513C2B0EC92A00323E71 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		1869513D2B0EC92A00323E71 /* MovieDetailModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailModule.swift; sourceTree = "<group>"; };
+		1869513E2B0EC92A00323E71 /* MovieDetail+Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MovieDetail+Dependencies.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		186950AE2B0E5BB100323E71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1869511E2B0EC53C00323E71 /* SDWebImageSwiftUI in Frameworks */,
+				186950F52B0E614300323E71 /* core_architecture in Frameworks */,
+				186950FB2B0E614300323E71 /* Network in Frameworks */,
+				186950F72B0E614300323E71 /* Debugger in Frameworks */,
+				186950F92B0E614300323E71 /* DebuggerUI in Frameworks */,
+				186951212B0EC56000323E71 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186950BE2B0E5BB300323E71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186950C82B0E5BB300323E71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		186950A82B0E5BB100323E71 = {
+			isa = PBXGroup;
+			children = (
+				186950B32B0E5BB100323E71 /* MetFlix */,
+				186950C42B0E5BB300323E71 /* MetFlixTests */,
+				186950CE2B0E5BB300323E71 /* MetFlixUITests */,
+				186950B22B0E5BB100323E71 /* Products */,
+				186950F32B0E614300323E71 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		186950B22B0E5BB100323E71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				186950B12B0E5BB100323E71 /* MetFlix.app */,
+				186950C12B0E5BB300323E71 /* MetFlixTests.xctest */,
+				186950CB2B0E5BB300323E71 /* MetFlixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		186950B32B0E5BB100323E71 /* MetFlix */ = {
+			isa = PBXGroup;
+			children = (
+				186950B42B0E5BB100323E71 /* MetFlixApp.swift */,
+				186950B62B0E5BB100323E71 /* AppCommands.swift */,
+				186951342B0EC92A00323E71 /* Modules */,
+				186951222B0EC57C00323E71 /* ReusableViews */,
+				186951052B0E8AB900323E71 /* Extensions */,
+				186950FE2B0E833E00323E71 /* Service */,
+				186950EE2B0E5EFB00323E71 /* App */,
+				186950B82B0E5BB300323E71 /* Assets.xcassets */,
+				186951292B0EC87C00323E71 /* Resources */,
+				186950BA2B0E5BB300323E71 /* Preview Content */,
+			);
+			path = MetFlix;
+			sourceTree = "<group>";
+		};
+		186950BA2B0E5BB300323E71 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		186950C42B0E5BB300323E71 /* MetFlixTests */ = {
+			isa = PBXGroup;
+			children = (
+				186950C52B0E5BB300323E71 /* MetFlixTests.swift */,
+			);
+			path = MetFlixTests;
+			sourceTree = "<group>";
+		};
+		186950CE2B0E5BB300323E71 /* MetFlixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				186950CF2B0E5BB300323E71 /* MetFlixUITests.swift */,
+				186950D12B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift */,
+			);
+			path = MetFlixUITests;
+			sourceTree = "<group>";
+		};
+		186950EE2B0E5EFB00323E71 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				186950EF2B0E5F0800323E71 /* AppFactory.swift */,
+				186951032B0E857F00323E71 /* LaunchConfiguration.swift */,
+				186951012B0E845D00323E71 /* AppNetworking.swift */,
+				1869511A2B0EC36D00323E71 /* AppRemoteAssets.swift */,
+				186950FC2B0E7EF300323E71 /* App+Dependencies.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		186950F32B0E614300323E71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		186950FE2B0E833E00323E71 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				186950FF2B0E835200323E71 /* MovieService.swift */,
+				186951152B0EBECF00323E71 /* Cache */,
+				186951102B0EBD9D00323E71 /* Apis */,
+				1869510E2B0E96E200323E71 /* Internet.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		186951052B0E8AB900323E71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				186951062B0E8AC500323E71 /* Debugger+Extensions.swift */,
+				186951082B0E8CAA00323E71 /* Shake+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		186951102B0EBD9D00323E71 /* Apis */ = {
+			isa = PBXGroup;
+			children = (
+				186951122B0EBDBA00323E71 /* MovieDetail */,
+				186951112B0EBDA300323E71 /* PopularMovies */,
+			);
+			path = Apis;
+			sourceTree = "<group>";
+		};
+		186951112B0EBDA300323E71 /* PopularMovies */ = {
+			isa = PBXGroup;
+			children = (
+				1869510A2B0E94E800323E71 /* Movie.swift */,
+				1869510C2B0E95A900323E71 /* PopularMoviesRequest.swift */,
+			);
+			path = PopularMovies;
+			sourceTree = "<group>";
+		};
+		186951122B0EBDBA00323E71 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				186951132B0EBDD700323E71 /* MovieDetailRequest.swift */,
+				186951272B0EC82D00323E71 /* MovieDetail.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		186951152B0EBECF00323E71 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				186951162B0EBED600323E71 /* CacheManager.swift */,
+				186951182B0EBFBC00323E71 /* Cache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		186951222B0EC57C00323E71 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				186951232B0EC58F00323E71 /* AnimatedView.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		186951292B0EC87C00323E71 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1869512A2B0EC88700323E71 /* Animations */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1869512A2B0EC88700323E71 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				186951252B0EC62700323E71 /* image_loading.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		186951342B0EC92A00323E71 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				186951352B0EC92A00323E71 /* Home */,
+				1869513A2B0EC92A00323E71 /* MovieDetail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		186951352B0EC92A00323E71 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				186951362B0EC92A00323E71 /* Home+Dependencies.swift */,
+				186951372B0EC92A00323E71 /* HomeViewModel.swift */,
+				186951382B0EC92A00323E71 /* HomeView.swift */,
+				186951392B0EC92A00323E71 /* HomeModule.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1869513A2B0EC92A00323E71 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1869513B2B0EC92A00323E71 /* MovieDetailView.swift */,
+				1869513C2B0EC92A00323E71 /* MovieDetailViewModel.swift */,
+				1869513D2B0EC92A00323E71 /* MovieDetailModule.swift */,
+				1869513E2B0EC92A00323E71 /* MovieDetail+Dependencies.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		186950B02B0E5BB100323E71 /* MetFlix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186950D52B0E5BB300323E71 /* Build configuration list for PBXNativeTarget "MetFlix" */;
+			buildPhases = (
+				186950AD2B0E5BB100323E71 /* Sources */,
+				186950AE2B0E5BB100323E71 /* Frameworks */,
+				186950AF2B0E5BB100323E71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetFlix;
+			packageProductDependencies = (
+				186950F42B0E614300323E71 /* core_architecture */,
+				186950F62B0E614300323E71 /* Debugger */,
+				186950F82B0E614300323E71 /* DebuggerUI */,
+				186950FA2B0E614300323E71 /* Network */,
+				1869511D2B0EC53C00323E71 /* SDWebImageSwiftUI */,
+				186951202B0EC56000323E71 /* Lottie */,
+			);
+			productName = MetFlix;
+			productReference = 186950B12B0E5BB100323E71 /* MetFlix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		186950C02B0E5BB300323E71 /* MetFlixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186950D82B0E5BB300323E71 /* Build configuration list for PBXNativeTarget "MetFlixTests" */;
+			buildPhases = (
+				186950BD2B0E5BB300323E71 /* Sources */,
+				186950BE2B0E5BB300323E71 /* Frameworks */,
+				186950BF2B0E5BB300323E71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				186950C32B0E5BB300323E71 /* PBXTargetDependency */,
+			);
+			name = MetFlixTests;
+			productName = MetFlixTests;
+			productReference = 186950C12B0E5BB300323E71 /* MetFlixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		186950CA2B0E5BB300323E71 /* MetFlixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186950DB2B0E5BB300323E71 /* Build configuration list for PBXNativeTarget "MetFlixUITests" */;
+			buildPhases = (
+				186950C72B0E5BB300323E71 /* Sources */,
+				186950C82B0E5BB300323E71 /* Frameworks */,
+				186950C92B0E5BB300323E71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				186950CD2B0E5BB300323E71 /* PBXTargetDependency */,
+			);
+			name = MetFlixUITests;
+			productName = MetFlixUITests;
+			productReference = 186950CB2B0E5BB300323E71 /* MetFlixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		186950A92B0E5BB100323E71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					186950B02B0E5BB100323E71 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					186950C02B0E5BB300323E71 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 186950B02B0E5BB100323E71;
+					};
+					186950CA2B0E5BB300323E71 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 186950B02B0E5BB100323E71;
+					};
+				};
+			};
+			buildConfigurationList = 186950AC2B0E5BB100323E71 /* Build configuration list for PBXProject "MetFlix" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 186950A82B0E5BB100323E71;
+			packageReferences = (
+				186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */,
+				1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
+			productRefGroup = 186950B22B0E5BB100323E71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				186950B02B0E5BB100323E71 /* MetFlix */,
+				186950C02B0E5BB300323E71 /* MetFlixTests */,
+				186950CA2B0E5BB300323E71 /* MetFlixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		186950AF2B0E5BB100323E71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186950BC2B0E5BB300323E71 /* Preview Assets.xcassets in Resources */,
+				186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */,
+				186951262B0EC62700323E71 /* image_loading.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186950BF2B0E5BB300323E71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186950C92B0E5BB300323E71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		186950AD2B0E5BB100323E71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1869510B2B0E94E800323E71 /* Movie.swift in Sources */,
+				186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */,
+				1869510F2B0E96E200323E71 /* Internet.swift in Sources */,
+				186951402B0EC92A00323E71 /* HomeViewModel.swift in Sources */,
+				186951422B0EC92A00323E71 /* HomeModule.swift in Sources */,
+				186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */,
+				186951092B0E8CAA00323E71 /* Shake+Extensions.swift in Sources */,
+				186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */,
+				1869511B2B0EC36D00323E71 /* AppRemoteAssets.swift in Sources */,
+				186951042B0E857F00323E71 /* LaunchConfiguration.swift in Sources */,
+				186951242B0EC58F00323E71 /* AnimatedView.swift in Sources */,
+				186951002B0E835200323E71 /* MovieService.swift in Sources */,
+				186951172B0EBED600323E71 /* CacheManager.swift in Sources */,
+				186951192B0EBFBC00323E71 /* Cache.swift in Sources */,
+				186951072B0E8AC500323E71 /* Debugger+Extensions.swift in Sources */,
+				186951452B0EC92A00323E71 /* MovieDetailModule.swift in Sources */,
+				186951462B0EC92A00323E71 /* MovieDetail+Dependencies.swift in Sources */,
+				1869513F2B0EC92A00323E71 /* Home+Dependencies.swift in Sources */,
+				186951412B0EC92A00323E71 /* HomeView.swift in Sources */,
+				1869510D2B0E95A900323E71 /* PopularMoviesRequest.swift in Sources */,
+				186951022B0E845D00323E71 /* AppNetworking.swift in Sources */,
+				186951142B0EBDD700323E71 /* MovieDetailRequest.swift in Sources */,
+				186951442B0EC92A00323E71 /* MovieDetailViewModel.swift in Sources */,
+				186951432B0EC92A00323E71 /* MovieDetailView.swift in Sources */,
+				186950FD2B0E7EF300323E71 /* App+Dependencies.swift in Sources */,
+				186951282B0EC82D00323E71 /* MovieDetail.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186950BD2B0E5BB300323E71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186950C62B0E5BB300323E71 /* MetFlixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186950C72B0E5BB300323E71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186950D22B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift in Sources */,
+				186950D02B0E5BB300323E71 /* MetFlixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		186950C32B0E5BB300323E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 186950B02B0E5BB100323E71 /* MetFlix */;
+			targetProxy = 186950C22B0E5BB300323E71 /* PBXContainerItemProxy */;
+		};
+		186950CD2B0E5BB300323E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 186950B02B0E5BB100323E71 /* MetFlix */;
+			targetProxy = 186950CC2B0E5BB300323E71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		186950D32B0E5BB300323E71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		186950D42B0E5BB300323E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		186950D62B0E5BB300323E71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MetFlix/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashc.MathMaster.MetFlix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		186950D72B0E5BB300323E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MetFlix/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashc.MathMaster.MetFlix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		186950D92B0E5BB300323E71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashc.MathMaster.MetFlixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetFlix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MetFlix";
+			};
+			name = Debug;
+		};
+		186950DA2B0E5BB300323E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashc.MathMaster.MetFlixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetFlix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MetFlix";
+			};
+			name = Release;
+		};
+		186950DC2B0E5BB300323E71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashc.MathMaster.MetFlixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MetFlix;
+			};
+			name = Debug;
+		};
+		186950DD2B0E5BB300323E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashc.MathMaster.MetFlixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MetFlix;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		186950AC2B0E5BB100323E71 /* Build configuration list for PBXProject "MetFlix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186950D32B0E5BB300323E71 /* Debug */,
+				186950D42B0E5BB300323E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186950D52B0E5BB300323E71 /* Build configuration list for PBXNativeTarget "MetFlix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186950D62B0E5BB300323E71 /* Debug */,
+				186950D72B0E5BB300323E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186950D82B0E5BB300323E71 /* Build configuration list for PBXNativeTarget "MetFlixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186950D92B0E5BB300323E71 /* Debug */,
+				186950DA2B0E5BB300323E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186950DB2B0E5BB300323E71 /* Build configuration list for PBXNativeTarget "MetFlixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186950DC2B0E5BB300323E71 /* Debug */,
+				186950DD2B0E5BB300323E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/syedqamara/core_architecture.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.15;
+			};
+		};
+		1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		186950F42B0E614300323E71 /* core_architecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
+			productName = core_architecture;
+		};
+		186950F62B0E614300323E71 /* Debugger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
+			productName = Debugger;
+		};
+		186950F82B0E614300323E71 /* DebuggerUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
+			productName = DebuggerUI;
+		};
+		186950FA2B0E614300323E71 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
+			productName = Network;
+		};
+		1869511D2B0EC53C00323E71 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		186951202B0EC56000323E71 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 186950A92B0E5BB100323E71 /* Project object */;
+}
