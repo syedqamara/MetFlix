@@ -12,6 +12,7 @@ import Dependencies
 public struct MovieDetailModule<V: MovieDetailViewModeling>: ViewModuling {
     public typealias ViewType = MovieDetailView<V>
     public struct ModuleInput: ModulingInput {
+        let movieId: Int
         let vm: V
     }
     private let input: ModuleInput

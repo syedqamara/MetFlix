@@ -7,28 +7,33 @@
 
 import Foundation
 import core_architecture
-struct PaginatedResult<T: DataModel>: DataModel {
-    let page: Int
-    let results: [T]
-    let totalPages: Int
-    let totalResults: Int
+public struct PaginatedResult<T: DataModel>: DataModel {
+    public let page: Int
+    public let results: [T]
+    public let totalPages: Int
+    public let totalResults: Int
+    enum CodingKeys: String, CodingKey {
+        case page, results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
+    }
 }
 
-struct Movie: DataModel {
-    let adult: Bool
-    let backdropPath: String?
-    let genreIds: [Int]
-    let id: Int
-    let originalLanguage: String
-    let originalTitle: String
-    let overview: String
-    let popularity: Double
-    let posterPath: String?
-    let releaseDate: String
-    let title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+public struct Movie: DataModel {
+    public let adult: Bool
+    public let backdropPath: String?
+    public let genreIds: [Int]
+    public let id: Int
+    public let originalLanguage: String
+    public let originalTitle: String
+    public let overview: String
+    public let popularity: Double
+    public let posterPath: String?
+    public let releaseDate: String
+    public let title: String
+    public let video: Bool
+    public let voteAverage: Double
+    public let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
         case adult

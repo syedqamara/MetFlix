@@ -15,9 +15,17 @@ extension MoviesEnpoint: Pointable {
     public var pointing: String {
         switch self {
         case .popular:
-            return "movie/popular"
+            return "discover/movie"
         case .movie(let id):
             return "movie/\(id)"
+        }
+    }
+    private var staticPointing: String {
+        switch self {
+        case .popular:
+            return "discover/movie"
+        case .movie(_):
+            return "movie/:id"
         }
     }
     
@@ -28,8 +36,8 @@ extension MoviesEnpoint: Pointable {
         ]
     }
     
-    public var debugID: String { "debugging.id.\(pointing)" }
-    public var configID: String { "configuration.id.\(pointing)" }
+    public var debugID: String { "debugging.id.\(staticPointing)" }
+    public var configID: String { "configuration.id.\(staticPointing)" }
 }
 
 extension Cached {

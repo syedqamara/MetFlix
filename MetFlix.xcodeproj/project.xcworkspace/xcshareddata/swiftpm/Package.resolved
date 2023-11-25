@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/syedqamara/core_architecture.git",
       "state" : {
-        "revision" : "6cbd70b534b66d55acb11271f411d91108eef423",
-        "version" : "1.0.15"
+        "revision" : "13f236c4706dcdac78572ff10c78168dcb75aacc",
+        "version" : "1.0.19"
       }
     },
     {

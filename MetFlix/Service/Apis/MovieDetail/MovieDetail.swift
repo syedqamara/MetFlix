@@ -9,33 +9,61 @@ import Foundation
 import core_architecture
 
 
-struct MovieDetail: DataModel {
-    let adult: Bool
-    let backdropPath: String?
-    let belongsToCollection: Collection?
-    let budget: Int
-    let genres: [Genre]
-    let homepage: String
-    let id: Int
-    let imdbId: String
-    let originalLanguage: String
-    let originalTitle: String
-    let overview: String
-    let popularity: Double
-    let posterPath: String?
-    let productionCompanies: [ProductionCompany]
-    let productionCountries: [ProductionCountry]
-    let releaseDate: String
-    let revenue: Int
-    let runtime: Int
-    let spokenLanguages: [SpokenLanguage]
-    let status: String
-    let tagline: String
-    let title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+public struct MovieDetail: DataModel {
+    public let adult: Bool?
+    public let backdropPath: String?
+    public let belongsToCollection: Collection?
+    public let budget: Int?
+    public let genres: [Genre]
+    public let homepage: String
+    public let id: Int
+    public let imdbId: String
+    public let originalLanguage: String
+    public let originalTitle: String
+    public let overview: String
+    public let popularity: Double
+    public let posterPath: String?
+    public let productionCompanies: [ProductionCompany]
+    public let productionCountries: [ProductionCountry]
+    public let releaseDate: String
+    public let revenue: Int
+    public let runtime: Int
+    public let spokenLanguages: [SpokenLanguage]
+    public let status: String
+    public let tagline: String
+    public let title: String
+    public let video: Bool
+    public let voteAverage: Double
+    public let voteCount: Int
 
+    
+    public init(adult: Bool, backdropPath: String?, belongsToCollection: Collection?, budget: Int, genres: [Genre], homepage: String, id: Int, imdbId: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String?, productionCompanies: [ProductionCompany], productionCountries: [ProductionCountry], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [SpokenLanguage], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
+        self.adult = adult
+        self.backdropPath = backdropPath
+        self.belongsToCollection = belongsToCollection
+        self.budget = budget
+        self.genres = genres
+        self.homepage = homepage
+        self.id = id
+        self.imdbId = imdbId
+        self.originalLanguage = originalLanguage
+        self.originalTitle = originalTitle
+        self.overview = overview
+        self.popularity = popularity
+        self.posterPath = posterPath
+        self.productionCompanies = productionCompanies
+        self.productionCountries = productionCountries
+        self.releaseDate = releaseDate
+        self.revenue = revenue
+        self.runtime = runtime
+        self.spokenLanguages = spokenLanguages
+        self.status = status
+        self.tagline = tagline
+        self.title = title
+        self.video = video
+        self.voteAverage = voteAverage
+        self.voteCount = voteCount
+    }
     private enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
@@ -65,24 +93,31 @@ struct MovieDetail: DataModel {
     }
 }
 
-struct Collection: DataModel {
-    let id: Int
-    let name: String
-    let posterPath: String?
-    let backdropPath: String?
+public struct Collection: DataModel {
+    public let id: Int
+    public let name: String
+    public let posterPath: String?
+    public let backdropPath: String?
 }
 
-struct Genre: DataModel {
-    let id: Int
-    let name: String
+public struct Genre: DataModel {
+    public let id: Int
+    public let name: String
 }
 
-struct ProductionCompany: DataModel {
-    let id: Int
-    let logoPath: String?
-    let name: String
-    let originCountry: String?
+public struct ProductionCompany: DataModel {
+    public let id: Int
+    public let logoPath: String?
+    public let name: String
+    public let originCountry: String?
 
+    init(id: Int, logoPath: String?, name: String, originCountry: String?) {
+        self.id = id
+        self.logoPath = logoPath
+        self.name = name
+        self.originCountry = originCountry
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case logoPath = "logo_path"
@@ -91,21 +126,29 @@ struct ProductionCompany: DataModel {
     }
 }
 
-struct ProductionCountry: DataModel {
-    let iso3166_1: String
-    let name: String
-
+public struct ProductionCountry: DataModel {
+    public let iso3166_1: String
+    public let name: String
+    
+    public init(iso3166_1: String, name: String) {
+        self.iso3166_1 = iso3166_1
+        self.name = name
+    }
     private enum CodingKeys: String, CodingKey {
         case iso3166_1 = "iso_3166_1"
         case name
     }
 }
 
-struct SpokenLanguage: DataModel {
-    let englishName: String
-    let iso639_1: String
-    let name: String
-
+public struct SpokenLanguage: DataModel {
+    public let englishName: String
+    public let iso639_1: String
+    public let name: String
+    public init(englishName: String, iso639_1: String, name: String) {
+        self.englishName = englishName
+        self.iso639_1 = iso639_1
+        self.name = name
+    }
     private enum CodingKeys: String, CodingKey {
         case englishName = "english_name"
         case iso639_1 = "iso_639_1"

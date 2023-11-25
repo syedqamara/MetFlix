@@ -12,6 +12,7 @@ import DebuggerUI
 @main
 struct MetFlixApp: App {
     @Dependency(\.viewFactory) var viewFactory
+    @Dependency(\.networkDebugConnection) var networkDebugConnection
     @State var networkDebugAction: NetworkDebuggerActions? = nil
     @State var selectedCommand: ApplicationCommands = .application
     
@@ -35,7 +36,13 @@ struct MetFlixApp: App {
                             input: .home
                         )
                     )
+                    .ignoresSafeArea(.all, edges: [.top, .bottom])
                 }
+            }
+            .overlay(alignment: .top) {
+                Color.black
+                    .ignoresSafeArea(edges: .top)
+                    .frame(height: 0)
             }
             .onShakeGesture {
                 switch selectedCommand {
@@ -48,6 +55,10 @@ struct MetFlixApp: App {
             .sheet(item: $networkDebugAction, content: { action in
                 self.debugView(action: action)
             })
+            .onReceive(networkDebugConnection.$debuggingAction) { debuggingAction in
+                guard let action: NetworkDebuggerActions = debuggingAction else { return }
+                self.networkDebugAction = action
+            }
         }
     }
     private func debugView(action: NetworkDebuggerActions) -> AnyView {

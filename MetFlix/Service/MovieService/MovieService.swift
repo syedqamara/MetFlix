@@ -12,14 +12,14 @@ import Network
 
 
 
-protocol MovieServiceProtocol {
+public protocol MovieServiceProtocol {
     func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie>
-    func get(by id: String) async throws -> Movie
+    func get(by id: String) async throws -> MovieDetail
 }
 
-final class MovieService: MovieServiceProtocol {
+public final class MovieService: MovieServiceProtocol {
     @Dependency(\.defaultNetwork) var network
-    func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie> {
+    public func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie> {
         @Cached(endpoint: .popular) var popularMovies: PaginatedResult<Movie>?
         
         if Internet.isAvailable {
@@ -38,8 +38,21 @@ final class MovieService: MovieServiceProtocol {
         }
     }
     
-    func get(by id: String) async throws -> Movie {
-        @Cached(endpoint: .movie(id)) var movieDetail: PaginatedResult<Movie>?
-        throw SystemError.network(.noInternetConnection)
+    public func get(by id: String) async throws -> MovieDetail {
+        @Cached(endpoint: .movie(id)) var movieDetail: MovieDetail?
+        if Internet.isAvailable {
+            let detail = try await network.send(
+                to: MoviesEnpoint.movie(id),
+                with: nil,
+                type: MovieDetail.self
+            )
+            return detail
+        }
+        else if let cache = movieDetail {
+            return cache
+        }
+        else {
+            throw SystemError.network(.noInternetConnection)
+        }
     }
 }

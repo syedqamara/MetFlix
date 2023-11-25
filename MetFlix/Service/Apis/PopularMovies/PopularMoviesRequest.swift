@@ -8,11 +8,11 @@
 import Foundation
 import core_architecture
 
-enum SortBy: String, DataModel {
+public enum SortBy: String, DataModel {
     case popularity = "popularity.desc"
 }
 
-struct PopularMovieQueryParameters: DataModel {
+public struct PopularMovieQueryParameters: DataModel {
     var includeAdult: Bool
     var includeVideo: Bool
     var language: String
@@ -26,7 +26,7 @@ struct PopularMovieQueryParameters: DataModel {
         case page
         case sortBy = "sort_by"
     }
-    init(includeAdult: Bool = false, includeVideo: Bool = false, language: String = "en-US", page: Int = 1, sortBy: SortBy = .popularity) {
+    public init(includeAdult: Bool = false, includeVideo: Bool = false, language: String = "en-US", page: Int = 1, sortBy: SortBy = .popularity) {
         self.includeAdult = includeAdult
         self.includeVideo = includeVideo
         self.language = language
