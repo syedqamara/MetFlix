@@ -12,10 +12,7 @@ import Network
 
 
 
-public protocol MovieServiceProtocol {
-    func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie>
-    func get(by id: String) async throws -> MovieDetail
-}
+
 
 public final class MovieService: MovieServiceProtocol {
     @Dependency(\.defaultNetwork) var network

@@ -12,3 +12,4 @@ import Dependencies
 class AppStateModel: ObservableObject {
     @Dependency(\.networkDebugConnection) var networkDebugConnection
 }
+

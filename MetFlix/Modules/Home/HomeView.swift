@@ -10,9 +10,7 @@ import core_architecture
 import SwiftUI
 import Dependencies
 
-public protocol HomeViewProtocol: SwiftUIView {
-    
-}
+
 
 public struct HomeView<V: HomeViewModeling>: HomeViewProtocol {
     public typealias ViewModelType = V

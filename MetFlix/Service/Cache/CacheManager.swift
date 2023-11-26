@@ -7,12 +7,6 @@
 
 import Foundation
 
-protocol CacheManagerProtocol {
-    func insert<V>(value: V, for key: String)
-    func remove(for key: String)
-    func get<V>(valuefor key: String) -> V?
-}
-
 class SynchronizedCacheManager: CacheManagerProtocol {
     private let cache = NSCache<NSString, AnyObject>()
     private let cacheAccessQueue = DispatchQueue(label: "com.yourapp.cacheAccess", attributes: .concurrent)

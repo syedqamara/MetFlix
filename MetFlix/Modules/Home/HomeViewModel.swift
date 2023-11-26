@@ -10,15 +10,7 @@ import core_architecture
 import Combine
 import Dependencies
 
-public protocol HomeViewModeling: ViewModeling {
-    var error: Error? { get }
-    var isLoading: Bool { get }
-    var search: String { get set }
-    var movies: [MovieUIM] { get set }
-    
-    func onAppear()
-    func loadNextPage()
-}
+
 
 public final class HomeViewModel {
     @Published public var error: Error?

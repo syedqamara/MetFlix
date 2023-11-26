@@ -9,13 +9,7 @@ import Foundation
 import core_architecture
 import Dependencies
 
-public protocol MovieDetailViewModeling: ViewModeling {
-    var movieId: Int { get set }
-    var movieDetail: MovieDetailUIM? { get }
-    var error: Error? { get }
-    var isLoading: Bool { get }
-    func onAppear()
-}
+
 
 public final class MovieDetailViewModel {
     @Published public var movieDetail: MovieDetailUIM?

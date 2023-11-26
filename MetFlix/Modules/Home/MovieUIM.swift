@@ -8,7 +8,7 @@
 import Foundation
 import core_architecture
 
-public protocol UIModeling: UIModel where DataModelType: DataModel {}
+
 
 public struct PaginatedResultUIM<T: UIModeling>: UIModeling {
     public var page: Int

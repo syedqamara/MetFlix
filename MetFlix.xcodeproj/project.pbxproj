@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */; };
+		181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D402B13B731002F5E9B /* AbstractProtocols.swift */; };
 		186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B42B0E5BB100323E71 /* MetFlixApp.swift */; };
 		186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B62B0E5BB100323E71 /* AppCommands.swift */; };
 		186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950B82B0E5BB300323E71 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deocding+Bool.swift"; sourceTree = "<group>"; };
+		181E0D402B13B731002F5E9B /* AbstractProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProtocols.swift; sourceTree = "<group>"; };
 		186950B12B0E5BB100323E71 /* MetFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186950B42B0E5BB100323E71 /* MetFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixApp.swift; sourceTree = "<group>"; };
 		186950B62B0E5BB100323E71 /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			children = (
 				186950B42B0E5BB100323E71 /* MetFlixApp.swift */,
 				1869515F2B1034E600323E71 /* AppStateModel.swift */,
+				181E0D402B13B731002F5E9B /* AbstractProtocols.swift */,
 				186951342B0EC92A00323E71 /* Modules */,
 				186951222B0EC57C00323E71 /* ReusableViews */,
 				186951052B0E8AB900323E71 /* Extensions */,
@@ -258,6 +263,7 @@
 			children = (
 				186951062B0E8AC500323E71 /* Debugger+Extensions.swift */,
 				186951652B10B94D00323E71 /* MovieDetail+Preview.swift */,
+				181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */,
 				186951082B0E8CAA00323E71 /* Shake+Extensions.swift */,
 				186951492B0ECC6D00323E71 /* MovieUIM+Preview.swift */,
 			);
@@ -537,6 +543,8 @@
 				186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */,
 				1869514A2B0ECC6D00323E71 /* MovieUIM+Preview.swift in Sources */,
 				186951482B0ECA2800323E71 /* MovieUIM.swift in Sources */,
+				181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */,
+				181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */,
 				186951092B0E8CAA00323E71 /* Shake+Extensions.swift in Sources */,
 				1869515C2B0FF9DB00323E71 /* ErrorView.swift in Sources */,
 				186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */,
@@ -889,7 +897,7 @@
 			repositoryURL = "https://github.com/syedqamara/core_architecture.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.19;
+				version = 1.0.28;
 			};
 		};
 		1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {

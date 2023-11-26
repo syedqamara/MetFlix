@@ -9,9 +9,7 @@ import Foundation
 import core_architecture
 import SwiftUI
 
-public protocol MovieDetailViewProtocol: SwiftUIView {
-    
-}
+
 
 public struct MovieDetailView<V: MovieDetailViewModeling>: MovieDetailViewProtocol {
     public typealias ViewModelType = V

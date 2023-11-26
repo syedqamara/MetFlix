@@ -35,7 +35,7 @@ public struct MovieDetail: DataModel {
     public let video: Bool
     public let voteAverage: Double
     public let voteCount: Int
-
+    
     
     public init(adult: Bool, backdropPath: String?, belongsToCollection: Collection?, budget: Int, genres: [Genre], homepage: String, id: Int, imdbId: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String?, productionCompanies: [ProductionCompany], productionCountries: [ProductionCountry], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [SpokenLanguage], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
         self.adult = adult
@@ -63,6 +63,38 @@ public struct MovieDetail: DataModel {
         self.video = video
         self.voteAverage = voteAverage
         self.voteCount = voteCount
+    }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // Decode Bool values from both Bool and Int
+        adult = try container.decodeCustomBool(key: .adult)
+        video = try container.decodeCustomBool(key: .video)
+        
+        // Decode other properties
+        backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+        belongsToCollection = try container.decodeIfPresent(Collection.self, forKey: .belongsToCollection)
+        budget = try container.decodeIfPresent(Int.self, forKey: .budget)
+        genres = try container.decode([Genre].self, forKey: .genres)
+        homepage = try container.decode(String.self, forKey: .homepage)
+        id = try container.decode(Int.self, forKey: .id)
+        imdbId = try container.decode(String.self, forKey: .imdbId)
+        originalLanguage = try container.decode(String.self, forKey: .originalLanguage)
+        originalTitle = try container.decode(String.self, forKey: .originalTitle)
+        overview = try container.decode(String.self, forKey: .overview)
+        popularity = try container.decode(Double.self, forKey: .popularity)
+        posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
+        productionCompanies = try container.decode([ProductionCompany].self, forKey: .productionCompanies)
+        productionCountries = try container.decode([ProductionCountry].self, forKey: .productionCountries)
+        releaseDate = try container.decode(String.self, forKey: .releaseDate)
+        revenue = try container.decode(Int.self, forKey: .revenue)
+        runtime = try container.decode(Int.self, forKey: .runtime)
+        spokenLanguages = try container.decode([SpokenLanguage].self, forKey: .spokenLanguages)
+        status = try container.decode(String.self, forKey: .status)
+        tagline = try container.decode(String.self, forKey: .tagline)
+        title = try container.decode(String.self, forKey: .title)
+        voteAverage = try container.decode(Double.self, forKey: .voteAverage)
+        voteCount = try container.decode(Int.self, forKey: .voteCount)
     }
     private enum CodingKeys: String, CodingKey {
         case adult
@@ -98,11 +130,33 @@ public struct Collection: DataModel {
     public let name: String
     public let posterPath: String?
     public let backdropPath: String?
+    public init(id: Int, name: String, posterPath: String?, backdropPath: String?) {
+        self.id = id
+        self.name = name
+        self.posterPath = posterPath
+        self.backdropPath = backdropPath
+    }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
+        backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+    }
 }
 
 public struct Genre: DataModel {
     public let id: Int
     public let name: String
+    public init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+    }
 }
 
 public struct ProductionCompany: DataModel {
@@ -110,14 +164,20 @@ public struct ProductionCompany: DataModel {
     public let logoPath: String?
     public let name: String
     public let originCountry: String?
-
-    init(id: Int, logoPath: String?, name: String, originCountry: String?) {
+    
+    public init(id: Int, logoPath: String?, name: String, originCountry: String?) {
         self.id = id
         self.logoPath = logoPath
         self.name = name
         self.originCountry = originCountry
     }
-    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        logoPath = try container.decodeIfPresent(String.self, forKey: .logoPath)
+        name = try container.decode(String.self, forKey: .name)
+        originCountry = try container.decodeIfPresent(String.self, forKey: .originCountry)
+    }
     private enum CodingKeys: String, CodingKey {
         case id
         case logoPath = "logo_path"
@@ -134,6 +194,11 @@ public struct ProductionCountry: DataModel {
         self.iso3166_1 = iso3166_1
         self.name = name
     }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        iso3166_1 = try container.decode(String.self, forKey: .iso3166_1)
+        name = try container.decode(String.self, forKey: .name)
+    }
     private enum CodingKeys: String, CodingKey {
         case iso3166_1 = "iso_3166_1"
         case name
@@ -148,6 +213,12 @@ public struct SpokenLanguage: DataModel {
         self.englishName = englishName
         self.iso639_1 = iso639_1
         self.name = name
+    }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        englishName = try container.decode(String.self, forKey: .englishName)
+        iso639_1 = try container.decode(String.self, forKey: .iso639_1)
+        name = try container.decode(String.self, forKey: .name)
     }
     private enum CodingKeys: String, CodingKey {
         case englishName = "english_name"

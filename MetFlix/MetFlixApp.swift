@@ -61,11 +61,12 @@ struct MetFlixApp: App {
             }
         }
     }
-    private func debugView(action: NetworkDebuggerActions) -> AnyView {
+    private func debugView(action: NetworkDebuggerActions) -> some View {
         AnyView(
             viewFactory.makeView(
                 input: .debug(action)
             )
         )
+        .environmentObject(networkDebugConnection)
     }
 }

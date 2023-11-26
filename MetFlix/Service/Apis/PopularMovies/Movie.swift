@@ -51,7 +51,26 @@ public struct Movie: DataModel {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        // Decode Bool values from both Bool and Int
+        adult = try container.decodeCustomBool(key: .adult)
+        video = try container.decodeCustomBool(key: .video)
+
+        // Decode other properties
+        backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+        genreIds = try container.decode([Int].self, forKey: .genreIds)
+        id = try container.decode(Int.self, forKey: .id)
+        originalLanguage = try container.decode(String.self, forKey: .originalLanguage)
+        originalTitle = try container.decode(String.self, forKey: .originalTitle)
+        overview = try container.decode(String.self, forKey: .overview)
+        popularity = try container.decode(Double.self, forKey: .popularity)
+        posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
+        releaseDate = try container.decode(String.self, forKey: .releaseDate)
+        title = try container.decode(String.self, forKey: .title)
+        voteAverage = try container.decode(Double.self, forKey: .voteAverage)
+        voteCount = try container.decode(Int.self, forKey: .voteCount)
+    }
 }
-
-
 
