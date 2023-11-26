@@ -28,23 +28,11 @@ public struct RemoteImageView: View {
     
     public var body: some View {
         if let url = URL(string: image) {
-            WebImage(url: url)
-                .placeholder {
-                    animationView {
-                        AnimatedView(animationFileName: lottiePlaceholder, loopMode: .loop, size: size)
-                            .frame(width: size.width, height: size.height)
-                    }
-                    .frame(maxHeight: Double.greatestFiniteMagnitude)
-                }
-                .onSuccess() { arg, arg1, arg2  in
-                    isDownloaded = true
-                }
-                .resizable()
-                .clipped(antialiased: false)
-                .padding(0)
-                .aspectRatio(contentMode: .fill)
-                .overlay(isDownloaded ? overlayColor : .clear)
-                .id(image)
+            if isDownloaded {
+                image(url)
+            } else {
+                image(url)
+            }
         }
         else {
             animationView {
@@ -52,13 +40,44 @@ public struct RemoteImageView: View {
             }
         }
     }
+    @ViewBuilder
+    func image(_ url: URL) -> some View {
+        WebImage(url: url)
+            .placeholder {
+                animationView {
+                    AnimatedView(animationFileName: lottiePlaceholder, loopMode: .loop, size: size)
+                        .frame(width: size.width, height: size.height)
+                }
+                .frame(maxHeight: Double.greatestFiniteMagnitude)
+            }
+            .onProgress() {recieved,total in
+                isDownloaded = recieved == total
+            }
+            .onSuccess() { arg, arg1, arg2  in
+                isDownloaded = true
+            }
+            .resizable()
+            .clipped(antialiased: false)
+            .padding(0)
+            .aspectRatio(contentMode: .fill)
+            .overlay(isDownloaded ? overlayColor : .clear)
+            .id(image)
+    }
     
     @ViewBuilder
     func animationView(completion: () -> some View) -> some View {
         VStack(alignment: .center) {
             completion()
         }
-        .background(Color.black)
         .padding(0)
+    }
+}
+struct AnyShape<S: Shape>: Shape {
+    var shape: S
+    init(_ shape: S) {
+        self.shape = shape
+    }
+    func path(in rect: CGRect) -> Path {
+        return shape.path(in: rect)
     }
 }

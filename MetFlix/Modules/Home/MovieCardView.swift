@@ -104,7 +104,9 @@ struct MovieCardView: View {
 
 struct MovieCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let result = PaginatedResultUIM.preview.results
+        let model = PaginatedResult<Movie>.preview
+        let uimodel = PaginatedResultUIM<MovieUIM>.init(dataModel: model)
+        let result = uimodel.results
         let resultBinding = Binding.constant(result)
         
         ScrollView(content: {

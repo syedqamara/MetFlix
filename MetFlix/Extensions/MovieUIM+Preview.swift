@@ -1,25 +1,25 @@
 //
-//  MovieUIM+Extension.swift
+//  Movie+Extension.swift
 //  MetFlix
 //
 //  Created by Apple on 23/11/2023.
 //
 
 import Foundation
-public extension PaginatedResultUIM<MovieUIM> {
-    static var preview: PaginatedResultUIM<MovieUIM> {
-        return PaginatedResultUIM(
+public extension PaginatedResult<Movie> {
+    static var preview: PaginatedResult<Movie> {
+        return PaginatedResult(
             page: 1,
-            results: MovieUIM.previewArray,
+            results: Movie.previewArray,
             totalPages: 3,
             totalResults: 30
         )
     }
 }
 
-public extension MovieUIM {
-    static var preview: MovieUIM {
-        return MovieUIM(
+public extension Movie {
+    static var preview: Movie {
+        return Movie(
             adult: false,
             backdropPath: "/kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg",
             genreIds: [878, 28, 53],
@@ -37,10 +37,10 @@ public extension MovieUIM {
         )
     }
 
-    static var previewArray: [MovieUIM] {
+    static var previewArray: [Movie] {
         return [
-            MovieUIM.preview,
-            MovieUIM(
+            Movie.preview,
+            Movie(
                 adult: true,
                 backdropPath: "/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
                 genreIds: [28, 12],

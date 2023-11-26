@@ -7,7 +7,7 @@
 
 import Foundation
 extension MovieDetail {
-    static var preview: MovieDetail {
+    static public var preview: MovieDetail {
         
         return MovieDetail(
             adult: false,
@@ -40,27 +40,27 @@ extension MovieDetail {
 }
 
 extension SpokenLanguage {
-    static var previewEnglish: SpokenLanguage { SpokenLanguage(englishName: "English", iso639_1: "en", name: "English") }
-    static var previewJapanese: SpokenLanguage { SpokenLanguage(englishName: "Japanese", iso639_1: "ja", name: "日本語") }
-    static var previewThai: SpokenLanguage { SpokenLanguage(englishName: "Thai", iso639_1: "th", name: "ภาษาไทย") }
-    static var previewVietnamese: SpokenLanguage { SpokenLanguage(englishName: "Vietnamese", iso639_1: "vi", name: "Tiếng Việt") }
+    static public var previewEnglish: SpokenLanguage { SpokenLanguage(englishName: "English", iso639_1: "en", name: "English") }
+    static public var previewJapanese: SpokenLanguage { SpokenLanguage(englishName: "Japanese", iso639_1: "ja", name: "日本語") }
+    static public var previewThai: SpokenLanguage { SpokenLanguage(englishName: "Thai", iso639_1: "th", name: "ภาษาไทย") }
+    static public var previewVietnamese: SpokenLanguage { SpokenLanguage(englishName: "Vietnamese", iso639_1: "vi", name: "Tiếng Việt") }
 }
 
 extension ProductionCountry {
-    static var previewCA: ProductionCountry { ProductionCountry(iso3166_1: "CA", name: "Canada") }
-    static var previewUS: ProductionCountry { ProductionCountry(iso3166_1: "US", name: "United States of America") }
+    static public var previewCA: ProductionCountry { ProductionCountry(iso3166_1: "CA", name: "Canada") }
+    static public var previewUS: ProductionCountry { ProductionCountry(iso3166_1: "US", name: "United States of America") }
     
 }
 
 extension ProductionCompany {
-    static var previewNewRegency: ProductionCompany { ProductionCompany(id: 10104, logoPath: "/wRn5HnYMGeJHmItRypgOZOC6gwY.png", name: "New Regency Pictures", originCountry: "US") }
-    static var previewEntertainment: ProductionCompany { ProductionCompany(id: 8147, logoPath: "/q6HOAdSNgCbeOqwoMVRc6REgbXF.png", name: "Entertainment One", originCountry: "CA") }
-    static var previewRegency: ProductionCompany { ProductionCompany(id: 508, logoPath: "/7cxRWzi4LsVm4Utfpr1hfARNurT.png", name: "Regency Enterprises", originCountry: "US") }
-    static var previewBadDreams: ProductionCompany { ProductionCompany(id: 206867, logoPath: nil, name: "Bad Dreams", originCountry: "") }
+    static public var previewNewRegency: ProductionCompany { ProductionCompany(id: 10104, logoPath: "/wRn5HnYMGeJHmItRypgOZOC6gwY.png", name: "New Regency Pictures", originCountry: "US") }
+    static public var previewEntertainment: ProductionCompany { ProductionCompany(id: 8147, logoPath: "/q6HOAdSNgCbeOqwoMVRc6REgbXF.png", name: "Entertainment One", originCountry: "CA") }
+    static public var previewRegency: ProductionCompany { ProductionCompany(id: 508, logoPath: "/7cxRWzi4LsVm4Utfpr1hfARNurT.png", name: "Regency Enterprises", originCountry: "US") }
+    static public var previewBadDreams: ProductionCompany { ProductionCompany(id: 206867, logoPath: nil, name: "Bad Dreams", originCountry: "") }
 }
 
 extension Genre {
-    static var previewScienceFiction: Genre { Genre(id: 878, name: "Science Fiction") }
-    static var previewAction: Genre { Genre(id: 28, name: "Action") }
-    static var previewThriller: Genre { Genre(id: 53, name: "Thriller") }
+    static public var previewScienceFiction: Genre { Genre(id: 878, name: "Science Fiction") }
+    static public var previewAction: Genre { Genre(id: 28, name: "Action") }
+    static public var previewThriller: Genre { Genre(id: 53, name: "Thriller") }
 }
