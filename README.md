@@ -1,8 +1,14 @@
 # MetFlix Application - Core Abstractions
 
-| Title | Title | Title |
+| Movies List (without Debugger) | Movies Detail (without Debugger) | Movies Detail (Debugger) |
 |-------|-------|-------|
-| View/Player   | View/Player   | View/Player   |
+|  <video width="250" height="400" src="https://github.com/syedqamara/MetFlix/raw/main/assets/5058871/9a7b4954-7865-420e-879a-87c45b4d003c" type="video/mp4"></video>  | <video width="250" height="400" src="https://github.com/syedqamara/MetFlix/assets/5058871/b139d84d-21c9-45d7-b717-c26098601a7c" type="video/mp4"></video>   | <video width="250" height="400" src="https://github.com/syedqamara/MetFlix/assets/5058871/1d81bfee-03c6-4c5b-95f1-31cab8d48f98" type="video/mp4"></video>   |
+
+
+
+
+
+
 
 ## `UIModeling` Protocol
 
