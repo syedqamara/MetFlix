@@ -1,4 +1,3 @@
-```markdown
 # MetFlix Application - Core Abstractions
 
 ## `UIModeling` Protocol
@@ -15,7 +14,6 @@ public protocol UIModeling: UIModel where DataModelType: DataModel {
     
 }
 ```
-
 ## `HomeViewModeling` Protocol
 
 ```swift
