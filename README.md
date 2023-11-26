@@ -1,5 +1,9 @@
 # MetFlix Application - Core Abstractions
 
+| Title | Title | Title |
+|-------|-------|-------|
+| View/Player   | View/Player   | View/Player   |
+
 ## `UIModeling` Protocol
 
 ```swift
