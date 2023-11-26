@@ -981,7 +981,7 @@
 			repositoryURL = "https://github.com/syedqamara/core_architecture.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.28;
+				version = 1.0.30;
 			};
 		};
 		1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {

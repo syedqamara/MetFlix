@@ -23,6 +23,7 @@ func launch() {
     do {
         
         try registrar.networkRegister(
+            name: "Fetch Movies List",
             host: Config.moviesHost,
             endpoint: MoviesEnpoint.popular,
             method: .get,
@@ -33,6 +34,7 @@ func launch() {
             ]
         )
         try registrar.networkRegister(
+            name: "Fetch Movie Detail",
             host: Config.moviesHost,
             endpoint: MoviesEnpoint.movie(""),
             method: .get,
