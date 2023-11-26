@@ -1,5 +1,8 @@
-```markdown
 # MetFlix Application - Core Abstractions
+
+| Title | Title | Title |
+|-------|-------|-------|
+| View/Player   | View/Player   | View/Player   |
 
 ## `UIModeling` Protocol
 
@@ -15,7 +18,6 @@ public protocol UIModeling: UIModel where DataModelType: DataModel {
     
 }
 ```
-
 ## `HomeViewModeling` Protocol
 
 ```swift
