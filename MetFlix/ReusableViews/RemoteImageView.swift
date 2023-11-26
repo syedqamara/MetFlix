@@ -62,6 +62,7 @@ public struct RemoteImageView: View {
             .aspectRatio(contentMode: .fill)
             .overlay(isDownloaded ? overlayColor : .clear)
             .id(image)
+            .frame(minWidth: size.width)
     }
     
     @ViewBuilder

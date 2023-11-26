@@ -8,7 +8,7 @@
 import Foundation
 import Dependencies
 
-public enum MovieServiceDependency: TestDependencyKey {
+public enum MovieServiceDependency: TestDependencyKey, DependencyKey {
     public static var liveValue: MovieServiceProtocol { MovieService() }
     public static var testValue: MovieServiceProtocol { MockMovieServiceProtocol() }
 }
