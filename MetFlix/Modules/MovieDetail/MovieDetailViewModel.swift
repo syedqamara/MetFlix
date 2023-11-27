@@ -37,6 +37,7 @@ extension MovieDetailViewModel: MovieDetailViewModeling {
                 let detail = try await movieService.get(by: "\(self.movieId)")
                 DispatchQueue.main.async {
                     self.isLoading = false
+                    self.movieDetail = nil
                     self.movieDetail = .init(dataModel: detail)
                 }
             }

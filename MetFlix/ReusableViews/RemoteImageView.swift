@@ -48,6 +48,7 @@ public struct RemoteImageView: View {
                     AnimatedView(animationFileName: lottiePlaceholder, loopMode: .loop, size: size)
                         .frame(width: size.width, height: size.height)
                 }
+                .frame(minWidth: size.width)
                 .frame(maxHeight: Double.greatestFiniteMagnitude)
             }
             .onProgress() {recieved,total in
@@ -71,6 +72,7 @@ public struct RemoteImageView: View {
             completion()
         }
         .padding(0)
+        .frame(minWidth: size.width)
     }
 }
 struct AnyShape<S: Shape>: Shape {

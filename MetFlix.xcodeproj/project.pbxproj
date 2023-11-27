@@ -25,6 +25,7 @@
 		181E0D642B13CED1002F5E9B /* ExpandableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D632B13CED1002F5E9B /* ExpandableTextView.swift */; };
 		181E0D682B13CF3F002F5E9B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D672B13CF3F002F5E9B /* CardView.swift */; };
 		181E0D6A2B13CF61002F5E9B /* CardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D692B13CF61002F5E9B /* CardCarouselView.swift */; };
+		181E0D6C2B1415A6002F5E9B /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D6B2B1415A6002F5E9B /* HomeViewModelTest.swift */; };
 		186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B42B0E5BB100323E71 /* MetFlixApp.swift */; };
 		186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B62B0E5BB100323E71 /* AppCommands.swift */; };
 		186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950B82B0E5BB300323E71 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		181E0D632B13CED1002F5E9B /* ExpandableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTextView.swift; sourceTree = "<group>"; };
 		181E0D672B13CF3F002F5E9B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		181E0D692B13CF61002F5E9B /* CardCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarouselView.swift; sourceTree = "<group>"; };
+		181E0D6B2B1415A6002F5E9B /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		186950B12B0E5BB100323E71 /* MetFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186950B42B0E5BB100323E71 /* MetFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixApp.swift; sourceTree = "<group>"; };
 		186950B62B0E5BB100323E71 /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				186950C52B0E5BB300323E71 /* MetFlixTests.swift */,
+				181E0D6B2B1415A6002F5E9B /* HomeViewModelTest.swift */,
 			);
 			path = MetFlixTests;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186950C62B0E5BB300323E71 /* MetFlixTests.swift in Sources */,
+				181E0D6C2B1415A6002F5E9B /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -66,7 +66,7 @@ public protocol MovieDetailViewProtocol: SwiftUIView {
  */
 public protocol MovieDetailViewModeling: ViewModeling {
     var movieId: Int { get set }
-    var movieDetail: MovieDetailUIM? { get }
+    var movieDetail: MovieDetailUIM? { get set }
     var error: Error? { get }
     var isLoading: Bool { get }
     func onAppear()

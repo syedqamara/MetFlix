@@ -12,10 +12,10 @@ import PreviewSnapshots
 
 public struct MovieDetailView<V: MovieDetailViewModeling>: MovieDetailViewProtocol {
     public typealias ViewModelType = V
-    @ObservedObject var viewModel: V
+    @StateObject var viewModel: V
     @Environment(\.dismiss) var dismiss
     public init(viewModel: V) {
-        self.viewModel = viewModel
+        _viewModel = .init(wrappedValue: viewModel)
     }
     
     public var body: some View {

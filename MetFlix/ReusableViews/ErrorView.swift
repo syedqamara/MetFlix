@@ -31,10 +31,12 @@ struct PlaceholderView: View {
                 .font(.largeTitle.bold())
                 .foregroundColor(.white)
                 .padding(.top, 16)
+                .frame(minWidth: UIScreen.main.bounds.width)
             Text(subtitleText)
                 .font(.largeTitle)
                 .foregroundColor(.white)
                 .padding(.top, 8)
+                .frame(minWidth: UIScreen.main.bounds.width)
             AnimatedView(
                 animationFileName: placeholder.animationFileName,
                 loopMode: .loop,
@@ -45,7 +47,9 @@ struct PlaceholderView: View {
             )
             .scaleEffect(.init(width: 0.5, height: 0.5))
             .frame(maxHeight: 200)
+            .frame(minWidth: UIScreen.main.bounds.width)
         }
+        .frame(minWidth: UIScreen.main.bounds.width)
         .padding()
         .background(Color.black.ignoresSafeArea(.all, edges: [.top, .bottom]))
     }
