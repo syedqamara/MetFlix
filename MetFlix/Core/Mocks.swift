@@ -16,7 +16,7 @@ class MockHomeViewModeling: HomeViewModeling {
     @Published var error: Error?
     @Published var isLoading: Bool = false
     @Published var search: String = ""
-    @Published var movies: [MovieUIM] = []
+//    @Published var movies: [MovieUIM] = []
     
     func onAppear() {}
     
@@ -27,7 +27,7 @@ class MockHomeViewModeling: HomeViewModeling {
  */
 class MockMovieDetailViewModeling: MovieDetailViewModeling {
     @Published var movieId: Int = 0
-    @Published var movieDetail: MovieDetailUIM?
+//    @Published var movieDetail: MovieDetailUIM?
     @Published var error: Error?
     @Published var isLoading: Bool = false
     
@@ -60,33 +60,44 @@ public class MockFunctionArgument<V> {
     }
 }
 
-public class MockMovieServiceProtocol: MovieServiceProtocol {
+public class MockEpisodeServiceProtocol: EpisodeServiceProtocol {
     
-    public var getPopularQuery: MockFunctionArgument<PopularMovieQueryParameters> = .init()
-    public var getByID: MockFunctionArgument<String> = .init()
-    
-    public var getPopularReturn: MockFunctionArgument<PaginatedResult<Movie>> = .init()
-    public var getByIDReturn: MockFunctionArgument<MovieDetail> = .init()
+    public var episodeArgument: MockFunctionArgument<EpisodesApiData> = .init()
     
     public init() {}
     
-    public func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie> {
-        // Implement mock logic for getPopular
-        getPopularQuery.invoked(by: query)
-        if let returnValue = getPopularReturn.argumentLastValue {
-            getPopularReturn.invoked(by: returnValue)
+    public func episodes() async throws -> EpisodesApiData {
+        if let returnValue = episodeArgument.argumentLastValue {
+            episodeArgument.invoked(by: returnValue)
             return returnValue
         }
-        return PaginatedResult<Movie>.preview
+        return .preview
     }
+}
+public class MockChannelServiceProtocol: ChannelServiceProtocol {
     
-    public func get(by id: String) async throws -> MovieDetail {
-        // Implement mock logic for get(by:)
-        getByID.invoked(by: id)
-        if let returnValue = getByIDReturn.argumentLastValue {
-            getByIDReturn.invoked(by: returnValue)
+    public var channelArgument: MockFunctionArgument<ChannelsApiData> = .init()
+    
+    public init() {}
+    public func channels() async throws -> ChannelsApiData {
+        if let returnValue = channelArgument.argumentLastValue {
+            channelArgument.invoked(by: returnValue)
             return returnValue
         }
-        return MovieDetail.preview // Replace MovieDetail() with the actual mock for MovieDetail
+        return .preview
+    }
+}
+public class MockCategoriesServiceProtocol: CategoriesServiceProtocol {
+    
+    public var categoriesArgument: MockFunctionArgument<CategoriesApiData> = .init()
+    
+    public init() {}
+    
+    public func categories() async throws -> CategoriesApiData {
+        if let returnValue = categoriesArgument.argumentLastValue {
+            categoriesArgument.invoked(by: returnValue)
+            return returnValue
+        }
+        return .preview
     }
 }

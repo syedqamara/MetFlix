@@ -45,7 +45,7 @@ struct MetFlixApp: App {
                 case .application:
                     AnyView(
                         viewFactory.makeView(
-                            input: .home
+                            input: .breakpoint
                         )
                     )
                     .ignoresSafeArea(.all, edges: [.top, .bottom])

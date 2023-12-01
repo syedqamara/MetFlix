@@ -31,7 +31,7 @@ public protocol HomeViewModeling: ViewModeling {
     var error: Error? { get }
     var isLoading: Bool { get }
     var search: String { get set }
-    var movies: [MovieUIM] { get set }
+//    var movies: [MovieUIM] { get set }
     
     func onAppear()
     func loadNextPage()
@@ -66,7 +66,7 @@ public protocol MovieDetailViewProtocol: SwiftUIView {
  */
 public protocol MovieDetailViewModeling: ViewModeling {
     var movieId: Int { get set }
-    var movieDetail: MovieDetailUIM? { get set }
+//    var movieDetail: MovieDetailUIM? { get set }
     var error: Error? { get }
     var isLoading: Bool { get }
     func onAppear()
@@ -80,9 +80,16 @@ public protocol MovieDetailViewModeling: ViewModeling {
  
  - Note: Conforms to `core_architecture`'s service protocol with asynchronous methods.
  */
-public protocol MovieServiceProtocol {
-    func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie>
-    func get(by id: String) async throws -> MovieDetail
+public protocol MindValleyServiceProtocol {}
+
+public protocol EpisodeServiceProtocol: MindValleyServiceProtocol {
+    func episodes() async throws -> EpisodesApiData
+}
+public protocol ChannelServiceProtocol: MindValleyServiceProtocol {
+    func channels()  async throws-> ChannelsApiData
+}
+public protocol CategoriesServiceProtocol: MindValleyServiceProtocol {
+    func categories() async throws -> CategoriesApiData
 }
 
 

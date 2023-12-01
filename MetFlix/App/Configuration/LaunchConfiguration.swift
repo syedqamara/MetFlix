@@ -23,26 +23,31 @@ func launch() {
     do {
         
         try registrar.networkRegister(
-            name: "Fetch Movies List",
-            host: Config.moviesHost,
-            endpoint: MoviesEnpoint.popular,
+            name: "Get Episodes Api",
+            host: Config.mindValleyHost,
+            endpoint: MindValleyEndpoints.episodes,
             method: .get,
             contentType: .queryParam,
-            responseType: PaginatedResult<Movie>.self,
-            headers: [
-                "Authorization": "Bearer \(Config.movieApiReadToken)"
-            ]
+            responseType: EpisodesApiData.self,
+            headers: [:]
         )
         try registrar.networkRegister(
-            name: "Fetch Movie Detail",
-            host: Config.moviesHost,
-            endpoint: MoviesEnpoint.movie(""),
+            name: "Get Channels Api",
+            host: Config.mindValleyHost,
+            endpoint: MindValleyEndpoints.channels,
             method: .get,
             contentType: .queryParam,
-            responseType: MovieDetail.self,
-            headers: [
-                "Authorization": "Bearer \(Config.movieApiReadToken)"
-            ]
+            responseType: ChannelsApiData.self,
+            headers: [:]
+        )
+        try registrar.networkRegister(
+            name: "Get Categories Api",
+            host: Config.mindValleyHost,
+            endpoint: MindValleyEndpoints.categories,
+            method: .get,
+            contentType: .queryParam,
+            responseType: CategoriesApiData.self,
+            headers: [:]
         )
         
         
