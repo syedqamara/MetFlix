@@ -22,17 +22,6 @@ import Foundation
 //    
 //    func loadNextPage() {}
 //}
-/**
- A mock implementation for the MovieDetailViewModeling protocol.
- */
-class MockMovieDetailViewModeling: MovieDetailViewModeling {
-    @Published var movieId: Int = 0
-//    @Published var movieDetail: MovieDetailUIM?
-    @Published var error: Error?
-    @Published var isLoading: Bool = false
-    
-    func onAppear() {}
-}
 
 /**
  Function Argument(parameters, returns)

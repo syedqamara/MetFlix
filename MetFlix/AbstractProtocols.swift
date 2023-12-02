@@ -43,32 +43,8 @@ public protocol HomeViewProtocol: SwiftUIView {
 }
 
 
-// MARK: - Movie Detail Module Abstracts
 
-/**
- A protocol representing the view for the Movie Detail module in the MetFlix application.
- 
- - Note: Conforms to `core_architecture`'s `SwiftUIView` protocol.
- */
-public protocol MovieDetailViewProtocol: SwiftUIView {
-    
-}
-
-/**
- A protocol defining the view model for the Movie Detail module in the MetFlix application.
- 
- - Note: Conforms to `core_architecture`'s `ViewModeling` protocol.
- */
-public protocol MovieDetailViewModeling: ViewModeling {
-    var movieId: Int { get set }
-//    var movieDetail: MovieDetailUIM? { get set }
-    var error: Error? { get }
-    var isLoading: Bool { get }
-    func onAppear()
-}
-
-
-// MARK: - Movie Service Abstract
+// MARK: - Mind Valley Service Abstract
 
 /**
  A protocol defining the services for movie-related operations in the MetFlix application.

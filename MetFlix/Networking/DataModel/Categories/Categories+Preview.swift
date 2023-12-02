@@ -22,7 +22,7 @@ public extension CategoriesApiData {
 
 public extension Categories {
     static var preview: Categories {
-        let previewCategory1 = Category(name: "Preview Category 1")
+        let previewCategory1 = Category(name: "Preview")
         let previewCategory2 = Category(name: "Preview Category 2")
         return Categories(categories: [previewCategory1, previewCategory2])
     }

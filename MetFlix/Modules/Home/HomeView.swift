@@ -35,7 +35,7 @@ struct HomeView<VM: HomeViewModeling>: SwiftUIView {
                         )
                     case .categories(let categories):
                         AnyView(
-                            viewFactory.makeView(input: .episodes(nil))
+                            viewFactory.makeView(input: .categories(categories))
                         )
                     case .channels(let channels):
                         AnyView(

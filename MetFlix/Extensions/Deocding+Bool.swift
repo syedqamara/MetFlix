@@ -71,6 +71,9 @@ extension Color {
     static var appTheme: Color {
         "23272F".color
     }
+    static var categoriesTagColor: Color {
+        "95989D".color.opacity(0.2)
+    }
 }
 
 extension UIColor {

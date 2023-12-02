@@ -7,10 +7,10 @@
 
 import Foundation
 import core_architecture
-public struct CategoryUIM: UIModel {
+public struct CategoryUIM: UIModel, Identifiable {
     public typealias DataModelType = Category
     public var name: String? = nil
-
+    public var id: String { name ?? "" }
     public init(dataModel: Category) {
         if let name = dataModel.name {
             self.name = name

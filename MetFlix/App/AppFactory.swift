@@ -13,7 +13,7 @@ import DebuggerUI
 
 extension SwiftUIViewFactory {
     enum MetflixInput {
-    case home, episodes(EpisodesDataUIM?), breakpoint, debug(NetworkDebuggerActions)
+    case home, episodes(EpisodesDataUIM?), categories(CategoriesDataUIM?), breakpoint, debug(NetworkDebuggerActions)
     }
     func makeView(input: MetflixInput) -> any SwiftUIView {
         switch input {
@@ -26,6 +26,15 @@ extension SwiftUIViewFactory {
                             .channels(nil),
                             .categories(nil)
                         ]
+                    )
+                )
+            )
+            .view()
+        case .categories(let categories):
+            return CategoriesModule(
+                input: .init(
+                    vm: CategoriesViewModel(
+                        categories: categories
                     )
                 )
             )
