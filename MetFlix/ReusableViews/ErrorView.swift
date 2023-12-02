@@ -51,7 +51,7 @@ struct PlaceholderView: View {
         }
         .frame(minWidth: UIScreen.main.bounds.width)
         .padding()
-        .background(Color.black.ignoresSafeArea(.all, edges: [.top, .bottom]))
+        .background(Color.appTheme.ignoresSafeArea(.all, edges: [.top, .bottom]))
     }
 
     private var titleText: String {

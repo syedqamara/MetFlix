@@ -13,10 +13,30 @@ import DebuggerUI
 
 extension SwiftUIViewFactory {
     enum MetflixInput {
-    case breakpoint, debug(NetworkDebuggerActions)
+    case home, episodes(EpisodesDataUIM?), breakpoint, debug(NetworkDebuggerActions)
     }
     func makeView(input: MetflixInput) -> any SwiftUIView {
         switch input {
+        case .home:
+            return HomeModule(
+                input: .init(
+                    viewModel: HomeViewModel(
+                        sections: [
+                            .episodes(nil),
+                            .channels(nil),
+                            .categories(nil)
+                        ]
+                    )
+                )
+            )
+            .view()
+        case .episodes(let episodes):
+            return EpisodesModule(
+                input: .init(
+                    viewModel: EpisodesViewModel(episodes: episodes)
+                )
+            )
+            .view()
         case .breakpoint:
             return BreakpointConfigurationsModule(input: .init()).view()
         case .debug(let action):

@@ -23,36 +23,40 @@ struct MetFlixApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                switch selectedCommand {
-                case .breakpoint:
-                    AnyView(
-                        viewFactory.makeView(
-                            input: .breakpoint
+                ZStack {
+                    Color.appTheme
+                        .edgesIgnoringSafeArea(.all)
+                    switch selectedCommand {
+                    case .breakpoint:
+                        AnyView(
+                            viewFactory.makeView(
+                                input: .breakpoint
+                            )
                         )
-                    )
-                    .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            HStack {
-                                Text("Metflix Network Configuration")
-                                    .font(.title3.bold())
-                                    .foregroundColor(.white)
-                                    .shadow(color: .red, radius: 3, x: 3, y: -3)
-                                Spacer()
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                HStack {
+                                    Text("Metflix Network Configuration")
+                                        .font(.title3.bold())
+                                        .foregroundColor(.white)
+                                        .shadow(color: .red, radius: 3, x: 3, y: -3)
+                                    Spacer()
+                                }
+                                .ignoresSafeArea(.all, edges: [.top, .bottom])
                             }
-                            .ignoresSafeArea(.all, edges: [.top, .bottom])
                         }
-                    }
-                case .application:
-                    AnyView(
-                        viewFactory.makeView(
-                            input: .breakpoint
+                    case .application:
+                        AnyView(
+                            viewFactory.makeView(
+                                input: .home
+                            )
                         )
-                    )
-                    .ignoresSafeArea(.all, edges: [.top, .bottom])
+                        .ignoresSafeArea(.all, edges: [.top, .bottom])
+                    }
                 }
             }
             .overlay(alignment: .top) {
-                Color.black
+                Color.appTheme
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 0)
             }

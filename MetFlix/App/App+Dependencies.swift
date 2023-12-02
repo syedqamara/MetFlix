@@ -16,7 +16,7 @@ extension SwiftUIViewFactory: DependencyKey, TestDependencyKey {
 }
 
 public extension DependencyValues {
-    public var viewFactory: SwiftUIViewFactory {
+    var viewFactory: SwiftUIViewFactory {
         get {
             self[SwiftUIViewFactory.self]
         }

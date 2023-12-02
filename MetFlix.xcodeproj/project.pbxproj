@@ -15,13 +15,37 @@
 		181800352B1A5FC500D07546 /* Episode+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800342B1A5FC500D07546 /* Episode+Preview.swift */; };
 		181800382B1A62EA00D07546 /* MindValleyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800372B1A62EA00D07546 /* MindValleyService.swift */; };
 		1818003A2B1A65A800D07546 /* MindValley+Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800392B1A65A800D07546 /* MindValley+Dependency.swift */; };
+		181800402B1A917500D07546 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818003F2B1A917500D07546 /* HomeModule.swift */; };
+		181800422B1A917A00D07546 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800412B1A917A00D07546 /* HomeView.swift */; };
+		181800442B1A918000D07546 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800432B1A918000D07546 /* HomeViewModel.swift */; };
+		181800462B1A91C500D07546 /* HomeUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800452B1A91C500D07546 /* HomeUIM.swift */; };
+		181800492B1AA66B00D07546 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 181800482B1AA66B00D07546 /* SkeletonUI */; };
+		1818004B2B1AAE3700D07546 /* CategoriesUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818004A2B1AAE3700D07546 /* CategoriesUIM.swift */; };
+		1818004D2B1AAE3E00D07546 /* EpisodesUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818004C2B1AAE3E00D07546 /* EpisodesUIM.swift */; };
+		1818004F2B1AAE4400D07546 /* ChannelsUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818004E2B1AAE4400D07546 /* ChannelsUIM.swift */; };
+		181800512B1AB15600D07546 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800502B1AB15600D07546 /* EpisodesViewModel.swift */; };
+		181800532B1AB1E100D07546 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800522B1AB1E100D07546 /* EpisodesView.swift */; };
+		181800552B1AB24F00D07546 /* EpisodesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800542B1AB24F00D07546 /* EpisodesModule.swift */; };
+		181800632B1B8C8A00D07546 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181800572B1B8C8A00D07546 /* Roboto-Medium.ttf */; };
+		181800642B1B8C8A00D07546 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181800582B1B8C8A00D07546 /* Roboto-Light.ttf */; };
+		181800652B1B8C8A00D07546 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181800592B1B8C8A00D07546 /* Roboto-Regular.ttf */; };
+		181800662B1B8C8A00D07546 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1818005A2B1B8C8A00D07546 /* Roboto-MediumItalic.ttf */; };
+		181800672B1B8C8A00D07546 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1818005B2B1B8C8A00D07546 /* Roboto-ThinItalic.ttf */; };
+		181800682B1B8C8A00D07546 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1818005C2B1B8C8A00D07546 /* Roboto-BoldItalic.ttf */; };
+		181800692B1B8C8A00D07546 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1818005D2B1B8C8A00D07546 /* Roboto-LightItalic.ttf */; };
+		1818006A2B1B8C8A00D07546 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1818005E2B1B8C8A00D07546 /* Roboto-Italic.ttf */; };
+		1818006B2B1B8C8A00D07546 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1818005F2B1B8C8A00D07546 /* Roboto-BlackItalic.ttf */; };
+		1818006C2B1B8C8A00D07546 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181800602B1B8C8A00D07546 /* Roboto-Bold.ttf */; };
+		1818006D2B1B8C8A00D07546 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181800612B1B8C8A00D07546 /* Roboto-Thin.ttf */; };
+		1818006E2B1B8C8A00D07546 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181800622B1B8C8A00D07546 /* Roboto-Black.ttf */; };
+		181800722B1B900C00D07546 /* FontViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800712B1B900C00D07546 /* FontViewModifier.swift */; };
+		181800752B1B9F5500D07546 /* RemoteImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800742B1B9F5500D07546 /* RemoteImageViewModel.swift */; };
 		181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */; };
 		181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D402B13B731002F5E9B /* AbstractProtocols.swift */; };
 		181E0D482B13C0DE002F5E9B /* core_architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D472B13C0DE002F5E9B /* core_architecture */; };
 		181E0D4A2B13C0DE002F5E9B /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D492B13C0DE002F5E9B /* Debugger */; };
 		181E0D4C2B13C0DE002F5E9B /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4B2B13C0DE002F5E9B /* DebuggerUI */; };
 		181E0D4E2B13C0DE002F5E9B /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4D2B13C0DE002F5E9B /* Network */; };
-		181E0D502B13C0DE002F5E9B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4F2B13C0DE002F5E9B /* SDWebImageSwiftUI */; };
 		181E0D522B13C0DE002F5E9B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D512B13C0DE002F5E9B /* Lottie */; };
 		181E0D552B13C28A002F5E9B /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D542B13C28A002F5E9B /* PreviewSnapshots */; };
 		181E0D582B13C72E002F5E9B /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D452B13BFDE002F5E9B /* Dependencies.swift */; };
@@ -49,7 +73,6 @@
 		186951172B0EBED600323E71 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951162B0EBED600323E71 /* CacheManager.swift */; };
 		186951192B0EBFBC00323E71 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951182B0EBFBC00323E71 /* Cache.swift */; };
 		1869511B2B0EC36D00323E71 /* AppRemoteAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869511A2B0EC36D00323E71 /* AppRemoteAssets.swift */; };
-		1869511E2B0EC53C00323E71 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1869511D2B0EC53C00323E71 /* SDWebImageSwiftUI */; };
 		186951212B0EC56000323E71 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 186951202B0EC56000323E71 /* Lottie */; };
 		186951242B0EC58F00323E71 /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951232B0EC58F00323E71 /* AnimatedView.swift */; };
 		1869514E2B0FDADD00323E71 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869514D2B0FDADD00323E71 /* RemoteImageView.swift */; };
@@ -90,6 +113,31 @@
 		181800342B1A5FC500D07546 /* Episode+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Episode+Preview.swift"; sourceTree = "<group>"; };
 		181800372B1A62EA00D07546 /* MindValleyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindValleyService.swift; sourceTree = "<group>"; };
 		181800392B1A65A800D07546 /* MindValley+Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MindValley+Dependency.swift"; sourceTree = "<group>"; };
+		1818003F2B1A917500D07546 /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		181800412B1A917A00D07546 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		181800432B1A918000D07546 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		181800452B1A91C500D07546 /* HomeUIM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIM.swift; sourceTree = "<group>"; };
+		1818004A2B1AAE3700D07546 /* CategoriesUIM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesUIM.swift; sourceTree = "<group>"; };
+		1818004C2B1AAE3E00D07546 /* EpisodesUIM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesUIM.swift; sourceTree = "<group>"; };
+		1818004E2B1AAE4400D07546 /* ChannelsUIM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsUIM.swift; sourceTree = "<group>"; };
+		181800502B1AB15600D07546 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
+		181800522B1AB1E100D07546 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
+		181800542B1AB24F00D07546 /* EpisodesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesModule.swift; sourceTree = "<group>"; };
+		181800572B1B8C8A00D07546 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		181800582B1B8C8A00D07546 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		181800592B1B8C8A00D07546 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		1818005A2B1B8C8A00D07546 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		1818005B2B1B8C8A00D07546 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		1818005C2B1B8C8A00D07546 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1818005D2B1B8C8A00D07546 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		1818005E2B1B8C8A00D07546 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		1818005F2B1B8C8A00D07546 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		181800602B1B8C8A00D07546 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		181800612B1B8C8A00D07546 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		181800622B1B8C8A00D07546 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		1818006F2B1B8CA400D07546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		181800712B1B900C00D07546 /* FontViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontViewModifier.swift; sourceTree = "<group>"; };
+		181800742B1B9F5500D07546 /* RemoteImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageViewModel.swift; sourceTree = "<group>"; };
 		181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deocding+Bool.swift"; sourceTree = "<group>"; };
 		181E0D402B13B731002F5E9B /* AbstractProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProtocols.swift; sourceTree = "<group>"; };
 		181E0D422B13BF0F002F5E9B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -134,11 +182,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1869511E2B0EC53C00323E71 /* SDWebImageSwiftUI in Frameworks */,
 				186950F52B0E614300323E71 /* core_architecture in Frameworks */,
 				186950FB2B0E614300323E71 /* Network in Frameworks */,
 				186950F72B0E614300323E71 /* Debugger in Frameworks */,
 				186950F92B0E614300323E71 /* DebuggerUI in Frameworks */,
+				181800492B1AA66B00D07546 /* SkeletonUI in Frameworks */,
 				186951212B0EC56000323E71 /* Lottie in Frameworks */,
 				181E0D552B13C28A002F5E9B /* PreviewSnapshots in Frameworks */,
 			);
@@ -148,7 +196,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181E0D502B13C0DE002F5E9B /* SDWebImageSwiftUI in Frameworks */,
 				181E0D482B13C0DE002F5E9B /* core_architecture in Frameworks */,
 				181E0D4E2B13C0DE002F5E9B /* Network in Frameworks */,
 				181E0D4A2B13C0DE002F5E9B /* Debugger in Frameworks */,
@@ -203,6 +250,80 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		1818003B2B1A674D00D07546 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1818003F2B1A917500D07546 /* HomeModule.swift */,
+				181800412B1A917A00D07546 /* HomeView.swift */,
+				181800432B1A918000D07546 /* HomeViewModel.swift */,
+				181800452B1A91C500D07546 /* HomeUIM.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1818003C2B1A675700D07546 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				1818004E2B1AAE4400D07546 /* ChannelsUIM.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		1818003D2B1A675D00D07546 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				1818004C2B1AAE3E00D07546 /* EpisodesUIM.swift */,
+				181800502B1AB15600D07546 /* EpisodesViewModel.swift */,
+				181800522B1AB1E100D07546 /* EpisodesView.swift */,
+				181800542B1AB24F00D07546 /* EpisodesModule.swift */,
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		1818003E2B1A676200D07546 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1818004A2B1AAE3700D07546 /* CategoriesUIM.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		181800562B1B8C8A00D07546 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				181800572B1B8C8A00D07546 /* Roboto-Medium.ttf */,
+				181800582B1B8C8A00D07546 /* Roboto-Light.ttf */,
+				181800592B1B8C8A00D07546 /* Roboto-Regular.ttf */,
+				1818005A2B1B8C8A00D07546 /* Roboto-MediumItalic.ttf */,
+				1818005B2B1B8C8A00D07546 /* Roboto-ThinItalic.ttf */,
+				1818005C2B1B8C8A00D07546 /* Roboto-BoldItalic.ttf */,
+				1818005D2B1B8C8A00D07546 /* Roboto-LightItalic.ttf */,
+				1818005E2B1B8C8A00D07546 /* Roboto-Italic.ttf */,
+				1818005F2B1B8C8A00D07546 /* Roboto-BlackItalic.ttf */,
+				181800602B1B8C8A00D07546 /* Roboto-Bold.ttf */,
+				181800612B1B8C8A00D07546 /* Roboto-Thin.ttf */,
+				181800622B1B8C8A00D07546 /* Roboto-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		181800702B1B8FFC00D07546 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				181800712B1B900C00D07546 /* FontViewModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		181800732B1B9F4500D07546 /* RemoteImage */ = {
+			isa = PBXGroup;
+			children = (
+				1869514D2B0FDADD00323E71 /* RemoteImageView.swift */,
+				181800742B1B9F5500D07546 /* RemoteImageViewModel.swift */,
+			);
+			path = RemoteImage;
+			sourceTree = "<group>";
+		};
 		181E0D442B13BFBC002F5E9B /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +357,7 @@
 		186950B32B0E5BB100323E71 /* MetFlix */ = {
 			isa = PBXGroup;
 			children = (
+				1818006F2B1B8CA400D07546 /* Info.plist */,
 				186950B42B0E5BB100323E71 /* MetFlixApp.swift */,
 				1869515F2B1034E600323E71 /* AppStateModel.swift */,
 				181E0D402B13B731002F5E9B /* AbstractProtocols.swift */,
@@ -342,8 +464,9 @@
 		186951222B0EC57C00323E71 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				181800702B1B8FFC00D07546 /* ViewModifiers */,
 				186951232B0EC58F00323E71 /* AnimatedView.swift */,
-				1869514D2B0FDADD00323E71 /* RemoteImageView.swift */,
+				181800732B1B9F4500D07546 /* RemoteImage */,
 				1869515B2B0FF9DB00323E71 /* ErrorView.swift */,
 				186951632B10471100323E71 /* RatingView.swift */,
 				186951672B10CB4100323E71 /* LineView.swift */,
@@ -354,6 +477,7 @@
 		186951292B0EC87C00323E71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				181800562B1B8C8A00D07546 /* Fonts */,
 				1869512A2B0EC88700323E71 /* Animations */,
 			);
 			path = Resources;
@@ -373,6 +497,10 @@
 		186951342B0EC92A00323E71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1818003E2B1A676200D07546 /* Category */,
+				1818003D2B1A675D00D07546 /* Episode */,
+				1818003C2B1A675700D07546 /* Channel */,
+				1818003B2B1A674D00D07546 /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -407,9 +535,9 @@
 				186950F62B0E614300323E71 /* Debugger */,
 				186950F82B0E614300323E71 /* DebuggerUI */,
 				186950FA2B0E614300323E71 /* Network */,
-				1869511D2B0EC53C00323E71 /* SDWebImageSwiftUI */,
 				186951202B0EC56000323E71 /* Lottie */,
 				181E0D542B13C28A002F5E9B /* PreviewSnapshots */,
+				181800482B1AA66B00D07546 /* SkeletonUI */,
 			);
 			productName = MetFlix;
 			productReference = 186950B12B0E5BB100323E71 /* MetFlix.app */;
@@ -434,7 +562,6 @@
 				181E0D492B13C0DE002F5E9B /* Debugger */,
 				181E0D4B2B13C0DE002F5E9B /* DebuggerUI */,
 				181E0D4D2B13C0DE002F5E9B /* Network */,
-				181E0D4F2B13C0DE002F5E9B /* SDWebImageSwiftUI */,
 				181E0D512B13C0DE002F5E9B /* Lottie */,
 			);
 			productName = MetFlixTests;
@@ -493,9 +620,9 @@
 			mainGroup = 186950A82B0E5BB100323E71;
 			packageReferences = (
 				186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */,
-				1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				181E0D532B13C28A002F5E9B /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */,
+				181800472B1AA66B00D07546 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 186950B22B0E5BB100323E71 /* Products */;
 			projectDirPath = "";
@@ -515,9 +642,21 @@
 			files = (
 				1869515E2B0FFC1B00323E71 /* no_result_animation.json in Resources */,
 				186951542B0FDD3900323E71 /* image_loading_animation.json in Resources */,
+				1818006D2B1B8C8A00D07546 /* Roboto-Thin.ttf in Resources */,
 				186951552B0FDD3900323E71 /* error_animation.json in Resources */,
+				181800672B1B8C8A00D07546 /* Roboto-ThinItalic.ttf in Resources */,
+				1818006E2B1B8C8A00D07546 /* Roboto-Black.ttf in Resources */,
+				181800692B1B8C8A00D07546 /* Roboto-LightItalic.ttf in Resources */,
+				181800632B1B8C8A00D07546 /* Roboto-Medium.ttf in Resources */,
 				1869515A2B0FEDB700323E71 /* loading_animation.json in Resources */,
+				1818006B2B1B8C8A00D07546 /* Roboto-BlackItalic.ttf in Resources */,
+				181800682B1B8C8A00D07546 /* Roboto-BoldItalic.ttf in Resources */,
 				186950BC2B0E5BB300323E71 /* Preview Assets.xcassets in Resources */,
+				181800662B1B8C8A00D07546 /* Roboto-MediumItalic.ttf in Resources */,
+				181800652B1B8C8A00D07546 /* Roboto-Regular.ttf in Resources */,
+				1818006A2B1B8C8A00D07546 /* Roboto-Italic.ttf in Resources */,
+				181800642B1B8C8A00D07546 /* Roboto-Light.ttf in Resources */,
+				1818006C2B1B8C8A00D07546 /* Roboto-Bold.ttf in Resources */,
 				186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,10 +685,14 @@
 				1818002E2B1A5F5300D07546 /* Categories+Preview.swift in Sources */,
 				186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */,
 				186951512B0FDB9D00323E71 /* Config.swift in Sources */,
+				1818004D2B1AAE3E00D07546 /* EpisodesUIM.swift in Sources */,
 				181E0D582B13C72E002F5E9B /* Dependencies.swift in Sources */,
+				1818004B2B1AAE3700D07546 /* CategoriesUIM.swift in Sources */,
 				1869510F2B0E96E200323E71 /* Internet.swift in Sources */,
+				181800422B1A917A00D07546 /* HomeView.swift in Sources */,
 				186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */,
 				181800352B1A5FC500D07546 /* Episode+Preview.swift in Sources */,
+				181800462B1A91C500D07546 /* HomeUIM.swift in Sources */,
 				181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */,
 				181800332B1A5F9C00D07546 /* Channel+Preview.swift in Sources */,
 				181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */,
@@ -558,21 +701,29 @@
 				186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */,
 				1818002C2B1A5BDF00D07546 /* Categories.swift in Sources */,
 				1869511B2B0EC36D00323E71 /* AppRemoteAssets.swift in Sources */,
+				181800402B1A917500D07546 /* HomeModule.swift in Sources */,
+				181800532B1AB1E100D07546 /* EpisodesView.swift in Sources */,
 				186951042B0E857F00323E71 /* LaunchConfiguration.swift in Sources */,
 				181800382B1A62EA00D07546 /* MindValleyService.swift in Sources */,
 				186951242B0EC58F00323E71 /* AnimatedView.swift in Sources */,
 				181E0D592B13C734002F5E9B /* Mocks.swift in Sources */,
 				181800282B1A5B3900D07546 /* Episode.swift in Sources */,
 				186951172B0EBED600323E71 /* CacheManager.swift in Sources */,
+				181800512B1AB15600D07546 /* EpisodesViewModel.swift in Sources */,
+				181800752B1B9F5500D07546 /* RemoteImageViewModel.swift in Sources */,
+				181800722B1B900C00D07546 /* FontViewModifier.swift in Sources */,
+				181800442B1A918000D07546 /* HomeViewModel.swift in Sources */,
 				1818003A2B1A65A800D07546 /* MindValley+Dependency.swift in Sources */,
 				186951192B0EBFBC00323E71 /* Cache.swift in Sources */,
 				186951072B0E8AC500323E71 /* Debugger+Extensions.swift in Sources */,
 				186951602B1034E600323E71 /* AppStateModel.swift in Sources */,
 				1818002A2B1A5BBE00D07546 /* Channel.swift in Sources */,
+				1818004F2B1AAE4400D07546 /* ChannelsUIM.swift in Sources */,
 				186951022B0E845D00323E71 /* Endpoints.swift in Sources */,
 				186951642B10471100323E71 /* RatingView.swift in Sources */,
 				186950FD2B0E7EF300323E71 /* App+Dependencies.swift in Sources */,
 				1869514E2B0FDADD00323E71 /* RemoteImageView.swift in Sources */,
+				181800552B1AB24F00D07546 /* EpisodesModule.swift in Sources */,
 				186951682B10CB4100323E71 /* LineView.swift in Sources */,
 				181E0D5E2B13CE69002F5E9B /* View+Extension.swift in Sources */,
 			);
@@ -736,6 +887,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MetFlix/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetFlix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -764,6 +916,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MetFlix/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetFlix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -896,6 +1049,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		181800472B1AA66B00D07546 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		181E0D532B13C28A002F5E9B /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/doordash-oss/swiftui-preview-snapshots";
@@ -912,14 +1073,6 @@
 				version = 1.0.30;
 			};
 		};
-		1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -931,6 +1084,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		181800482B1AA66B00D07546 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 181800472B1AA66B00D07546 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
+		};
 		181E0D472B13C0DE002F5E9B /* core_architecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
@@ -950,11 +1108,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
 			productName = Network;
-		};
-		181E0D4F2B13C0DE002F5E9B /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
 		};
 		181E0D512B13C0DE002F5E9B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -985,11 +1138,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
 			productName = Network;
-		};
-		1869511D2B0EC53C00323E71 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1869511C2B0EC53B00323E71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
 		};
 		186951202B0EC56000323E71 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -28,13 +28,8 @@ public protocol UIModeling: UIModel where DataModelType: DataModel {
  - Note: Conforms to `core_architecture`'s `ViewModeling` protocol.
  */
 public protocol HomeViewModeling: ViewModeling {
-    var error: Error? { get }
-    var isLoading: Bool { get }
-    var search: String { get set }
-//    var movies: [MovieUIM] { get set }
-    
+    var sections: [HomeSectionUIM] { get set }
     func onAppear()
-    func loadNextPage()
 }
 
 
@@ -80,17 +75,22 @@ public protocol MovieDetailViewModeling: ViewModeling {
  
  - Note: Conforms to `core_architecture`'s service protocol with asynchronous methods.
  */
-public protocol MindValleyServiceProtocol {}
 
-public protocol EpisodeServiceProtocol: MindValleyServiceProtocol {
+
+public protocol EpisodeServiceProtocol {
     func episodes() async throws -> EpisodesApiData
 }
-public protocol ChannelServiceProtocol: MindValleyServiceProtocol {
+public protocol ChannelServiceProtocol {
     func channels()  async throws-> ChannelsApiData
 }
-public protocol CategoriesServiceProtocol: MindValleyServiceProtocol {
+public protocol CategoriesServiceProtocol {
     func categories() async throws -> CategoriesApiData
 }
+public protocol ImageDownloadingProtocol {
+    func image(for url: String) async throws -> Data
+}
+
+public protocol MindValleyServiceProtocol: EpisodeServiceProtocol, ChannelServiceProtocol, CategoriesServiceProtocol, ImageDownloadingProtocol {}
 
 
 // MARK: - Cache Manager Abstract

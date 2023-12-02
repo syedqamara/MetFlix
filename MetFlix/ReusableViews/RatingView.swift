@@ -177,7 +177,7 @@ struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             RatingView(rate: 6, ratingSubtitle: "(120) Votes", size: 20, font: .title2.bold(), selectedColor: .red, unSelectedColor: .white)
-                .background(.black)
+                .background(Color.appTheme)
         }
     }
 }
