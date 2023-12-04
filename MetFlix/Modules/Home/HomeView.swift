@@ -9,7 +9,6 @@ import Foundation
 import core_architecture
 import Dependencies
 import SwiftUI
-import SkeletonUI
 
 struct HomeView<VM: HomeViewModeling>: SwiftUIView {
     typealias ViewModelType = VM
@@ -52,7 +51,7 @@ struct HomeView<VM: HomeViewModeling>: SwiftUIView {
             }
         }
         .refreshable {
-            
+            viewModel.refresh()
         }
         .scrollContentBackground(.hidden)
         .onAppear() {

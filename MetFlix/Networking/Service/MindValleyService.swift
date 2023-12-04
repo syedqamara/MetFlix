@@ -11,7 +11,7 @@ import Network
 import core_architecture
 
 class MindValleyService: MindValleyServiceProtocol {
-    private let imageService = MindValleyImageService()
+    private let fileService = MindValleyFileService()
     @Dependency(\.defaultNetwork) var network
     
     enum Errors: String, Error {
@@ -19,14 +19,23 @@ class MindValleyService: MindValleyServiceProtocol {
     }
     // Generic Get Method
     private func `get`<D: DataModel>(type: D.Type, dataModel: DataModel? = nil, endpoint: MindValleyEndpoints) async throws -> D {
-        @Cached<D>(endpoint: .episodes) var cached
+        @Cached<D>(endpoint: endpoint) var cached
+        @Cached<String>(endpoint: endpoint) var fileNameCache
         if Internet.isAvailable {
-            let data = try await network.send(to: endpoint, with: dataModel, type: type)
-            _cached.wrappedValue = data
-            return data
-        }
-        else if let cached {
+            let dataModel = try await network.send(to: endpoint, with: dataModel, type: type)
+            _cached.wrappedValue = dataModel
+            let fileData = try JSONEncoder().encode(dataModel).base64EncodedData(options: .lineLength76Characters)
+            let fileName = UUID().uuidString
+            _fileNameCache.wrappedValue = fileName
+            fileService.save(fileName: .json(fileName), data: fileData)
+            return dataModel
+        } else if let cached {
             return cached
+        } else if let fileName = fileNameCache {
+            let fileData = try fileService.load(fileName: .json(fileName))
+            let dataModel = try JSONDecoder().decode(type, from: fileData)
+            _cached.wrappedValue = dataModel
+            return dataModel
         }
         throw Errors.noInternet
     }
@@ -53,7 +62,7 @@ extension MindValleyService {
     func image(for urlString: String) async throws -> Data {
         @Cached<String>(key: urlString) var localPath
         if let localPath {
-            return try imageService.load(fileName: localPath)
+            return try fileService.load(fileName: .png(localPath))
         } else if Internet.isAvailable {
             guard let url = URL(string: urlString) else { throw Errors.invalidURL }
             let request = URLRequest(url: url)
@@ -62,9 +71,9 @@ extension MindValleyService {
                 throw Errors.invalidStatusCode
             }
             let data = response.0
-            let newFileName = "\(UUID().uuidString).png"
+            let newFileName = UUID().uuidString
             _localPath.wrappedValue = newFileName
-            imageService.save(fileName: newFileName, data: data)
+            fileService.save(fileName: .png(newFileName), data: data)
             return data
         }
         throw Errors.noInternet
@@ -75,25 +84,25 @@ extension MindValleyService {
     
 }
 
-private class MindValleyImageService {
-    private let queue: DispatchQueue = .init(label: "com.cache.image.queue", qos: .background)
-    func load(fileName: String) throws -> Data {
+private class MindValleyFileService {
+    private let queue: DispatchQueue = .init(label: "com.cache.file.queue", qos: .background)
+    func load(fileName: AssetsEnpoint) throws -> Data {
         try queue.sync {
             var url = URL.documentsDirectory
-            url.append(component: fileName)
-            @Configuration<Data>(fileName) var imageData
+            url.append(component: fileName.pointing)
+            @Cached<Data>(endpoint: fileName) var imageData
             if let imageData {
                 return imageData
             }
             return try Data(contentsOf: url)
         }
     }
-    func save(fileName: String, data: Data?) {
+    func save(fileName: AssetsEnpoint, data: Data?) {
         queue.sync(flags: .barrier) {
             do {
-                @Configuration<Data>(fileName) var imageData
+                @Cached<Data>(endpoint: fileName) var imageData
                 let cacheDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                let url = cacheDirectory.appendingPathComponent(fileName)
+                let url = cacheDirectory.appendingPathComponent(fileName.pointing)
                 imageData = data
                 if let data = data {
                     if FileManager.default.fileExists(atPath: url.path) {

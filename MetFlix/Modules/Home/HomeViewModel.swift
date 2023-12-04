@@ -10,7 +10,7 @@ import core_architecture
 import Dependencies
 
 
-public class HomeViewModel: HomeViewModeling {
+public class HomeViewModel {
     @Published public var error: Error?
     @Published public var isLoading: Bool
     @Published public var search: String
@@ -50,7 +50,7 @@ public class HomeViewModel: HomeViewModeling {
     }
 }
 
-extension HomeViewModel {
+extension HomeViewModel: HomeViewModeling {
     public func onAppear() {
         loadData()
     }

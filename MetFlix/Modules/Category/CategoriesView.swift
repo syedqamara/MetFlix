@@ -72,12 +72,14 @@ struct TagView: View {
                     Color.categoriesTagColor
                         .cornerRadius(size.height / 2)
                         .frame(width: size.width, height: size.height)
-                    Text(model.name)
-                        .robotoFont(style: .black(.small))
-                        .multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .foregroundColor(.white)
-                        .padding()
+                    if let name = model.name {
+                        Text(name)
+                            .robotoFont(style: .black(.small))
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
                 }
             }
         }

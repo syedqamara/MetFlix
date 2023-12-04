@@ -9,6 +9,7 @@ import Foundation
 import Network
 import Dependencies
 import core_architecture
+import DebuggerUI
 
 
 
@@ -16,11 +17,11 @@ import core_architecture
 
 func launch() {
     @Dependency(\.registerar) var registrar
-    @Dependency(\.networkDebugConnection) var connection
-    @Dependency(\.networkDebugger) var networkDebugger
-    @Dependency(\.defaultNetwork) var network
+    
     
     do {
+        @Configuration<DebugUITheme.NetworkDebugModule.KeyValue>(DebuggerUI.networkModuleKeyValueThemeName) var theme: DebugUITheme.NetworkDebugModule.KeyValue?
+        _theme.wrappedValue = .appTheme
         
         try registrar.networkRegister(
             name: "Get Episodes Api",

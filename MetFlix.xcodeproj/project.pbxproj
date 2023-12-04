@@ -19,7 +19,6 @@
 		181800422B1A917A00D07546 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800412B1A917A00D07546 /* HomeView.swift */; };
 		181800442B1A918000D07546 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800432B1A918000D07546 /* HomeViewModel.swift */; };
 		181800462B1A91C500D07546 /* HomeUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800452B1A91C500D07546 /* HomeUIM.swift */; };
-		181800492B1AA66B00D07546 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 181800482B1AA66B00D07546 /* SkeletonUI */; };
 		1818004B2B1AAE3700D07546 /* CategoriesUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818004A2B1AAE3700D07546 /* CategoriesUIM.swift */; };
 		1818004D2B1AAE3E00D07546 /* EpisodesUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818004C2B1AAE3E00D07546 /* EpisodesUIM.swift */; };
 		1818004F2B1AAE4400D07546 /* ChannelsUIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818004E2B1AAE4400D07546 /* ChannelsUIM.swift */; };
@@ -47,7 +46,6 @@
 		181E0D4C2B13C0DE002F5E9B /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4B2B13C0DE002F5E9B /* DebuggerUI */; };
 		181E0D4E2B13C0DE002F5E9B /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4D2B13C0DE002F5E9B /* Network */; };
 		181E0D522B13C0DE002F5E9B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D512B13C0DE002F5E9B /* Lottie */; };
-		181E0D552B13C28A002F5E9B /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D542B13C28A002F5E9B /* PreviewSnapshots */; };
 		181E0D582B13C72E002F5E9B /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D452B13BFDE002F5E9B /* Dependencies.swift */; };
 		181E0D592B13C734002F5E9B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D422B13BF0F002F5E9B /* Mocks.swift */; };
 		181E0D5E2B13CE69002F5E9B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D5D2B13CE69002F5E9B /* View+Extension.swift */; };
@@ -67,8 +65,8 @@
 		183C2A682B1D384E000FADFE /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A672B1D384E000FADFE /* Previewer.swift */; };
 		183C2A6B2B1D4A2B000FADFE /* EpisodesTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */; };
 		183C2A6D2B1D4A62000FADFE /* EpisodeTileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */; };
+		183C2A712B1DFBDD000FADFE /* DebugUITheme+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A702B1DFBDD000FADFE /* DebugUITheme+Extensions.swift */; };
 		186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B42B0E5BB100323E71 /* MetFlixApp.swift */; };
-		186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B62B0E5BB100323E71 /* AppCommands.swift */; };
 		186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950B82B0E5BB300323E71 /* Assets.xcassets */; };
 		186950BC2B0E5BB300323E71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */; };
 		186950C62B0E5BB300323E71 /* MetFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950C52B0E5BB300323E71 /* MetFlixTests.swift */; };
@@ -83,7 +81,6 @@
 		186951022B0E845D00323E71 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951012B0E845D00323E71 /* Endpoints.swift */; };
 		186951042B0E857F00323E71 /* LaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951032B0E857F00323E71 /* LaunchConfiguration.swift */; };
 		186951072B0E8AC500323E71 /* Debugger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951062B0E8AC500323E71 /* Debugger+Extensions.swift */; };
-		186951092B0E8CAA00323E71 /* Shake+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951082B0E8CAA00323E71 /* Shake+Extensions.swift */; };
 		1869510F2B0E96E200323E71 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869510E2B0E96E200323E71 /* Internet.swift */; };
 		186951172B0EBED600323E71 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951162B0EBED600323E71 /* CacheManager.swift */; };
 		186951192B0EBFBC00323E71 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951182B0EBFBC00323E71 /* Cache.swift */; };
@@ -174,9 +171,9 @@
 		183C2A672B1D384E000FADFE /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTileView.swift; sourceTree = "<group>"; };
 		183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTileListView.swift; sourceTree = "<group>"; };
+		183C2A702B1DFBDD000FADFE /* DebugUITheme+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DebugUITheme+Extensions.swift"; sourceTree = "<group>"; };
 		186950B12B0E5BB100323E71 /* MetFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186950B42B0E5BB100323E71 /* MetFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixApp.swift; sourceTree = "<group>"; };
-		186950B62B0E5BB100323E71 /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
 		186950B82B0E5BB300323E71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		186950C12B0E5BB300323E71 /* MetFlixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetFlixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +186,6 @@
 		186951012B0E845D00323E71 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		186951032B0E857F00323E71 /* LaunchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfiguration.swift; sourceTree = "<group>"; };
 		186951062B0E8AC500323E71 /* Debugger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debugger+Extensions.swift"; sourceTree = "<group>"; };
-		186951082B0E8CAA00323E71 /* Shake+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shake+Extensions.swift"; sourceTree = "<group>"; };
 		1869510E2B0E96E200323E71 /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
 		186951162B0EBED600323E71 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		186951182B0EBFBC00323E71 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -216,9 +212,7 @@
 				186950FB2B0E614300323E71 /* Network in Frameworks */,
 				186950F72B0E614300323E71 /* Debugger in Frameworks */,
 				186950F92B0E614300323E71 /* DebuggerUI in Frameworks */,
-				181800492B1AA66B00D07546 /* SkeletonUI in Frameworks */,
 				186951212B0EC56000323E71 /* Lottie in Frameworks */,
-				181E0D552B13C28A002F5E9B /* PreviewSnapshots in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +457,6 @@
 				1869514F2B0FDB8E00323E71 /* Configuration */,
 				186950EF2B0E5F0800323E71 /* AppFactory.swift */,
 				186951012B0E845D00323E71 /* Endpoints.swift */,
-				186950B62B0E5BB100323E71 /* AppCommands.swift */,
 				1869511A2B0EC36D00323E71 /* AppRemoteAssets.swift */,
 				186950FC2B0E7EF300323E71 /* App+Dependencies.swift */,
 			);
@@ -494,9 +487,9 @@
 				186951062B0E8AC500323E71 /* Debugger+Extensions.swift */,
 				181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */,
 				183C2A612B1D3795000FADFE /* Float+Extension.swift */,
+				183C2A702B1DFBDD000FADFE /* DebugUITheme+Extensions.swift */,
 				183C2A632B1D379B000FADFE /* String+Extension.swift */,
 				183C2A652B1D37B3000FADFE /* Color+Extension.swift */,
-				186951082B0E8CAA00323E71 /* Shake+Extensions.swift */,
 				181E0D5D2B13CE69002F5E9B /* View+Extension.swift */,
 			);
 			path = Extensions;
@@ -597,8 +590,6 @@
 				186950F82B0E614300323E71 /* DebuggerUI */,
 				186950FA2B0E614300323E71 /* Network */,
 				186951202B0EC56000323E71 /* Lottie */,
-				181E0D542B13C28A002F5E9B /* PreviewSnapshots */,
-				181800482B1AA66B00D07546 /* SkeletonUI */,
 			);
 			productName = MetFlix;
 			productReference = 186950B12B0E5BB100323E71 /* MetFlix.app */;
@@ -682,8 +673,6 @@
 			packageReferences = (
 				186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */,
 				1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				181E0D532B13C28A002F5E9B /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */,
-				181800472B1AA66B00D07546 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 186950B22B0E5BB100323E71 /* Products */;
 			projectDirPath = "";
@@ -747,6 +736,7 @@
 				186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */,
 				186951512B0FDB9D00323E71 /* Config.swift in Sources */,
 				1818004D2B1AAE3E00D07546 /* EpisodesUIM.swift in Sources */,
+				183C2A712B1DFBDD000FADFE /* DebugUITheme+Extensions.swift in Sources */,
 				181E0D582B13C72E002F5E9B /* Dependencies.swift in Sources */,
 				1818004B2B1AAE3700D07546 /* CategoriesUIM.swift in Sources */,
 				1869510F2B0E96E200323E71 /* Internet.swift in Sources */,
@@ -754,7 +744,6 @@
 				181800422B1A917A00D07546 /* HomeView.swift in Sources */,
 				183C2A512B1BDAD2000FADFE /* CategoriesView.swift in Sources */,
 				183C2A532B1BDAD9000FADFE /* CategoriesViewModel.swift in Sources */,
-				186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */,
 				181800352B1A5FC500D07546 /* Episode+Preview.swift in Sources */,
 				183C2A682B1D384E000FADFE /* Previewer.swift in Sources */,
 				183C2A592B1BE69D000FADFE /* ChannelsViewModel.swift in Sources */,
@@ -764,7 +753,6 @@
 				181800332B1A5F9C00D07546 /* Channel+Preview.swift in Sources */,
 				183C2A622B1D3795000FADFE /* Float+Extension.swift in Sources */,
 				181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */,
-				186951092B0E8CAA00323E71 /* Shake+Extensions.swift in Sources */,
 				1869515C2B0FF9DB00323E71 /* ErrorView.swift in Sources */,
 				186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */,
 				183C2A4F2B1BDABD000FADFE /* CategoriesModule.swift in Sources */,
@@ -1125,28 +1113,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		181800472B1AA66B00D07546 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		181E0D532B13C28A002F5E9B /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/doordash-oss/swiftui-preview-snapshots";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/syedqamara/core_architecture.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.30;
+				version = 1.0.48;
 			};
 		};
 		1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
@@ -1160,11 +1132,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		181800482B1AA66B00D07546 /* SkeletonUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 181800472B1AA66B00D07546 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
-			productName = SkeletonUI;
-		};
 		181E0D472B13C0DE002F5E9B /* core_architecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
@@ -1189,11 +1156,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		181E0D542B13C28A002F5E9B /* PreviewSnapshots */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 181E0D532B13C28A002F5E9B /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
-			productName = PreviewSnapshots;
 		};
 		186950F42B0E614300323E71 /* core_architecture */ = {
 			isa = XCSwiftPackageProductDependency;

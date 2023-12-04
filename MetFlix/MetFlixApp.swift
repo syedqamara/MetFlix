@@ -15,6 +15,7 @@ struct MetFlixApp: App {
     @Dependency(\.networkDebugConnection) var networkDebugConnection
     @State var networkDebugAction: NetworkDebuggerActions? = nil
     @State var selectedCommand: ApplicationCommands = .application
+    @State var selectedCommand: ApplicationDebugCommands = .breakpoint
     
     init() {
         launch()
@@ -29,24 +30,22 @@ struct MetFlixApp: App {
                     switch selectedCommand {
                     case .breakpoint:
                         AnyView(
-                            viewFactory.makeView(
-                                input: .breakpoint
-                            )
+                            viewFactory.makeView(input: .breakpoint)
                         )
-                        .toolbar {
-                            ToolbarItem(placement: .principal) {
-                                HStack {
-                                    Text("Network Configuration")
-                                        .robotoFont(style: .bold(.title))
-                                        .multilineTextAlignment(.leading)
-                                        .foregroundColor(.white)
-                                        .shadow(color: .appThemeSecondary, radius: 3, x: 3, y: -3)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                    Spacer()
-                                }
-                                .ignoresSafeArea(.all, edges: [.top, .bottom])
-                            }
-                        }
+//                        .toolbar {
+//                            ToolbarItem(placement: .principal) {
+//                                HStack {
+//                                    Text("Network Configuration")
+//                                        .robotoFont(style: .bold(.title))
+//                                        .multilineTextAlignment(.leading)
+//                                        .foregroundColor(.white)
+//                                        .shadow(color: .appThemeSecondary, radius: 3, x: 3, y: -3)
+//                                        .fixedSize(horizontal: false, vertical: true)
+//                                    Spacer()
+//                                }
+//                                .ignoresSafeArea(.all, edges: [.top, .bottom])
+//                            }
+//                        }
                     case .application:
                         AnyView(
                             viewFactory.makeView(
@@ -62,21 +61,7 @@ struct MetFlixApp: App {
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 0)
             }
-            .onShakeGesture {
-                switch selectedCommand {
-                case .application:
-                    selectedCommand = .breakpoint
-                case .breakpoint:
-                    selectedCommand = .application
-                }
-            }
-            .sheet(item: $networkDebugAction, content: { action in
-                self.debugView(action: action)
-            })
-            .onReceive(networkDebugConnection.$debuggingAction) { debuggingAction in
-                guard let action: NetworkDebuggerActions = debuggingAction else { return }
-                self.networkDebugAction = action
-            }
+            .modifier(DebugShakeGestureModifier(selectedCommand: $selectedCommand))
         }
     }
     private func debugView(action: NetworkDebuggerActions) -> some View {
