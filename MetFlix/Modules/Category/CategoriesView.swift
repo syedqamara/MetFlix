@@ -17,14 +17,18 @@ public struct CategoriesView<VM: CategoriesViewModeling>: SwiftUIView {
         self.viewModel = viewModel
     }
     public var body: some View {
-        if let categories = viewModel.categories?.data?.categories {
-            TagView(dataModels: categories)
-        } else {
-            AnimatedView(
-                animationFileName: Config.Lottie.loadingAnimation,
-                loopMode: .loop,
-                size: .init(width: 100, height: 100)
-            )
+        VStack {
+            if let categories = viewModel.categories?.data?.categories {
+                TagView(dataModels: categories)
+                SeparatorView()
+            } else {
+                AnimatedView(
+                    animationFileName: Config.Lottie.loadingAnimation,
+                    loopMode: .loop,
+                    size: .init(width: 100, height: 100)
+                )
+                .scaleEffect(.init(width: 0.5, height: 0.5), anchor: .center)
+            }
         }
     }
 }
@@ -57,7 +61,7 @@ struct TagView: View {
                 }
             }
         }
-        .frame(height: dataModelChunkSize * 90)
+        .frame(height: dataModelChunkSize * 80)
         .padding()
     }
     @ViewBuilder
@@ -79,18 +83,28 @@ struct TagView: View {
         }
     }
 }
-struct CategoriesView_Preview: PreviewProvider {
+struct CategoriesView_Previews: PreviewProvider {
     @Dependency(\.viewFactory) static var viewFactory
     static var previews: some View {
-        AnyView(
-            viewFactory.makeView(
-                input: .categories(
-                    .init(
-                        dataModel: .preview
+        snapshots.previews.previewLayout(.sizeThatFits)
+    }
+    static var snapshots: Previewer<CategoriesApiData> {
+        Previewer(
+            configurations: [
+                .init(name: "Preview", state: CategoriesApiData.preview),
+                .init(name: "Preview 2", state: CategoriesApiData.preview2),
+                .init(name: "Preview 3", state: CategoriesApiData.preview3)
+            ]) { state in
+                AnyView(
+                    viewFactory.makeView(
+                        input: .categories(
+                            .init(
+                                dataModel: state
+                            )
+                        )
                     )
                 )
-            )
-        )
-        .background(Color.appTheme)
+                .background(Color.appTheme)
+            }
     }
 }

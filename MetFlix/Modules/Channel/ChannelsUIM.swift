@@ -7,50 +7,58 @@
 
 import Foundation
 import core_architecture
-public struct SeriesUIM: UIModel {
+public struct SeriesUIM: UIModel, Identifiable {
     public typealias DataModelType = Series
     public var title: String?
     public var coverAsset: CoverAssetUIM?
-    public var id: String?
+    public var identifier: String?
+    public var id: String? { identifier ?? title ?? "" }
 
     public init(dataModel: Series) {
         self.title = dataModel.title
         self.coverAsset = dataModel.coverAsset.map { CoverAssetUIM(dataModel: $0) }
-        self.id = dataModel.id
+        self.identifier = dataModel.id
     }
 }
 
-public struct CourseUIM: UIModel {
+public struct CourseUIM: UIModel, Identifiable {
     public typealias DataModelType = Course
     public var type: String?
     public var title: String?
-    public var coverAsset: CoverAssetUIM
-    public var channel: EpisodeChannelUIM
+    public var id: String { title ?? type ?? "" }
+    public var coverAsset: CoverAssetUIM? = nil
+    public var channel: EpisodeChannelUIM? = nil
 
     public init(dataModel: Course) {
         self.type = dataModel.type
         self.title = dataModel.title
-        self.coverAsset = CoverAssetUIM(dataModel: dataModel.coverAsset)
-        self.channel = EpisodeChannelUIM(dataModel: dataModel.channel)
+        if let coverAsset = dataModel.coverAsset {
+            self.coverAsset = CoverAssetUIM(dataModel: coverAsset)
+        }
+        if let channel = dataModel.channel {
+            self.channel = EpisodeChannelUIM(dataModel: channel)
+        }
+        
     }
 }
 
-public struct ChannelUIM: UIModel {
+public struct ChannelUIM: UIModel, Identifiable {
     public typealias DataModelType = Channel
     public var title: String?
     public var mediaCount: Int?
     public var series: [SeriesUIM]?
     public var latestMedia: [CourseUIM]?
-    public var id: String?
+    public var identifier: String?
     public var iconAsset: AssetUIM?
     public var coverAsset: CoverAssetUIM?
-
+    public var id: String { identifier ?? title ?? "" }
+    public var isSeries: Bool { (series ?? []).isNotEmpty }
     public init(dataModel: Channel) {
         self.title = dataModel.title
         self.mediaCount = dataModel.mediaCount
         self.series = dataModel.series?.map { SeriesUIM(dataModel: $0) }
         self.latestMedia = dataModel.latestMedia?.map { CourseUIM(dataModel: $0) }
-        self.id = dataModel.id
+        self.identifier = dataModel.id
         self.iconAsset = dataModel.iconAsset.map { AssetUIM(dataModel: $0) }
         self.coverAsset = dataModel.coverAsset.map { CoverAssetUIM(dataModel: $0) }
     }

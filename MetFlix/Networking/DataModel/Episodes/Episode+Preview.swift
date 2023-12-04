@@ -47,10 +47,26 @@ public extension EpisodesApiData {
         let previewEpisode = Episode.preview
         return EpisodesApiData(data: previewEpisode)
     }
+    static var preview2: EpisodesApiData {
+        let previewEpisode = Episode.preview2
+        return EpisodesApiData(data: previewEpisode)
+    }
+    static var preview3: EpisodesApiData {
+        let previewEpisode = Episode.preview3
+        return EpisodesApiData(data: previewEpisode)
+    }
 }
 
 public extension Episode {
     static var preview: Episode {
+        let previewMedia: [EpisodeMedia] = [.preview, .preview2, .preview3, .preview4]
+        return Episode(media: previewMedia)
+    }
+    static var preview2: Episode {
+        let previewMedia: [EpisodeMedia] = [.preview, .preview2, .preview3, .preview4]
+        return Episode(media: previewMedia)
+    }
+    static var preview3: Episode {
         let previewMedia: [EpisodeMedia] = [.preview, .preview2, .preview3, .preview4]
         return Episode(media: previewMedia)
     }

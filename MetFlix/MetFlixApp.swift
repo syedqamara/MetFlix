@@ -36,10 +36,12 @@ struct MetFlixApp: App {
                         .toolbar {
                             ToolbarItem(placement: .principal) {
                                 HStack {
-                                    Text("Metflix Network Configuration")
-                                        .font(.title3.bold())
+                                    Text("Network Configuration")
+                                        .robotoFont(style: .bold(.title))
+                                        .multilineTextAlignment(.leading)
                                         .foregroundColor(.white)
-                                        .shadow(color: .red, radius: 3, x: 3, y: -3)
+                                        .shadow(color: .appThemeSecondary, radius: 3, x: 3, y: -3)
+                                        .fixedSize(horizontal: false, vertical: true)
                                     Spacer()
                                 }
                                 .ignoresSafeArea(.all, edges: [.top, .bottom])

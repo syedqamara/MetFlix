@@ -39,16 +39,22 @@ struct HomeView<VM: HomeViewModeling>: SwiftUIView {
                         )
                     case .channels(let channels):
                         AnyView(
-                            viewFactory.makeView(input: .episodes(nil))
+                            viewFactory.makeView(input: .channels(channels))
+                        )
+                    case .error(let error):
+                        PlaceholderView(
+                            placeholder: .error(error.localizedDescription)
                         )
                     default:
-                        AnyView(
-                            viewFactory.makeView(input: .episodes(nil))
-                        )
+                        HStack{}
                     }
                 }
             }
         }
+        .refreshable {
+            
+        }
+        .scrollContentBackground(.hidden)
         .onAppear() {
             viewModel.onAppear()
         }
@@ -68,26 +74,57 @@ struct HomeView<VM: HomeViewModeling>: SwiftUIView {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            ZStack {
-                Color.appTheme.edgesIgnoringSafeArea(.all)
-                HomeView(
-                    viewModel: HomeViewModel(
-                        sections: [
-                            .episodes(nil),
-                            .channels(nil),
-                            .categories(nil),
-                        ]
-                    )
-                )
-                .background(Color.appTheme)
+        snapshots.previews.previewLayout(.sizeThatFits)
+    }
+    static var snapshots: Previewer<[HomeSectionUIM]> {
+        .init(
+            configurations: [
+                .init(name: "Empty", state: []),
+                .init(name: "Static", state: [
+                    HomeSectionUIM.episodes(.init(dataModel: EpisodesApiData.preview)),
+                    HomeSectionUIM.channels(.init(dataModel: ChannelsApiData.preview)),
+                    HomeSectionUIM.categories(.init(dataModel: CategoriesApiData.preview))
+                ]),
+                .init(name: "Live", state: [
+                    HomeSectionUIM.episodes(nil),
+                    HomeSectionUIM.channels(nil),
+                    HomeSectionUIM.categories(nil)
+                ]),
+                .init(name: "Error", state: [
+                    HomeSectionUIM.error(NSError(domain: "com", code: 1, userInfo: [
+                        NSLocalizedDescriptionKey:  """
+This is a mock error message, containing dummy representation of an error scenario.
+"""
+                    ]))
+                ]),
+                .init(name: "Static Episode", state: [
+                    HomeSectionUIM.episodes(.init(dataModel: EpisodesApiData.preview))
+                ]),
+                .init(name: "Static Channels", state: [
+                    HomeSectionUIM.channels(.init(dataModel: ChannelsApiData.preview))
+                ]),
+                .init(name: "Static Categories", state: [
+                    HomeSectionUIM.categories(.init(dataModel: CategoriesApiData.preview))
+                ])
+            ]) { (sections: [HomeSectionUIM]) in
+                NavigationStack {
+                    ZStack {
+                        Color.appTheme.edgesIgnoringSafeArea(.all)
+                        HomeView(
+                            viewModel: HomeViewModel(
+                                sections: sections
+                            )
+                        )
+                        .background(Color.appTheme)
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+                .overlay(alignment: .top) {
+                    Color.appTheme
+                        .ignoresSafeArea(edges: .top)
+                        .frame(height: 0)
+                }
             }
-        }
-        .edgesIgnoringSafeArea(.all)
-        .overlay(alignment: .top) {
-            Color.appTheme
-                .ignoresSafeArea(edges: .top)
-                .frame(height: 0)
-        }
     }
 }
+

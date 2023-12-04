@@ -36,6 +36,31 @@ case episodes(EpisodesDataUIM?), channels(ChannelsDataUIM?), categories(Categori
             self = .none
         }
     }
+    func isSameSection(_ section: HomeSectionUIM) -> Bool {
+        switch self {
+        case .episodes(_):
+            if case .episodes(_) = section {
+                return true
+            }
+        case .channels(_):
+            if case .channels(_) = section {
+                return true
+            }
+        case .categories(_):
+            if case .categories(_) = section {
+                return true
+            }
+        case .none:
+            if case .none = section {
+                return true
+            }
+        case .error(_):
+            if case .error(_) = section {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 extension HomeSectionUIM: Identifiable {

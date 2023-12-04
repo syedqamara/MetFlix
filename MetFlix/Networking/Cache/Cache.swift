@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import core_architecture
 @propertyWrapper
 public struct Cached<V> {
     private let key: String

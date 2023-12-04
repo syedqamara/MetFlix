@@ -55,6 +55,18 @@
 		183C2A4F2B1BDABD000FADFE /* CategoriesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A4E2B1BDABD000FADFE /* CategoriesModule.swift */; };
 		183C2A512B1BDAD2000FADFE /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A502B1BDAD2000FADFE /* CategoriesView.swift */; };
 		183C2A532B1BDAD9000FADFE /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A522B1BDAD9000FADFE /* CategoriesViewModel.swift */; };
+		183C2A552B1BE686000FADFE /* ChannelsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A542B1BE686000FADFE /* ChannelsModule.swift */; };
+		183C2A572B1BE68A000FADFE /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A562B1BE68A000FADFE /* ChannelsView.swift */; };
+		183C2A592B1BE69D000FADFE /* ChannelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A582B1BE69C000FADFE /* ChannelsViewModel.swift */; };
+		183C2A5C2B1C9F51000FADFE /* ChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A5B2B1C9F51000FADFE /* ChannelHeaderView.swift */; };
+		183C2A5E2B1CA00E000FADFE /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A5D2B1CA00E000FADFE /* CourseView.swift */; };
+		183C2A602B1CA058000FADFE /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A5F2B1CA058000FADFE /* SeriesView.swift */; };
+		183C2A622B1D3795000FADFE /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A612B1D3795000FADFE /* Float+Extension.swift */; };
+		183C2A642B1D379B000FADFE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A632B1D379B000FADFE /* String+Extension.swift */; };
+		183C2A662B1D37B3000FADFE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A652B1D37B3000FADFE /* Color+Extension.swift */; };
+		183C2A682B1D384E000FADFE /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A672B1D384E000FADFE /* Previewer.swift */; };
+		183C2A6B2B1D4A2B000FADFE /* EpisodesTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */; };
+		183C2A6D2B1D4A62000FADFE /* EpisodeTileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */; };
 		186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B42B0E5BB100323E71 /* MetFlixApp.swift */; };
 		186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B62B0E5BB100323E71 /* AppCommands.swift */; };
 		186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950B82B0E5BB300323E71 /* Assets.xcassets */; };
@@ -87,7 +99,7 @@
 		1869515E2B0FFC1B00323E71 /* no_result_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1869515D2B0FFC1A00323E71 /* no_result_animation.json */; };
 		186951602B1034E600323E71 /* AppStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869515F2B1034E600323E71 /* AppStateModel.swift */; };
 		186951642B10471100323E71 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951632B10471100323E71 /* RatingView.swift */; };
-		186951682B10CB4100323E71 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951672B10CB4100323E71 /* LineView.swift */; };
+		186951682B10CB4100323E71 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951672B10CB4100323E71 /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +162,18 @@
 		183C2A4E2B1BDABD000FADFE /* CategoriesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModule.swift; sourceTree = "<group>"; };
 		183C2A502B1BDAD2000FADFE /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		183C2A522B1BDAD9000FADFE /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		183C2A542B1BE686000FADFE /* ChannelsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModule.swift; sourceTree = "<group>"; };
+		183C2A562B1BE68A000FADFE /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
+		183C2A582B1BE69C000FADFE /* ChannelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewModel.swift; sourceTree = "<group>"; };
+		183C2A5B2B1C9F51000FADFE /* ChannelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelHeaderView.swift; sourceTree = "<group>"; };
+		183C2A5D2B1CA00E000FADFE /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		183C2A5F2B1CA058000FADFE /* SeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesView.swift; sourceTree = "<group>"; };
+		183C2A612B1D3795000FADFE /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
+		183C2A632B1D379B000FADFE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		183C2A652B1D37B3000FADFE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		183C2A672B1D384E000FADFE /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
+		183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTileView.swift; sourceTree = "<group>"; };
+		183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTileListView.swift; sourceTree = "<group>"; };
 		186950B12B0E5BB100323E71 /* MetFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186950B42B0E5BB100323E71 /* MetFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixApp.swift; sourceTree = "<group>"; };
 		186950B62B0E5BB100323E71 /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
@@ -180,7 +204,7 @@
 		1869515D2B0FFC1A00323E71 /* no_result_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_result_animation.json; sourceTree = "<group>"; };
 		1869515F2B1034E600323E71 /* AppStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateModel.swift; sourceTree = "<group>"; };
 		186951632B10471100323E71 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		186951672B10CB4100323E71 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		186951672B10CB4100323E71 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				1818004E2B1AAE4400D07546 /* ChannelsUIM.swift */,
+				183C2A542B1BE686000FADFE /* ChannelsModule.swift */,
+				183C2A5A2B1C9F45000FADFE /* Views */,
+				183C2A582B1BE69C000FADFE /* ChannelsViewModel.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -280,7 +307,7 @@
 			children = (
 				1818004C2B1AAE3E00D07546 /* EpisodesUIM.swift */,
 				181800502B1AB15600D07546 /* EpisodesViewModel.swift */,
-				181800522B1AB1E100D07546 /* EpisodesView.swift */,
+				183C2A692B1D49F7000FADFE /* Views */,
 				181800542B1AB24F00D07546 /* EpisodesModule.swift */,
 			);
 			path = Episode;
@@ -340,6 +367,27 @@
 				181E0D452B13BFDE002F5E9B /* Dependencies.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		183C2A5A2B1C9F45000FADFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				183C2A562B1BE68A000FADFE /* ChannelsView.swift */,
+				183C2A5B2B1C9F51000FADFE /* ChannelHeaderView.swift */,
+				183C2A5D2B1CA00E000FADFE /* CourseView.swift */,
+				183C2A5F2B1CA058000FADFE /* SeriesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		183C2A692B1D49F7000FADFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				181800522B1AB1E100D07546 /* EpisodesView.swift */,
+				183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */,
+				183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		186950A82B0E5BB100323E71 = {
@@ -445,6 +493,9 @@
 			children = (
 				186951062B0E8AC500323E71 /* Debugger+Extensions.swift */,
 				181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */,
+				183C2A612B1D3795000FADFE /* Float+Extension.swift */,
+				183C2A632B1D379B000FADFE /* String+Extension.swift */,
+				183C2A652B1D37B3000FADFE /* Color+Extension.swift */,
 				186951082B0E8CAA00323E71 /* Shake+Extensions.swift */,
 				181E0D5D2B13CE69002F5E9B /* View+Extension.swift */,
 			);
@@ -478,7 +529,8 @@
 				181800732B1B9F4500D07546 /* RemoteImage */,
 				1869515B2B0FF9DB00323E71 /* ErrorView.swift */,
 				186951632B10471100323E71 /* RatingView.swift */,
-				186951672B10CB4100323E71 /* LineView.swift */,
+				186951672B10CB4100323E71 /* SeparatorView.swift */,
+				183C2A672B1D384E000FADFE /* Previewer.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -698,20 +750,26 @@
 				181E0D582B13C72E002F5E9B /* Dependencies.swift in Sources */,
 				1818004B2B1AAE3700D07546 /* CategoriesUIM.swift in Sources */,
 				1869510F2B0E96E200323E71 /* Internet.swift in Sources */,
+				183C2A6D2B1D4A62000FADFE /* EpisodeTileListView.swift in Sources */,
 				181800422B1A917A00D07546 /* HomeView.swift in Sources */,
 				183C2A512B1BDAD2000FADFE /* CategoriesView.swift in Sources */,
 				183C2A532B1BDAD9000FADFE /* CategoriesViewModel.swift in Sources */,
 				186950B72B0E5BB100323E71 /* AppCommands.swift in Sources */,
 				181800352B1A5FC500D07546 /* Episode+Preview.swift in Sources */,
+				183C2A682B1D384E000FADFE /* Previewer.swift in Sources */,
+				183C2A592B1BE69D000FADFE /* ChannelsViewModel.swift in Sources */,
 				181800462B1A91C500D07546 /* HomeUIM.swift in Sources */,
 				181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */,
+				183C2A662B1D37B3000FADFE /* Color+Extension.swift in Sources */,
 				181800332B1A5F9C00D07546 /* Channel+Preview.swift in Sources */,
+				183C2A622B1D3795000FADFE /* Float+Extension.swift in Sources */,
 				181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */,
 				186951092B0E8CAA00323E71 /* Shake+Extensions.swift in Sources */,
 				1869515C2B0FF9DB00323E71 /* ErrorView.swift in Sources */,
 				186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */,
 				183C2A4F2B1BDABD000FADFE /* CategoriesModule.swift in Sources */,
 				1818002C2B1A5BDF00D07546 /* Categories.swift in Sources */,
+				183C2A642B1D379B000FADFE /* String+Extension.swift in Sources */,
 				1869511B2B0EC36D00323E71 /* AppRemoteAssets.swift in Sources */,
 				181800402B1A917500D07546 /* HomeModule.swift in Sources */,
 				181800532B1AB1E100D07546 /* EpisodesView.swift in Sources */,
@@ -720,11 +778,15 @@
 				186951242B0EC58F00323E71 /* AnimatedView.swift in Sources */,
 				181E0D592B13C734002F5E9B /* Mocks.swift in Sources */,
 				181800282B1A5B3900D07546 /* Episode.swift in Sources */,
+				183C2A572B1BE68A000FADFE /* ChannelsView.swift in Sources */,
 				186951172B0EBED600323E71 /* CacheManager.swift in Sources */,
 				181800512B1AB15600D07546 /* EpisodesViewModel.swift in Sources */,
 				181800752B1B9F5500D07546 /* RemoteImageViewModel.swift in Sources */,
 				181800722B1B900C00D07546 /* FontViewModifier.swift in Sources */,
+				183C2A5E2B1CA00E000FADFE /* CourseView.swift in Sources */,
+				183C2A552B1BE686000FADFE /* ChannelsModule.swift in Sources */,
 				181800442B1A918000D07546 /* HomeViewModel.swift in Sources */,
+				183C2A6B2B1D4A2B000FADFE /* EpisodesTileView.swift in Sources */,
 				1818003A2B1A65A800D07546 /* MindValley+Dependency.swift in Sources */,
 				186951192B0EBFBC00323E71 /* Cache.swift in Sources */,
 				186951072B0E8AC500323E71 /* Debugger+Extensions.swift in Sources */,
@@ -734,9 +796,11 @@
 				186951022B0E845D00323E71 /* Endpoints.swift in Sources */,
 				186951642B10471100323E71 /* RatingView.swift in Sources */,
 				186950FD2B0E7EF300323E71 /* App+Dependencies.swift in Sources */,
+				183C2A602B1CA058000FADFE /* SeriesView.swift in Sources */,
 				1869514E2B0FDADD00323E71 /* RemoteImageView.swift in Sources */,
 				181800552B1AB24F00D07546 /* EpisodesModule.swift in Sources */,
-				186951682B10CB4100323E71 /* LineView.swift in Sources */,
+				186951682B10CB4100323E71 /* SeparatorView.swift in Sources */,
+				183C2A5C2B1C9F51000FADFE /* ChannelHeaderView.swift in Sources */,
 				181E0D5E2B13CE69002F5E9B /* View+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,6 @@ struct AnimatedView: UIViewRepresentable {
 
 struct AnimatedView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimatedView(animationFileName: "image_loading", loopMode: .loop, size: .init(width: 40, height: 40))
+        AnimatedView(animationFileName: "loading_animation", loopMode: .loop, size: .init(width: 40, height: 40))
     }
 }

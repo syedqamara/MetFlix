@@ -27,16 +27,16 @@ public struct Series: DataModel {
 public struct Course: DataModel {
     public let type: String?
     public let title: String?
-    public let coverAsset: CoverAsset
-    public let channel: EpisodeChannel
+    public let coverAsset: CoverAsset?
+    public let channel: EpisodeChannel?
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.type = try container.decodeIfPresent(String.self, forKey: .type)
         self.title = try container.decodeIfPresent(String.self, forKey: .title)
-        self.coverAsset = try container.decode(CoverAsset.self, forKey: .coverAsset)
-        self.channel = try container.decode(EpisodeChannel.self, forKey: .channel)
+        self.coverAsset = try container.decodeIfPresent(CoverAsset.self, forKey: .coverAsset)
+        self.channel = try container.decodeIfPresent(EpisodeChannel.self, forKey: .channel)
     }
-    public init(type: String?, title: String?, coverAsset: CoverAsset, channel: EpisodeChannel) {
+    public init(type: String?, title: String?, coverAsset: CoverAsset?, channel: EpisodeChannel?) {
         self.type = type
         self.title = title
         self.coverAsset = coverAsset

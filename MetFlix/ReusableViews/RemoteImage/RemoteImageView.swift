@@ -16,12 +16,14 @@ public struct RemoteImageView<VM: RemoteImageViewModeling>: View {
     public let lottiePlaceholder: String
     public let overlayColor: Color
     public let size: CGSize
+    public let scale: CGFloat
     @ObservedObject var viewModel: VM
-    init(url: String, lottiePlaceholder: String, overlayColor: Color = .appTheme, size: CGSize, isDownloaded: Binding<Bool> = .constant(false)) {
+    init(url: String, lottiePlaceholder: String, overlayColor: Color = .appTheme, size: CGSize, scale: CGFloat = 1, isDownloaded: Binding<Bool> = .constant(false)) {
         self.lottiePlaceholder = lottiePlaceholder
         self.overlayColor = overlayColor
         self.size = size
         self.viewModel = VM(url: url)
+        self.scale = scale
     }
     
     public var body: some View {
@@ -30,22 +32,32 @@ public struct RemoteImageView<VM: RemoteImageViewModeling>: View {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .overlay(viewModel.isLoading ? .clear : overlayColor.opacity(0.4))
+                    .overlay(viewModel.isLoading ? .clear : overlayColor.opacity(0.25))
                     .frame(minWidth: size.width)
                     .clipped()
                     .padding(0)
             }
-            else if let error = viewModel.error {
-                PlaceholderView(
-                    placeholder: PlaceholderUIM.error(error.localizedDescription)
-                )
+            else if viewModel.isLoading {
+                if lottiePlaceholder.isNotEmpty {
+                    AnimatedView(
+                        animationFileName: lottiePlaceholder,
+                        loopMode: .loop,
+                        size: .init(
+                            width: size.width / 2,
+                            height: size.height / 2
+                        )
+                    )
+                    .scaleEffect(.init(width: scale, height: scale), anchor: .center)
+                    .fixedSize()
+                }
             }
             else {
-                AnimatedView(
-                    animationFileName: lottiePlaceholder,
-                    loopMode: .loop,
-                    size: size
-                )
+                Image("placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(minWidth: size.width)
+                    .clipped()
+                    .padding(0)
             }
         }
         .onAppear() {

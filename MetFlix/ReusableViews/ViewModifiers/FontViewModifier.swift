@@ -74,13 +74,27 @@ public struct RobotoFontModifier: ViewModifier {
             }
         }
     }
+    #if os(iOS)
     public enum FontSize: CGFloat {
         case headline = 35
         case title = 30
         case subtitle = 27
         case normal = 25
         case small = 20
+        case xSmall = 15
+        case xxSmall = 10
     }
+    #else
+    public enum FontSize: CGFloat {
+        case headline = 45
+        case title = 40
+        case subtitle = 37
+        case normal = 35
+        case small = 30
+        case xSmall = 25
+        case xxSmall = 20
+    }
+    #endif
 
     public func body(content: Content) -> some View {
         var fontName: String
@@ -144,6 +158,8 @@ struct RobotoFontView: View {
                     titles(font: .black(.subtitle))
                     titles(font: .black(.normal))
                     titles(font: .black(.small))
+                    titles(font: .black(.xSmall))
+                    titles(font: .black(.xxSmall))
                 }
                 VStack {
                     titles(font: .bold(.headline))
@@ -151,6 +167,8 @@ struct RobotoFontView: View {
                     titles(font: .bold(.subtitle))
                     titles(font: .bold(.normal))
                     titles(font: .bold(.small))
+                    titles(font: .bold(.xSmall))
+                    titles(font: .bold(.xxSmall))
                 }
                 VStack {
                     titles(font: .medium(.headline))
@@ -158,6 +176,8 @@ struct RobotoFontView: View {
                     titles(font: .medium(.subtitle))
                     titles(font: .medium(.normal))
                     titles(font: .medium(.small))
+                    titles(font: .medium(.xSmall))
+                    titles(font: .medium(.xxSmall))
                 }
                 VStack {
                     titles(font: .regular(.headline))
@@ -165,6 +185,8 @@ struct RobotoFontView: View {
                     titles(font: .regular(.subtitle))
                     titles(font: .regular(.normal))
                     titles(font: .regular(.small))
+                    titles(font: .regular(.xSmall))
+                    titles(font: .regular(.xxSmall))
                 }
                 VStack {
                     titles(font: .light(.headline))
@@ -172,6 +194,8 @@ struct RobotoFontView: View {
                     titles(font: .light(.subtitle))
                     titles(font: .light(.normal))
                     titles(font: .light(.small))
+                    titles(font: .light(.xSmall))
+                    titles(font: .light(.xxSmall))
                 }
                 VStack {
                     titles(font: .thin(.headline))
@@ -179,6 +203,8 @@ struct RobotoFontView: View {
                     titles(font: .thin(.subtitle))
                     titles(font: .thin(.normal))
                     titles(font: .thin(.small))
+                    titles(font: .thin(.xSmall))
+                    titles(font: .thin(.xxSmall))
                 }
             }
             .padding()

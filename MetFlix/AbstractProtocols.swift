@@ -30,6 +30,7 @@ public protocol UIModeling: UIModel where DataModelType: DataModel {
 public protocol HomeViewModeling: ViewModeling {
     var sections: [HomeSectionUIM] { get set }
     func onAppear()
+    func refresh()
 }
 
 

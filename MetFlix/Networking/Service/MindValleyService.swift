@@ -11,10 +11,11 @@ import Network
 import core_architecture
 
 class MindValleyService: MindValleyServiceProtocol {
+    private let imageService = MindValleyImageService()
     @Dependency(\.defaultNetwork) var network
     
     enum Errors: String, Error {
-    case noInternet, invalidURL
+    case noInternet, invalidURL, invalidStatusCode
     }
     // Generic Get Method
     private func `get`<D: DataModel>(type: D.Type, dataModel: DataModel? = nil, endpoint: MindValleyEndpoints) async throws -> D {
@@ -52,15 +53,18 @@ extension MindValleyService {
     func image(for urlString: String) async throws -> Data {
         @Cached<String>(key: urlString) var localPath
         if let localPath {
-            return try load(fileName: localPath)
+            return try imageService.load(fileName: localPath)
         } else if Internet.isAvailable {
             guard let url = URL(string: urlString) else { throw Errors.invalidURL }
             let request = URLRequest(url: url)
             let response = try await URLSession.shared.data(for: request)
+            guard let httpResponse = response.1 as? HTTPURLResponse, httpResponse.statusCode >= 200, httpResponse.statusCode < 204 else {
+                throw Errors.invalidStatusCode
+            }
             let data = response.0
             let newFileName = "\(UUID().uuidString).png"
             _localPath.wrappedValue = newFileName
-            save(fileName: newFileName, data: data)
+            imageService.save(fileName: newFileName, data: data)
             return data
         }
         throw Errors.noInternet
@@ -68,45 +72,47 @@ extension MindValleyService {
 }
 
 extension MindValleyService {
-    private func load(fileName: String) throws -> Data {
-        var url = URL.temporaryDirectory
-        url.append(component: fileName)
-        return try Data(contentsOf: url)
-    }
-    private func save(fileName: String, data: Data?) {
-        var url = URL.temporaryDirectory
-        url.appendPathComponent(fileName)
+    
+}
 
-        if let data = data {
-            if FileManager.default.fileExists(atPath: url.path) {
-                // Rule 3: Update the existing file with new data
-                do {
-                    try data.write(to: url, options: .atomic)
-                    print("File updated successfully at: \(url)")
-                } catch {
-                    print("Error updating file: \(error.localizedDescription)")
-                }
-            } else {
-                // Rule 2: Create a new file and save data
-                do {
-                    try data.write(to: url, options: .atomic)
-                    print("File created and saved successfully at: \(url)")
-                } catch {
-                    print("Error creating and saving file: \(error.localizedDescription)")
-                }
+private class MindValleyImageService {
+    private let queue: DispatchQueue = .init(label: "com.cache.image.queue", qos: .background)
+    func load(fileName: String) throws -> Data {
+        try queue.sync {
+            var url = URL.documentsDirectory
+            url.append(component: fileName)
+            @Configuration<Data>(fileName) var imageData
+            if let imageData {
+                return imageData
             }
-        } else {
-            if FileManager.default.fileExists(atPath: url.path) {
-                // Rule 1: Remove the existing file if data is nil
-                do {
-                    try FileManager.default.removeItem(at: url)
-                    print("File removed successfully at: \(url)")
-                } catch {
-                    print("Error removing file: \(error.localizedDescription)")
+            return try Data(contentsOf: url)
+        }
+    }
+    func save(fileName: String, data: Data?) {
+        queue.sync(flags: .barrier) {
+            do {
+                @Configuration<Data>(fileName) var imageData
+                let cacheDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                let url = cacheDirectory.appendingPathComponent(fileName)
+                imageData = data
+                if let data = data {
+                    if FileManager.default.fileExists(atPath: url.path) {
+                        try data.write(to: url, options: .atomic)
+                    } else {
+                        try data.write(to: url, options: .atomic)
+                    }
+                } else {
+                    if FileManager.default.fileExists(atPath: url.path) {
+                        // Rule 1: Remove the existing file if data is nil
+                        try FileManager.default.removeItem(at: url)
+                    } else {
+                        print("No file exists at: \(url)")
+                    }
                 }
-            } else {
-                print("No file exists at: \(url)")
+            } catch {
+                print("Error getting cache directory: \(error.localizedDescription)")
             }
         }
     }
+
 }

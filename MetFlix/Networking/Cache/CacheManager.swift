@@ -9,7 +9,7 @@ import Foundation
 
 class SynchronizedCacheManager: CacheManagerProtocol {
     private let cache = NSCache<NSString, AnyObject>()
-    private let cacheAccessQueue = DispatchQueue(label: "com.yourapp.cacheAccess", attributes: .concurrent)
+    private let cacheAccessQueue = DispatchQueue(label: "com.metflix.cacheAccess", attributes: .concurrent)
 
     static let shared = SynchronizedCacheManager()
 
