@@ -21,7 +21,7 @@ public class RemoteImageViewModel: RemoteImageViewModeling {
     @Published public var image: UIImage? = nil
     @Published public var isLoading: Bool = false
     @Published public var error: Error? = nil
-    @Dependency(\.mindValleyImageService) private var mindValleyImageService
+    @Dependency(\.imageService) private var mindValleyImageService
     private var url: String
     required public init(url: String) {
         self.url = url

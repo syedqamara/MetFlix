@@ -18,9 +18,9 @@ class MindValleyService: MindValleyServiceProtocol {
     case noInternet, invalidURL, invalidStatusCode
     }
     // Generic Get Method
-    private func `get`<D: DataModel>(type: D.Type, dataModel: DataModel? = nil, endpoint: MindValleyEndpoints) async throws -> D {
-        @Cached<D>(endpoint: endpoint) var cached
-        @Cached<String>(endpoint: endpoint) var fileNameCache
+    public func serve<D: DataModel>(type: D.Type, dataModel: DataModel? = nil, endpoint: Pointable) async throws -> D {
+        @Cached<D>(key: endpoint.pointing) var cached
+        @Cached<String>(key: endpoint.pointing) var fileNameCache
         if Internet.isAvailable {
             let dataModel = try await network.send(to: endpoint, with: dataModel, type: type)
             _cached.wrappedValue = dataModel
@@ -42,23 +42,23 @@ class MindValleyService: MindValleyServiceProtocol {
 }
 
 
-extension MindValleyService {
+extension MindValleyService: EpisodeServiceProtocol {
     func episodes() async throws -> EpisodesApiData {
-        try await get(type: EpisodesApiData.self, endpoint: .episodes)
+        try await serve(type: EpisodesApiData.self, endpoint: MindValleyEndpoints.episodes)
     }
 }
 
-extension MindValleyService {
+extension MindValleyService: ChannelServiceProtocol {
     func channels() async throws -> ChannelsApiData {
-        try await get(type: ChannelsApiData.self, endpoint: .channels)
+        try await serve(type: ChannelsApiData.self, endpoint: MindValleyEndpoints.channels)
     }
 }
-extension MindValleyService {
+extension MindValleyService: CategoriesServiceProtocol {
     func categories() async throws -> CategoriesApiData {
-        try await get(type: CategoriesApiData.self, endpoint: .categories)
+        try await serve(type: CategoriesApiData.self, endpoint: MindValleyEndpoints.categories)
     }
 }
-extension MindValleyService {
+extension MindValleyService: ImageDownloadingProtocol {
     func image(for urlString: String) async throws -> Data {
         @Cached<String>(key: urlString) var localPath
         if let localPath {
@@ -80,11 +80,7 @@ extension MindValleyService {
     }
 }
 
-extension MindValleyService {
-    
-}
-
-private class MindValleyFileService {
+private class MindValleyFileService: ServiceProtocol {
     private let queue: DispatchQueue = .init(label: "com.cache.file.queue", qos: .background)
     func load(fileName: AssetsEnpoint) throws -> Data {
         try queue.sync {

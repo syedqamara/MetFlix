@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import core_architecture
+import Network
 
 // MARK: - Mocks
 
@@ -53,59 +55,21 @@ public class MockFunctionArgument<V> {
  A mock implementation for the MockMindValleyServiceProtocol protocol.
  */
 
-public class MockMindValleyServiceProtocol: MindValleyServiceProtocol {
-    enum Errors: String, Error {
-    case noValue
-    }
-    public var episodeArgument: MockFunctionArgument<EpisodesApiData> = .init()
-    public var channelArgument: MockFunctionArgument<ChannelsApiData> = .init()
-    public var categoriesArgument: MockFunctionArgument<CategoriesApiData> = .init()
-    public var imageURLArgument: MockFunctionArgument<String> = .init()
-    public var imageArgument: MockFunctionArgument<Data> = .init()
-    
-    public init() {}
+protocol Mockable {
+    associatedtype Parameter
+    associatedtype Returned
+    var parameter: Parameter { get set }
+    var returned: Returned { get set }
+    init(parameter: Parameter, returned: Returned)
 }
 
-extension MockMindValleyServiceProtocol {
-    public func episodes() async throws -> EpisodesApiData {
-        if let returnValue = episodeArgument.argumentLastValue {
-            episodeArgument.invoked(by: returnValue)
-            return returnValue
-        }
-        episodeArgument.invoked(by: nil)
-        throw Errors.noValue
-    }
-}
-
-extension MockMindValleyServiceProtocol {
-    public func channels() async throws -> ChannelsApiData {
-        if let returnValue = channelArgument.argumentLastValue {
-            channelArgument.invoked(by: returnValue)
-            return returnValue
-        }
-        channelArgument.invoked(by: nil)
-        throw Errors.noValue
-    }
-}
-
-extension MockMindValleyServiceProtocol {
-    public func categories() async throws -> CategoriesApiData {
-        if let returnValue = categoriesArgument.argumentLastValue {
-            categoriesArgument.invoked(by: returnValue)
-            return returnValue
-        }
-        categoriesArgument.invoked(by: nil)
-        throw Errors.noValue
-    }
-}
-
-extension MockMindValleyServiceProtocol {
-    public func image(for url: String) async throws -> Data {
-        if let returnValue = imageArgument.argumentLastValue {
-            imageArgument.invoked(by: returnValue)
-            return returnValue
-        }
-        imageArgument.invoked(by: nil)
-        throw Errors.noValue
+public class Mocking<P, R>: Mockable {
+    public typealias Parameter = P
+    public typealias Returned = R
+    public var parameter: P
+    public var returned: R
+    required public init(parameter: P, returned: R) {
+        self.parameter = parameter
+        self.returned = returned
     }
 }

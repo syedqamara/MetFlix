@@ -7,6 +7,7 @@
 
 import Foundation
 import core_architecture
+import Network
 
 // MARK: - App Abstracts
 
@@ -53,21 +54,26 @@ public protocol HomeViewProtocol: SwiftUIView {
  - Note: Conforms to `core_architecture`'s service protocol with asynchronous methods.
  */
 
+public protocol ServiceProtocol {
+    
+}
 
-public protocol EpisodeServiceProtocol {
+public protocol MindValleyServiceProtocol: ServiceProtocol {
+    func serve<D: DataModel>(type: D.Type, dataModel: DataModel?, endpoint: Pointable) async throws -> D
+}
+
+public protocol EpisodeServiceProtocol: MindValleyServiceProtocol {
     func episodes() async throws -> EpisodesApiData
 }
-public protocol ChannelServiceProtocol {
+public protocol ChannelServiceProtocol: MindValleyServiceProtocol {
     func channels()  async throws-> ChannelsApiData
 }
-public protocol CategoriesServiceProtocol {
+public protocol CategoriesServiceProtocol: MindValleyServiceProtocol {
     func categories() async throws -> CategoriesApiData
 }
-public protocol ImageDownloadingProtocol {
+public protocol ImageDownloadingProtocol: MindValleyServiceProtocol {
     func image(for url: String) async throws -> Data
 }
-
-public protocol MindValleyServiceProtocol: EpisodeServiceProtocol, ChannelServiceProtocol, CategoriesServiceProtocol, ImageDownloadingProtocol {}
 
 
 // MARK: - Cache Manager Abstract

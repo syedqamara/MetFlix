@@ -66,10 +66,14 @@
 		183C2A6B2B1D4A2B000FADFE /* EpisodesTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */; };
 		183C2A6D2B1D4A62000FADFE /* EpisodeTileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */; };
 		183C2A712B1DFBDD000FADFE /* DebugUITheme+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A702B1DFBDD000FADFE /* DebugUITheme+Extensions.swift */; };
+		183C2A732B1E7370000FADFE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A722B1E7370000FADFE /* UIImage+Extension.swift */; };
+		183C2A772B1E7A09000FADFE /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A762B1E7A08000FADFE /* MockViewModel.swift */; };
+		183C2A792B1E7AFA000FADFE /* MockServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A782B1E7AFA000FADFE /* MockServices.swift */; };
+		183C2A7B2B1E82AB000FADFE /* BaseServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C2A7A2B1E82AB000FADFE /* BaseServiceTestCase.swift */; };
 		186950B52B0E5BB100323E71 /* MetFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950B42B0E5BB100323E71 /* MetFlixApp.swift */; };
 		186950B92B0E5BB300323E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950B82B0E5BB300323E71 /* Assets.xcassets */; };
 		186950BC2B0E5BB300323E71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */; };
-		186950C62B0E5BB300323E71 /* MetFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950C52B0E5BB300323E71 /* MetFlixTests.swift */; };
+		186950C62B0E5BB300323E71 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950C52B0E5BB300323E71 /* BaseTests.swift */; };
 		186950D02B0E5BB300323E71 /* MetFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950CF2B0E5BB300323E71 /* MetFlixUITests.swift */; };
 		186950D22B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950D12B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift */; };
 		186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950EF2B0E5F0800323E71 /* AppFactory.swift */; };
@@ -172,12 +176,16 @@
 		183C2A6A2B1D4A2B000FADFE /* EpisodesTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTileView.swift; sourceTree = "<group>"; };
 		183C2A6C2B1D4A62000FADFE /* EpisodeTileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTileListView.swift; sourceTree = "<group>"; };
 		183C2A702B1DFBDD000FADFE /* DebugUITheme+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DebugUITheme+Extensions.swift"; sourceTree = "<group>"; };
+		183C2A722B1E7370000FADFE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		183C2A762B1E7A08000FADFE /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		183C2A782B1E7AFA000FADFE /* MockServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServices.swift; sourceTree = "<group>"; };
+		183C2A7A2B1E82AB000FADFE /* BaseServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceTestCase.swift; sourceTree = "<group>"; };
 		186950B12B0E5BB100323E71 /* MetFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186950B42B0E5BB100323E71 /* MetFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixApp.swift; sourceTree = "<group>"; };
 		186950B82B0E5BB300323E71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186950BB2B0E5BB300323E71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		186950C12B0E5BB300323E71 /* MetFlixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetFlixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		186950C52B0E5BB300323E71 /* MetFlixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixTests.swift; sourceTree = "<group>"; };
+		186950C52B0E5BB300323E71 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
 		186950CB2B0E5BB300323E71 /* MetFlixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetFlixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		186950CF2B0E5BB300323E71 /* MetFlixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixUITests.swift; sourceTree = "<group>"; };
 		186950D12B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetFlixUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -357,6 +365,8 @@
 		181E0D442B13BFBC002F5E9B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				183C2A762B1E7A08000FADFE /* MockViewModel.swift */,
+				183C2A782B1E7AFA000FADFE /* MockServices.swift */,
 				181E0D422B13BF0F002F5E9B /* Mocks.swift */,
 				181E0D452B13BFDE002F5E9B /* Dependencies.swift */,
 			);
@@ -436,7 +446,8 @@
 		186950C42B0E5BB300323E71 /* MetFlixTests */ = {
 			isa = PBXGroup;
 			children = (
-				186950C52B0E5BB300323E71 /* MetFlixTests.swift */,
+				186950C52B0E5BB300323E71 /* BaseTests.swift */,
+				183C2A7A2B1E82AB000FADFE /* BaseServiceTestCase.swift */,
 				181E0D6B2B1415A6002F5E9B /* HomeViewModelTest.swift */,
 			);
 			path = MetFlixTests;
@@ -491,6 +502,7 @@
 				183C2A632B1D379B000FADFE /* String+Extension.swift */,
 				183C2A652B1D37B3000FADFE /* Color+Extension.swift */,
 				181E0D5D2B13CE69002F5E9B /* View+Extension.swift */,
+				183C2A722B1E7370000FADFE /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -768,17 +780,20 @@
 				181800282B1A5B3900D07546 /* Episode.swift in Sources */,
 				183C2A572B1BE68A000FADFE /* ChannelsView.swift in Sources */,
 				186951172B0EBED600323E71 /* CacheManager.swift in Sources */,
+				183C2A772B1E7A09000FADFE /* MockViewModel.swift in Sources */,
 				181800512B1AB15600D07546 /* EpisodesViewModel.swift in Sources */,
 				181800752B1B9F5500D07546 /* RemoteImageViewModel.swift in Sources */,
 				181800722B1B900C00D07546 /* FontViewModifier.swift in Sources */,
 				183C2A5E2B1CA00E000FADFE /* CourseView.swift in Sources */,
 				183C2A552B1BE686000FADFE /* ChannelsModule.swift in Sources */,
 				181800442B1A918000D07546 /* HomeViewModel.swift in Sources */,
+				183C2A792B1E7AFA000FADFE /* MockServices.swift in Sources */,
 				183C2A6B2B1D4A2B000FADFE /* EpisodesTileView.swift in Sources */,
 				1818003A2B1A65A800D07546 /* MindValley+Dependency.swift in Sources */,
 				186951192B0EBFBC00323E71 /* Cache.swift in Sources */,
 				186951072B0E8AC500323E71 /* Debugger+Extensions.swift in Sources */,
 				186951602B1034E600323E71 /* AppStateModel.swift in Sources */,
+				183C2A732B1E7370000FADFE /* UIImage+Extension.swift in Sources */,
 				1818002A2B1A5BBE00D07546 /* Channel.swift in Sources */,
 				1818004F2B1AAE4400D07546 /* ChannelsUIM.swift in Sources */,
 				186951022B0E845D00323E71 /* Endpoints.swift in Sources */,
@@ -797,8 +812,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186950C62B0E5BB300323E71 /* MetFlixTests.swift in Sources */,
+				186950C62B0E5BB300323E71 /* BaseTests.swift in Sources */,
 				181E0D6C2B1415A6002F5E9B /* HomeViewModelTest.swift in Sources */,
+				183C2A7B2B1E82AB000FADFE /* BaseServiceTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

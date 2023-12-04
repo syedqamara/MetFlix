@@ -15,7 +15,6 @@ public protocol CategoriesViewModeling: ViewModeling {
 
 final public class CategoriesViewModel: CategoriesViewModeling {
     @Published public var categories: CategoriesDataUIM?
-    @Dependency(\.mindValleyService) private var mindValleyService
     public init(categories: CategoriesDataUIM? = nil) {
         self.categories = categories
     }

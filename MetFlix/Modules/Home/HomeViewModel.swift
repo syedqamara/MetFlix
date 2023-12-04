@@ -16,7 +16,9 @@ public class HomeViewModel {
     @Published public var search: String
     @Published public var sections: [HomeSectionUIM] = []
     private var defaultSections: [HomeSectionUIM]
-    @Dependency(\.mindValleyService) var mindValleyService
+    @Dependency(\.episodeService) var episodeService
+    @Dependency(\.channelService) var channelService
+    @Dependency(\.categoryService) var categoryService
     
     public init(error: Error? = nil, isLoading: Bool = true, search: String = "", sections: [HomeSectionUIM] = []) {
         self.error = error
@@ -78,7 +80,7 @@ extension HomeViewModel {
         
         Task {
             do {
-                let episodes = try await mindValleyService.episodes()
+                let episodes = try await episodeService.episodes()
                 let episodesUIM = EpisodesDataUIM(dataModel: episodes)
                 self.update(section: .episodes(episodesUIM))
             }
@@ -98,7 +100,7 @@ extension HomeViewModel {
         guard channelsSection.isNotEmpty else { return }
         Task {
             do {
-                let channels = try await mindValleyService.channels()
+                let channels = try await channelService.channels()
                 let channelsUIM = ChannelsDataUIM(dataModel: channels)
                 self.update(section: .channels(channelsUIM))
             }
@@ -119,7 +121,7 @@ extension HomeViewModel {
         }
         Task {
             do {
-                let categories = try await mindValleyService.categories()
+                let categories = try await categoryService.categories()
                 let categoriesUIM = CategoriesDataUIM(dataModel: categories)
                 self.update(section: .categories(categoriesUIM))
             }
