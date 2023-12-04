@@ -14,7 +14,6 @@ struct MetFlixApp: App {
     @Dependency(\.viewFactory) var viewFactory
     @Dependency(\.networkDebugConnection) var networkDebugConnection
     @State var networkDebugAction: NetworkDebuggerActions? = nil
-    @State var selectedCommand: ApplicationCommands = .application
     @State var selectedCommand: ApplicationDebugCommands = .breakpoint
     
     init() {
