@@ -11,23 +11,6 @@ import Network
 
 // MARK: - Mocks
 
-/**
- A mock implementation for the HomeViewModeling protocol.
- */
-//class MockHomeViewModeling: HomeViewModeling {
-//    @Published var error: Error?
-//    @Published var isLoading: Bool = false
-//    @Published var search: String = ""
-////    @Published var movies: [MovieUIM] = []
-//    
-//    func onAppear() {}
-//    
-//    func loadNextPage() {}
-//}
-
-/**
- Function Argument(parameters, returns)
- */
 
 public class MockFunctionArgument<V> {
     public var argumentRecievedCount: Int
