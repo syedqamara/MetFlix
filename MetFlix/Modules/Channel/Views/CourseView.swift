@@ -12,11 +12,11 @@ public struct CourseView: View {
     @State var course: CourseUIM
     let width = UIScreen.main.bounds.size.width / 2
     public var body: some View {
-        VStack(alignment: .leading, spacing: .spacing(.medium)) {
+        VView(alignment: .leading, spacing: .spacing(.medium)) {
             if let url = course.coverAsset?.url {
                 RemoteImage(
                     url: url,
-                    lottiePlaceholder: Config.Lottie.loadingAnimation,
+                    lottiePlaceholder: "",
                     size: .init(
                         width: width,
                         height: width * 1.5
@@ -32,7 +32,7 @@ public struct CourseView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 
             }
-            VStack(alignment: .leading, spacing: .spacing(.small)) {
+            VView(alignment: .leading, spacing: .spacing(.small)) {
                 if let title = course.title {
                     Text(title)
                         .robotoFont(style: .medium(.small))
@@ -48,11 +48,12 @@ public struct CourseListView: View {
     @State var courseList: [CourseUIM]
     public var body: some View {
         ScrollView(.horizontal) {
-            HStack(alignment: .top, spacing: .spacing(.small)) {
+            HView(alignment: .top, spacing: .spacing(.small)) {
                 ForEach(courseList) { course in
                     CourseView(course: course)
                 }
             }
+            
         }
     }
 }

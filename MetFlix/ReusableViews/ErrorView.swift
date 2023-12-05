@@ -26,7 +26,7 @@ struct PlaceholderView: View {
     var placeholder: PlaceholderUIM
 
     var body: some View {
-        VStack {
+        VView {
             Text(titleText)
                 .font(.largeTitle.bold())
                 .foregroundColor(.white)
@@ -51,7 +51,7 @@ struct PlaceholderView: View {
         }
         .frame(minWidth: UIScreen.main.bounds.width)
         .padding()
-        .background(Color.appTheme.ignoresSafeArea(.all, edges: [.top, .bottom]))
+        .background(Color.appTheme)
     }
 
     private var titleText: String {

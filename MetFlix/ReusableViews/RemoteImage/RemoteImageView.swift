@@ -17,6 +17,7 @@ public struct RemoteImageView<VM: RemoteImageViewModeling>: View {
     public let overlayColor: Color
     public let size: CGSize
     public let scale: CGFloat
+    @State private var isAppeared: Bool = false
     @ObservedObject var viewModel: VM
     init(url: String, lottiePlaceholder: String, overlayColor: Color = .appTheme, size: CGSize, scale: CGFloat = 1, isDownloaded: Binding<Bool> = .constant(false)) {
         self.lottiePlaceholder = lottiePlaceholder
@@ -25,42 +26,50 @@ public struct RemoteImageView<VM: RemoteImageViewModeling>: View {
         self.viewModel = VM(url: url)
         self.scale = scale
     }
-    
     public var body: some View {
-        VStack {
-            if let image = viewModel.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .overlay(viewModel.isLoading ? .clear : overlayColor.opacity(0.25))
-                    .frame(minWidth: size.width)
-                    .clipped()
-                    .padding(0)
-            }
-            else if viewModel.isLoading {
-                if lottiePlaceholder.isNotEmpty {
-                    AnimatedView(
-                        animationFileName: lottiePlaceholder,
-                        loopMode: .loop,
-                        size: .init(
-                            width: size.width / 2,
-                            height: size.height / 2
-                        )
-                    )
-                    .scaleEffect(.init(width: scale, height: scale), anchor: .center)
-                    .fixedSize()
+        VView {
+            if isAppeared {
+                if let image = viewModel.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .overlay(viewModel.isLoading ? .clear : overlayColor.opacity(0.25))
+                        .frame(minWidth: size.width)
+                        .clipped()
+                        .padding(0)
                 }
-            }
-            else {
-                Image("placeholder")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(minWidth: size.width)
-                    .clipped()
-                    .padding(0)
+                else if viewModel.isLoading {
+                    if lottiePlaceholder.isNotEmpty {
+                        AnimatedView(
+                            animationFileName: lottiePlaceholder,
+                            loopMode: .loop,
+                            size: .init(
+                                width: size.width / 2,
+                                height: size.height / 2
+                            )
+                        )
+                        .scaleEffect(.init(width: scale, height: scale), anchor: .center)
+                        .fixedSize()
+                    } else {
+                        if #available(iOS 14.0, *) {
+                            ProgressView {
+                                
+                            }
+                        }
+                    }
+                }
+                else {
+                    Image("placeholder")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(minWidth: size.width)
+                        .clipped()
+                        .padding(0)
+                }
             }
         }
         .onAppear() {
+            isAppeared = true
             viewModel.onAppear()
         }
     }

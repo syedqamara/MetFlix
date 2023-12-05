@@ -29,3 +29,24 @@ public struct Cached<V> {
         self.key = key
     }
 }
+
+@propertyWrapper
+public struct CachedPermanent<V> {
+    private let key: String
+    public var wrappedValue: V? {
+        get {
+            return UserDefaults.standard.value(forKey: key) as? V
+        }
+        set {
+            if let newValue = newValue {
+                UserDefaults.standard.set(newValue, forKey: key)
+            } else {
+                UserDefaults.standard.removeObject(forKey: key)
+            }
+        }
+    }
+
+    public init(key: String) {
+        self.key = key
+    }
+}

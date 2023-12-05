@@ -8,9 +8,7 @@
 import Foundation
 import core_architecture
 
-public protocol EpisodesViewModeling: ViewModeling {
-    var episodes: EpisodesDataUIM? { get }
-}
+
 
 public class EpisodesViewModel: EpisodesViewModeling {
     @Published public var episodes: EpisodesDataUIM?

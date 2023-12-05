@@ -40,13 +40,31 @@ public protocol HomeViewModeling: ViewModeling {
  
  - Note: Conforms to `core_architecture`'s `SwiftUIView` protocol.
  */
-public protocol HomeViewProtocol: SwiftUIView {
-    
+public protocol HomeModuling: ViewModuling where ViewType: HomeViewProtocol {}
+public protocol HomeViewProtocol: SwiftUIView where ViewModelType: HomeViewModeling {}
+
+public protocol EpisodesModuling: ViewModuling where ViewType: EpisodesViewProtocol {}
+public protocol EpisodesViewProtocol: SwiftUIView where ViewModelType: EpisodesViewModeling {}
+public protocol EpisodesViewModeling: ViewModeling {
+    var episodes: EpisodesDataUIM? { get }
 }
 
+public protocol CategoriesModuling: ViewModuling where ViewType: CategoriesViewProtocol {}
+public protocol CategoriesViewProtocol: SwiftUIView where ViewModelType: CategoriesViewModeling {}
+public protocol CategoriesViewModeling: ViewModeling {
+    var categories: CategoriesDataUIM? { get }
+}
 
+// For Modules
+public protocol ChannelsModuling: ViewModuling where ViewType: ChannelsViewProtocol {}
+// For Views
+public protocol ChannelsViewProtocol: SwiftUIView where ViewModelType: ChannelsViewModeling {}
+// For ViewModels
+public protocol ChannelsViewModeling: ViewModeling {
+    var channels: ChannelsDataUIM? { get }
+}
 
-// MARK: - Mind Valley Service Abstract
+// MARK: - Service Abstract
 
 /**
  A protocol defining the services for movie-related operations in the MetFlix application.
@@ -72,6 +90,8 @@ public protocol CategoriesServiceProtocol: MindValleyServiceProtocol {
     func categories() async throws -> CategoriesApiData
 }
 public protocol ImageDownloadingProtocol: MindValleyServiceProtocol {
+    var maxRequest: Int { get set }
+    func can(send url: String) -> Bool
     func image(for url: String) async throws -> Data
 }
 

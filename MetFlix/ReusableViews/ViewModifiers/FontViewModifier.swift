@@ -151,8 +151,8 @@ extension View {
 struct RobotoFontView: View {
     public var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                VStack {
+            VView(spacing: 20) {
+                VView {
                     titles(font: .black(.headline))
                     titles(font: .black(.title))
                     titles(font: .black(.subtitle))
@@ -161,7 +161,7 @@ struct RobotoFontView: View {
                     titles(font: .black(.xSmall))
                     titles(font: .black(.xxSmall))
                 }
-                VStack {
+                VView {
                     titles(font: .bold(.headline))
                     titles(font: .bold(.title))
                     titles(font: .bold(.subtitle))
@@ -170,7 +170,7 @@ struct RobotoFontView: View {
                     titles(font: .bold(.xSmall))
                     titles(font: .bold(.xxSmall))
                 }
-                VStack {
+                VView {
                     titles(font: .medium(.headline))
                     titles(font: .medium(.title))
                     titles(font: .medium(.subtitle))
@@ -179,7 +179,7 @@ struct RobotoFontView: View {
                     titles(font: .medium(.xSmall))
                     titles(font: .medium(.xxSmall))
                 }
-                VStack {
+                VView {
                     titles(font: .regular(.headline))
                     titles(font: .regular(.title))
                     titles(font: .regular(.subtitle))
@@ -188,7 +188,7 @@ struct RobotoFontView: View {
                     titles(font: .regular(.xSmall))
                     titles(font: .regular(.xxSmall))
                 }
-                VStack {
+                VView {
                     titles(font: .light(.headline))
                     titles(font: .light(.title))
                     titles(font: .light(.subtitle))
@@ -197,7 +197,7 @@ struct RobotoFontView: View {
                     titles(font: .light(.xSmall))
                     titles(font: .light(.xxSmall))
                 }
-                VStack {
+                VView {
                     titles(font: .thin(.headline))
                     titles(font: .thin(.title))
                     titles(font: .thin(.subtitle))
@@ -212,7 +212,7 @@ struct RobotoFontView: View {
     }
     @ViewBuilder
     func titles(font: RobotoFontModifier.FontStyle) -> some View {
-        VStack {
+        VView {
             Text(font.name)
                     .robotoFont(style: font)
         }

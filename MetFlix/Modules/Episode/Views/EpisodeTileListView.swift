@@ -18,8 +18,8 @@ public struct EpisodeTileListView<VM: EpisodesViewModeling>: SwiftUIView {
     }
     public var body: some View {
         ScrollView(.horizontal) {
-            VStack {
-                HStack(alignment: .top, spacing: .spacing(.medium)) {
+            VView {
+                HView(alignment: .top, spacing: .spacing(.medium)) {
                     if let episodes = viewModel.episodes?.data?.media {
                         ForEach(episodes) { episode in
                             EpisodesTileView(
@@ -30,7 +30,6 @@ public struct EpisodeTileListView<VM: EpisodesViewModeling>: SwiftUIView {
                 }
             }
         }
-        .scrollIndicators(.hidden)
     }
 }
 

@@ -17,7 +17,7 @@ public struct CategoriesView<VM: CategoriesViewModeling>: SwiftUIView {
         self.viewModel = viewModel
     }
     public var body: some View {
-        VStack {
+        VView {
             if let categories = viewModel.categories?.data?.categories {
                 TagView(dataModels: categories)
                 SeparatorView()
@@ -38,9 +38,9 @@ struct TagView: View {
     var dataModelChunkSize: CGFloat { CGFloat(dataModels.count / 2) }
     
     var body: some View {
-        VStack(spacing: .spacing(.xSmall)) {
+        VView(spacing: .spacing(.xSmall)) {
             GeometryReader { geometry in
-                HStack(spacing: 10) {
+                HView(spacing: 10) {
                     tagList(
                         tags: dataModels.prefix(dataModels.count / 2),
                         color: .blue,
@@ -66,9 +66,9 @@ struct TagView: View {
     }
     @ViewBuilder
     func tagList(tags: ArraySlice<CategoryUIM>, color: Color, size: CGSize) -> some View {
-        VStack {
+        VView {
             ForEach(tags, id: \.id) { model in
-                ZStack {
+                ZView {
                     Color.categoriesTagColor
                         .cornerRadius(size.height / 2)
                         .frame(width: size.width, height: size.height)

@@ -9,12 +9,14 @@ import SwiftUI
 import Dependencies
 import Debugger
 import DebuggerUI
+@available(iOS 14.0, *)
 @main
 struct MetFlixApp: App {
     @Dependency(\.viewFactory) var viewFactory
     @Dependency(\.networkDebugConnection) var networkDebugConnection
     @State var networkDebugAction: NetworkDebuggerActions? = nil
-    @State var selectedCommand: ApplicationDebugCommands = .breakpoint
+    @State var selectedCommand: ApplicationDebugCommands = .application
+    @State var isDebugViewShowing: Bool = false
     
     init() {
         launch()
@@ -22,10 +24,10 @@ struct MetFlixApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                ZStack {
+            NavigationUI {
+                ZView {
                     Color.appTheme
-                        .edgesIgnoringSafeArea(.all)
+                        .ignoreSafeAreaForAlliOSVersions()
                     switch selectedCommand {
                     case .breakpoint:
                         AnyView(
@@ -51,16 +53,24 @@ struct MetFlixApp: App {
                                 input: .home
                             )
                         )
-                        .ignoresSafeArea(.all, edges: [.top, .bottom])
                     }
                 }
+                .background(Color.appTheme)
             }
-            .overlay(alignment: .top) {
+            .overlay(
                 Color.appTheme
-                    .ignoresSafeArea(edges: .top)
-                    .frame(height: 0)
-            }
-            .modifier(DebugShakeGestureModifier(selectedCommand: $selectedCommand))
+                    .frame(width: UIScreen.main.bounds.width)
+                    .frame(height: 80)
+                    .position(x: UIScreen.main.bounds.width/2, y: -33)
+            )
+            .overlay(
+                Color.appTheme
+                    .frame(width: UIScreen.main.bounds.width)
+                    .frame(height: 80)
+                    .position(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height-53)
+            )
+            
+            .modifier(DebugShakeGestureModifier(selectedCommand: $selectedCommand, isShowing: $isDebugViewShowing, networkDebugAction: $networkDebugAction))
         }
     }
     private func debugView(action: NetworkDebuggerActions) -> some View {

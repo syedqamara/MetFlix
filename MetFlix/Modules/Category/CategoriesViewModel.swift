@@ -9,9 +9,7 @@ import Foundation
 import core_architecture
 import Dependencies
 
-public protocol CategoriesViewModeling: ViewModeling {
-    var categories: CategoriesDataUIM? { get }
-}
+
 
 final public class CategoriesViewModel: CategoriesViewModeling {
     @Published public var categories: CategoriesDataUIM?

@@ -17,7 +17,7 @@ public struct EpisodesView<VM: EpisodesViewModeling>: SwiftUIView {
         self.viewModel = viewModel
     }
     public var body: some View {
-        VStack(alignment: .leading) {
+        VView(alignment: .leading) {
             if viewModel.episodes == nil {
                 AnimatedView(
                     animationFileName: Config.Lottie.loadingAnimation,
@@ -26,7 +26,7 @@ public struct EpisodesView<VM: EpisodesViewModeling>: SwiftUIView {
                 )
                 .scaleEffect(.init(width: 0.5, height: 0.5), anchor: .center)
             } else {
-                HStack {
+                HView {
                     Text("New Episodes")
                         .robotoFont(style: .black(.headline))
                         .foregroundColor(.gray)

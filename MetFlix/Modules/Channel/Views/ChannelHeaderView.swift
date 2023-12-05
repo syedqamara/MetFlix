@@ -14,7 +14,7 @@ public struct ChannelHeaderView: View {
     @State var channel: ChannelUIM
     private let imageSize: CGFloat = 50
     public var body: some View {
-        HStack {
+        HView {
             RemoteImage(
                 url: (channel.iconAsset?.thumbnailUrl ?? ""),
                 lottiePlaceholder: Config.Lottie.loadingAnimation,
@@ -26,7 +26,7 @@ public struct ChannelHeaderView: View {
             )
                 .frame(width: imageSize, height: imageSize)
             
-            VStack(alignment: .leading, spacing: 0) {
+            VView(alignment: .leading, spacing: 0) {
                 if let title = channel.title {
                     Text(title)
                         .robotoFont(style: .medium(.small))

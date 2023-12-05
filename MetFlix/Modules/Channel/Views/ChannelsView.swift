@@ -17,7 +17,7 @@ public struct ChannelsView<VM: ChannelsViewModeling>: SwiftUIView {
         self.viewModel = viewModel
     }
     public var body: some View {
-        VStack {
+        VView {
             if let channels = viewModel.channels?.data?.channels {
                 ForEach(channels) { channel in
                     ChannelView(channel: channel)
@@ -38,7 +38,7 @@ public struct ChannelsView<VM: ChannelsViewModeling>: SwiftUIView {
 public struct ChannelView: View {
     @State var channel: ChannelUIM
     public var body: some View {
-        VStack(alignment: .leading, spacing: .spacing(.small)) {
+        VView(alignment: .leading, spacing: .spacing(.small)) {
             ChannelHeaderView(channel: channel)
                 .padding(.top)
             if channel.isSeries, let series = channel.series {
@@ -48,6 +48,7 @@ public struct ChannelView: View {
             }
             SeparatorView()
         }
+        .background(Color.appTheme)
     }
 }
 

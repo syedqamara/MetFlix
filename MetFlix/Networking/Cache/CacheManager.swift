@@ -14,6 +14,7 @@ class SynchronizedCacheManager: CacheManagerProtocol {
     static let shared = SynchronizedCacheManager()
 
     private init() {
+        UserDefaults.standard.dictionaryRepresentation()
         // Set up any additional configurations for the cache if needed
     }
 

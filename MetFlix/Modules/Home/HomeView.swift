@@ -9,6 +9,7 @@ import Foundation
 import core_architecture
 import Dependencies
 import SwiftUI
+import DebuggerUI
 
 struct HomeView<VM: HomeViewModeling>: SwiftUIView {
     typealias ViewModelType = VM
@@ -24,49 +25,63 @@ struct HomeView<VM: HomeViewModeling>: SwiftUIView {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.red]
     }
     var body: some View {
+        if #available(iOS 15.0, *) {
+            content
+                .refreshable {
+                    viewModel.refresh()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        navigationTitleView()
+                    }
+                }
+        } else {
+            content
+                .navigationBarItems(leading: navigationTitleView())
+        }
+    }
+    func navigationTitleView() -> some View {
+        HView {
+            Text("Channels")
+                .font(.largeTitle.bold())
+                .foregroundColor(.white)
+            Spacer()
+        }
+    }
+    var content: some View {
         ScrollView {
-            VStack {
+            VView {
                 ForEach(viewModel.sections) { section in
                     switch section {
                     case .episodes(let episodes):
                         AnyView(
                             viewFactory.makeView(input: .episodes(episodes))
                         )
+                        .background(Color.appTheme)
                     case .categories(let categories):
                         AnyView(
                             viewFactory.makeView(input: .categories(categories))
                         )
+                        .background(Color.appTheme)
                     case .channels(let channels):
                         AnyView(
                             viewFactory.makeView(input: .channels(channels))
                         )
+                        .background(Color.appTheme)
                     case .error(let error):
                         PlaceholderView(
                             placeholder: .error(error.localizedDescription)
                         )
+                        .background(Color.appTheme)
                     default:
-                        HStack{}
+                        HView{}
                     }
                 }
             }
+            .background(Color.appTheme)
         }
-        .refreshable {
-            viewModel.refresh()
-        }
-        .scrollContentBackground(.hidden)
         .onAppear() {
             viewModel.onAppear()
-        }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    Text("Channels")
-                        .font(.largeTitle.bold())
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-                .ignoresSafeArea(.all, edges: [.top])
-            }
         }
     }
 }
@@ -106,9 +121,9 @@ This is a mock error message, containing dummy representation of an error scenar
                     HomeSectionUIM.categories(.init(dataModel: CategoriesApiData.preview))
                 ])
             ]) { (sections: [HomeSectionUIM]) in
-                NavigationStack {
-                    ZStack {
-                        Color.appTheme.edgesIgnoringSafeArea(.all)
+                NavigationUI {
+                    ZView {
+                        Color.appTheme.ignoreSafeAreaForAlliOSVersions()
                         HomeView(
                             viewModel: HomeViewModel(
                                 sections: sections
@@ -117,12 +132,8 @@ This is a mock error message, containing dummy representation of an error scenar
                         .background(Color.appTheme)
                     }
                 }
-                .edgesIgnoringSafeArea(.all)
-                .overlay(alignment: .top) {
-                    Color.appTheme
-                        .ignoresSafeArea(edges: .top)
-                        .frame(height: 0)
-                }
+                .ignoreSafeAreaForAlliOSVersions()
+                .overlay(Color.appTheme)
             }
     }
 }

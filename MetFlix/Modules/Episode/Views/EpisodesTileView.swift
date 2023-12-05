@@ -14,7 +14,7 @@ struct EpisodesTileView: View {
     var episode: EpisodeMediaUIM
     let width = UIScreen.main.bounds.size.width / 2
     var body: some View {
-        VStack(alignment: .leading, spacing: .spacing(.medium)) {
+        VView(alignment: .leading, spacing: .spacing(.medium)) {
             if let url = episode.coverAsset?.url {
                 RemoteImage(
                     url: url,
@@ -35,7 +35,7 @@ struct EpisodesTileView: View {
                 )
                 .background(Color.categoriesTagColor)
             }
-            VStack(alignment: .leading, spacing: .spacing(.small)) {
+            VView(alignment: .leading, spacing: .spacing(.small)) {
                 if let title = episode.title {
                     Text(title)
                         .robotoFont(style: .medium(.small))

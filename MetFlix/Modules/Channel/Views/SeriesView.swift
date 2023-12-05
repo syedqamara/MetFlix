@@ -12,11 +12,11 @@ public struct SeriesView: View {
     @State var series: SeriesUIM
     private let width = UIScreen.main.bounds.width - 100
     public var body: some View {
-        VStack(alignment: .leading, spacing: .spacing(.small)) {
+        VView(alignment: .leading, spacing: .spacing(.small)) {
             if let url = series.coverAsset?.url {
                 RemoteImage(
                     url: url,
-                    lottiePlaceholder: Config.Lottie.loadingAnimation,
+                    lottiePlaceholder: "",
                     size: .zero,
                     scale: 0.5
                 )
@@ -26,7 +26,7 @@ public struct SeriesView: View {
                 .background(Color.categoriesTagColor)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-            VStack(alignment: .leading, spacing: .spacing(.small)) {
+            VView(alignment: .leading, spacing: .spacing(.small)) {
                 if let title = series.title {
                     Text(title)
                         .robotoFont(style: .bold(.small))
@@ -41,7 +41,7 @@ public struct SeriesListView: View {
     @State var seriesList: [SeriesUIM]
     public var body: some View {
         ScrollView(.horizontal) {
-            HStack(alignment: .top, spacing: .spacing(.small)) {
+            HView(alignment: .top, spacing: .spacing(.small)) {
                 ForEach(seriesList) { series in
                     SeriesView(series: series)
                 }

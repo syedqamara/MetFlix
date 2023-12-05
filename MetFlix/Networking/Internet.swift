@@ -9,7 +9,7 @@ import Foundation
 import SystemConfiguration
 
 class Internet {
-    fileprivate static let shared = Internet()
+    static let shared = Internet()
 
     private var reachability: SCNetworkReachability?
     private var reachabilityQueue = DispatchQueue(label: "com.yourapp.networkReachability")
@@ -32,7 +32,7 @@ class Internet {
         }
     }
 
-    private func isNetworkAvailable() -> Bool {
+    func isAvailable() -> Bool {
         var flags = SCNetworkReachabilityFlags()
         SCNetworkReachabilityGetFlags(reachability!, &flags)
 
@@ -41,5 +41,4 @@ class Internet {
 
         return isReachable && !needsConnection
     }
-    public static var isAvailable: Bool { shared.isNetworkAvailable() }
 }

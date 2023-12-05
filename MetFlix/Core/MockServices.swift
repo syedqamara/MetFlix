@@ -14,9 +14,12 @@ public class MockMindValleyServiceProtocol: Mocking<MockMindValleyServiceProtoco
     case noValue, inValidReturnData
     }
     public enum Parameter {
-    case image(MockFunctionArgument<String>)
-    indirect case serve(type: MockFunctionArgument<DataModel.Type>, dataModel: MockFunctionArgument<DataModel?>, endpoint: MockFunctionArgument<Pointable>)
-    case none(MockFunctionArgument<String>)
+        case image(MockFunctionArgument<String>)
+        case can(MockFunctionArgument<String>)
+        indirect case serve(type: MockFunctionArgument<DataModel.Type>, dataModel: MockFunctionArgument<DataModel?>, endpoint: MockFunctionArgument<Pointable>)
+        case maxRequest(MockFunctionArgument<Int>)
+        case none(MockFunctionArgument<String>)
+        
         
         
         public var rawValue: String {
@@ -25,6 +28,10 @@ public class MockMindValleyServiceProtocol: Mocking<MockMindValleyServiceProtoco
                 return "image"
             case .serve(type: _, dataModel: _, endpoint: _):
                 return "serve"
+            case .maxRequest(_):
+                return "maxRequest"
+            case .can(_):
+                return "can"
             case .none:
                 return ""
             }
@@ -36,6 +43,8 @@ public class MockMindValleyServiceProtocol: Mocking<MockMindValleyServiceProtoco
         case categories(MockFunctionArgument<CategoriesApiData>)
         case image(MockFunctionArgument<Data>)
         indirect case serve(MockFunctionArgument<DataModel>)
+        case can(MockFunctionArgument<Bool>)
+        case maxRequest(MockFunctionArgument<Int>)
         case none(MockFunctionArgument<String>)
         
         var rawValue: String {
@@ -46,12 +55,16 @@ public class MockMindValleyServiceProtocol: Mocking<MockMindValleyServiceProtoco
                 return "channels"
             case .categories(_):
                 return "categories"
+            case .maxRequest(_):
+                return "maxRequest"
             case .image(_):
                 return "image"
-            case .none:
-                return ""
             case .serve(_):
                 return "serve"
+            case .can(_):
+                return "can"
+            case .none:
+                return ""
             }
         }
     }
@@ -135,6 +148,41 @@ extension MockMindValleyServiceProtocol: CategoriesServiceProtocol {
 }
 
 extension MockMindValleyServiceProtocol: ImageDownloadingProtocol {
+    public var maxRequest: Int {
+        get {
+            if case .maxRequest(let arg) = returned {
+                if let value = arg.argumentLastValue {
+                    arg.invoked(by: value)
+                    return value
+                }
+            }
+            return 0
+        }
+        set {
+            if case .maxRequest(let arg) = parameter {
+                arg.invoked(by: newValue)
+            }
+            if case .can(let arg) = returned {
+                if let value = arg.argumentLastValue {
+                    arg.invoked(by: value)
+                }
+            }
+        }
+    }
+    
+    public func can(send url: String) -> Bool {
+        if case .can(let arg) = parameter {
+            arg.invoked(by: url)
+        }
+        if case .can(let arg) = returned {
+            if let value = arg.argumentLastValue {
+                arg.invoked(by: value)
+                return value
+            }
+        }
+        return false
+    }
+    
     public func image(for url: String) async throws -> Data {
         if case .image(let arg) = parameter {
             arg.invoked(by: url)
