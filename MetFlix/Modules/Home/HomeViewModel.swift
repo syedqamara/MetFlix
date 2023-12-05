@@ -2,108 +2,131 @@
 //  HomeViewModel.swift
 //  MetFlix
 //
-//  Created by Apple on 22/11/2023.
+//  Created by Apple on 02/12/2023.
 //
 
 import Foundation
 import core_architecture
-import Combine
 import Dependencies
 
 
-
-public final class HomeViewModel {
+public class HomeViewModel {
     @Published public var error: Error?
-    @Published public var movies: [MovieUIM]
-    @Published public var isLoading: Bool = false
-    @Published public var search: String = ""
-    private var cancellable: Set<AnyCancellable> = []
-    private var isLoadingNextPage: Bool = false
-    private var moviesResult: PaginatedResultUIM<MovieUIM>?
-    private let searchQueue = DispatchQueue(label: "com.search.queue", qos: .background)
-    @Dependency(\.movieService) var movieService
-    public init(moviesResult: PaginatedResultUIM<MovieUIM>?) {
-        self.moviesResult = moviesResult
-        self.movies = moviesResult?.results ?? []
-        $search
-            .sink { searchText in
-                self.search(name: searchText)
-            }
-            .store(in: &cancellable)
+    @Published public var isLoading: Bool
+    @Published public var search: String
+    @Published public var sections: [HomeSectionUIM] = []
+    private var defaultSections: [HomeSectionUIM]
+    @Dependency(\.episodeService) var episodeService
+    @Dependency(\.channelService) var channelService
+    @Dependency(\.categoryService) var categoryService
+    
+    public init(error: Error? = nil, isLoading: Bool = true, search: String = "", sections: [HomeSectionUIM] = []) {
+        self.error = error
+        self.isLoading = isLoading
+        self.search = search
+        self.sections = sections
+        self.defaultSections = sections
     }
-    private func loadMovie(page: Int) async throws {
-        let result = try await self.movieService.getPopular(query: .init())
-        let newMovies: [MovieUIM] = result.results.map { .init(dataModel: $0) }
-        if result.page == 1 {
-            self.moviesResult = .init(dataModel: result)
+    private func update(section: HomeSectionUIM) {
+        if let index = indexOf(section) {
             DispatchQueue.main.async {
-                self.movies = newMovies
+                self.sections[index] = section
             }
         }
-        else {
-            self.moviesResult?.results.append(contentsOf: newMovies)
-            self.moviesResult?.page = result.page
-            self.moviesResult?.totalPages = result.totalPages
-            self.moviesResult?.totalResults = result.totalResults
+    }
+    private func replace(section: HomeSectionUIM, with newSection: HomeSectionUIM) {
+        if let index = indexOf(section) {
             DispatchQueue.main.async {
-                self.movies.append(contentsOf: newMovies)
+                self.sections[index] = newSection
             }
         }
+    }
+    func indexOf(_ section: HomeSectionUIM) -> Int? {
+        for i in 0..<sections.count {
+            let sect = sections[i]
+            if sect.isSameSection(section) {
+                return i
+            }
+        }
+        return nil
     }
 }
 
-
 extension HomeViewModel: HomeViewModeling {
-    
-    public func loadNextPage() {
-        guard let previousResult = self.moviesResult,
-        !isLoadingNextPage,
-        (previousResult.page + 1) < previousResult.totalPages else { return }
-        isLoadingNextPage = true
-        Task {
-            do {
-                try await self.loadMovie(page: previousResult.page + 1)
-                DispatchQueue.main.async {
-                    self.isLoadingNextPage = false
-                }
-            }
-            catch let error {
-                DispatchQueue.main.async {
-                    self.isLoadingNextPage = false
-                    self.error = error
-                }
-            }
-        }
-    }
     public func onAppear() {
-        isLoading = true
+        loadData()
+    }
+    public func refresh() {
+        self.sections = defaultSections
+        loadData()
+    }
+}
+
+extension HomeViewModel {
+    private func loadData() {
+        loadEpisodes()
+        loadChannels()
+        loadCategories()
+    }
+    private func loadEpisodes() {
+        let episodeSection = sections.filter { section in
+            if case .episodes(let episode) = section {
+               return episode == nil
+            }
+            return false
+        }
+        guard episodeSection.isNotEmpty else { return }
+        
+        
         Task {
             do {
-                try await self.loadMovie(page: 1)
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                }
+                let episodes = try await episodeService.episodes()
+                let episodesUIM = EpisodesDataUIM(dataModel: episodes)
+                self.update(section: .episodes(episodesUIM))
             }
-            catch let error {
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    self.error = error
-                }
+            catch let err {
+                self.replace(section: .episodes(nil), with: .error(err))
+            }
+            
+        }
+    }
+    private func loadChannels() {
+        let channelsSection = sections.filter { section in
+            if case .channels(let channel) = section {
+               return channel == nil
+            }
+            return false
+        }
+        guard channelsSection.isNotEmpty else { return }
+        Task {
+            do {
+                let channels = try await channelService.channels()
+                let channelsUIM = ChannelsDataUIM(dataModel: channels)
+                self.update(section: .channels(channelsUIM))
+            }
+            catch let err {
+                self.replace(section: .channels(nil), with: .error(err))
             }
         }
     }
-        
-    public func search(name: String) {
-        if let result = self.moviesResult {
-            if name.isEmpty {
-                self.movies = result.results
-            } else {
-                searchQueue.sync {
-                    let filteredMovie = result.results.filter { $0.allow(search: name) }
-                    DispatchQueue.main.async {
-                        self.movies = filteredMovie
-                    }
-                }
+    private func loadCategories() {
+        let categoriesSection = sections.filter { section in
+            if case .categories(let category) = section {
+               return category == nil
+            }
+            return false
+        }
+        guard categoriesSection.isNotEmpty else {
+            return
+        }
+        Task {
+            do {
+                let categories = try await categoryService.categories()
+                let categoriesUIM = CategoriesDataUIM(dataModel: categories)
+                self.update(section: .categories(categoriesUIM))
+            }
+            catch let err {
+                self.replace(section: .categories(nil), with: .error(err))
             }
         }
     }

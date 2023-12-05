@@ -9,6 +9,7 @@ import Foundation
 import Network
 import Dependencies
 import core_architecture
+import DebuggerUI
 
 
 
@@ -16,33 +17,38 @@ import core_architecture
 
 func launch() {
     @Dependency(\.registerar) var registrar
-    @Dependency(\.networkDebugConnection) var connection
-    @Dependency(\.networkDebugger) var networkDebugger
-    @Dependency(\.defaultNetwork) var network
+    
     
     do {
+        @Configuration<DebugUITheme.NetworkDebugModule.KeyValue>(DebuggerUI.networkModuleKeyValueThemeName) var theme: DebugUITheme.NetworkDebugModule.KeyValue?
+        _theme.wrappedValue = .appTheme
         
         try registrar.networkRegister(
-            name: "Fetch Movies List",
-            host: Config.moviesHost,
-            endpoint: MoviesEnpoint.popular,
+            name: "Get Episodes Api",
+            host: Config.mindValleyHost,
+            endpoint: MindValleyEndpoints.episodes,
             method: .get,
             contentType: .queryParam,
-            responseType: PaginatedResult<Movie>.self,
-            headers: [
-                "Authorization": "Bearer \(Config.movieApiReadToken)"
-            ]
+            responseType: EpisodesApiData.self,
+            headers: [:]
         )
         try registrar.networkRegister(
-            name: "Fetch Movie Detail",
-            host: Config.moviesHost,
-            endpoint: MoviesEnpoint.movie(""),
+            name: "Get Channels Api",
+            host: Config.mindValleyHost,
+            endpoint: MindValleyEndpoints.channels,
             method: .get,
             contentType: .queryParam,
-            responseType: MovieDetail.self,
-            headers: [
-                "Authorization": "Bearer \(Config.movieApiReadToken)"
-            ]
+            responseType: ChannelsApiData.self,
+            headers: [:]
+        )
+        try registrar.networkRegister(
+            name: "Get Categories Api",
+            host: Config.mindValleyHost,
+            endpoint: MindValleyEndpoints.categories,
+            method: .get,
+            contentType: .queryParam,
+            responseType: CategoriesApiData.self,
+            headers: [:]
         )
         
         

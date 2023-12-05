@@ -9,12 +9,14 @@ import SwiftUI
 import Dependencies
 import Debugger
 import DebuggerUI
+@available(iOS 14.0, *)
 @main
 struct MetFlixApp: App {
     @Dependency(\.viewFactory) var viewFactory
     @Dependency(\.networkDebugConnection) var networkDebugConnection
     @State var networkDebugAction: NetworkDebuggerActions? = nil
-    @State var selectedCommand: ApplicationCommands = .application
+    @State var selectedCommand: ApplicationDebugCommands = .application
+    @State var isDebugViewShowing: Bool = false
     
     init() {
         launch()
@@ -22,55 +24,53 @@ struct MetFlixApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                switch selectedCommand {
-                case .breakpoint:
-                    AnyView(
-                        viewFactory.makeView(
-                            input: .breakpoint
+            NavigationUI {
+                ZView {
+                    Color.appTheme
+                        .ignoreSafeAreaForAlliOSVersions()
+                    switch selectedCommand {
+                    case .breakpoint:
+                        AnyView(
+                            viewFactory.makeView(input: .breakpoint)
                         )
-                    )
-                    .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            HStack {
-                                Text("Metflix Network Configuration")
-                                    .font(.title3.bold())
-                                    .foregroundColor(.white)
-                                    .shadow(color: .red, radius: 3, x: 3, y: -3)
-                                Spacer()
-                            }
-                            .ignoresSafeArea(.all, edges: [.top, .bottom])
-                        }
+//                        .toolbar {
+//                            ToolbarItem(placement: .principal) {
+//                                HStack {
+//                                    Text("Network Configuration")
+//                                        .robotoFont(style: .bold(.title))
+//                                        .multilineTextAlignment(.leading)
+//                                        .foregroundColor(.white)
+//                                        .shadow(color: .appThemeSecondary, radius: 3, x: 3, y: -3)
+//                                        .fixedSize(horizontal: false, vertical: true)
+//                                    Spacer()
+//                                }
+//                                .ignoresSafeArea(.all, edges: [.top, .bottom])
+//                            }
+//                        }
+                    case .application:
+                        AnyView(
+                            viewFactory.makeView(
+                                input: .home
+                            )
+                        )
                     }
-                case .application:
-                    AnyView(
-                        viewFactory.makeView(
-                            input: .home
-                        )
-                    )
-                    .ignoresSafeArea(.all, edges: [.top, .bottom])
                 }
+                .background(Color.appTheme)
             }
-            .overlay(alignment: .top) {
-                Color.black
-                    .ignoresSafeArea(edges: .top)
-                    .frame(height: 0)
-            }
-            .onShakeGesture {
-                switch selectedCommand {
-                case .application:
-                    selectedCommand = .breakpoint
-                case .breakpoint:
-                    selectedCommand = .application
-                }
-            }
-            .sheet(item: $networkDebugAction, content: { action in
-                self.debugView(action: action)
-            })
-            .onReceive(networkDebugConnection.$debuggingAction) { debuggingAction in
-                guard let action: NetworkDebuggerActions = debuggingAction else { return }
-                self.networkDebugAction = action
-            }
+            .overlay(
+                Color.appTheme
+                    .frame(width: UIScreen.main.bounds.width)
+                    .frame(height: 80)
+                    .position(x: UIScreen.main.bounds.width/2, y: -33)
+            )
+            .overlay(
+                Color.appTheme
+                    .frame(width: UIScreen.main.bounds.width)
+                    .frame(height: 80)
+                    .position(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height-53)
+            )
+            
+            .modifier(DebugShakeGestureModifier(selectedCommand: $selectedCommand, isShowing: $isDebugViewShowing, networkDebugAction: $networkDebugAction))
         }
     }
     private func debugView(action: NetworkDebuggerActions) -> some View {

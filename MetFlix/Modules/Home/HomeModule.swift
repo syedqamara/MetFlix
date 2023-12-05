@@ -2,25 +2,28 @@
 //  HomeModule.swift
 //  MetFlix
 //
-//  Created by Apple on 22/11/2023.
+//  Created by Apple on 02/12/2023.
 //
 
 import Foundation
 import core_architecture
-import Dependencies
 
-public struct HomeModule<V: HomeViewModeling>: ViewModuling {
-    public typealias ViewType = HomeView<V>
-    public struct ModuleInput: ModulingInput {
-        let vm: V
-    }
+struct HomeModule<V: HomeViewModeling>: ViewModuling {
+    typealias ViewType = HomeView<V>
     private let input: ModuleInput
-    
-    public init(input: ModuleInput) {
+    init(input: ModuleInput) {
         self.input = input
     }
+}
+
+extension HomeModule {
+    struct ModuleInput: ModulingInput {
+        let viewModel: V
+    }
     
-    public func view() -> HomeView<V> {
-        HomeView(viewModel: input.vm)
+    func view() -> HomeView<V> {
+        HomeView(
+            viewModel: input.viewModel
+        )
     }
 }

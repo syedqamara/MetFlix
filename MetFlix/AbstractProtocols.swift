@@ -7,6 +7,7 @@
 
 import Foundation
 import core_architecture
+import Network
 
 // MARK: - App Abstracts
 
@@ -28,13 +29,9 @@ public protocol UIModeling: UIModel where DataModelType: DataModel {
  - Note: Conforms to `core_architecture`'s `ViewModeling` protocol.
  */
 public protocol HomeViewModeling: ViewModeling {
-    var error: Error? { get }
-    var isLoading: Bool { get }
-    var search: String { get set }
-    var movies: [MovieUIM] { get set }
-    
+    var sections: [HomeSectionUIM] { get set }
     func onAppear()
-    func loadNextPage()
+    func refresh()
 }
 
 
@@ -43,46 +40,59 @@ public protocol HomeViewModeling: ViewModeling {
  
  - Note: Conforms to `core_architecture`'s `SwiftUIView` protocol.
  */
-public protocol HomeViewProtocol: SwiftUIView {
-    
+public protocol HomeModuling: ViewModuling where ViewType: HomeViewProtocol {}
+public protocol HomeViewProtocol: SwiftUIView where ViewModelType: HomeViewModeling {}
+
+public protocol EpisodesModuling: ViewModuling where ViewType: EpisodesViewProtocol {}
+public protocol EpisodesViewProtocol: SwiftUIView where ViewModelType: EpisodesViewModeling {}
+public protocol EpisodesViewModeling: ViewModeling {
+    var episodes: EpisodesDataUIM? { get }
 }
 
-
-// MARK: - Movie Detail Module Abstracts
-
-/**
- A protocol representing the view for the Movie Detail module in the MetFlix application.
- 
- - Note: Conforms to `core_architecture`'s `SwiftUIView` protocol.
- */
-public protocol MovieDetailViewProtocol: SwiftUIView {
-    
+public protocol CategoriesModuling: ViewModuling where ViewType: CategoriesViewProtocol {}
+public protocol CategoriesViewProtocol: SwiftUIView where ViewModelType: CategoriesViewModeling {}
+public protocol CategoriesViewModeling: ViewModeling {
+    var categories: CategoriesDataUIM? { get }
 }
 
-/**
- A protocol defining the view model for the Movie Detail module in the MetFlix application.
- 
- - Note: Conforms to `core_architecture`'s `ViewModeling` protocol.
- */
-public protocol MovieDetailViewModeling: ViewModeling {
-    var movieId: Int { get set }
-    var movieDetail: MovieDetailUIM? { get set }
-    var error: Error? { get }
-    var isLoading: Bool { get }
-    func onAppear()
+// For Modules
+public protocol ChannelsModuling: ViewModuling where ViewType: ChannelsViewProtocol {}
+// For Views
+public protocol ChannelsViewProtocol: SwiftUIView where ViewModelType: ChannelsViewModeling {}
+// For ViewModels
+public protocol ChannelsViewModeling: ViewModeling {
+    var channels: ChannelsDataUIM? { get }
 }
 
-
-// MARK: - Movie Service Abstract
+// MARK: - Service Abstract
 
 /**
  A protocol defining the services for movie-related operations in the MetFlix application.
  
  - Note: Conforms to `core_architecture`'s service protocol with asynchronous methods.
  */
-public protocol MovieServiceProtocol {
-    func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie>
-    func get(by id: String) async throws -> MovieDetail
+
+public protocol ServiceProtocol {
+    
+}
+
+public protocol MindValleyServiceProtocol: ServiceProtocol {
+    func serve<D: DataModel>(type: D.Type, dataModel: DataModel?, endpoint: Pointable) async throws -> D
+}
+
+public protocol EpisodeServiceProtocol: MindValleyServiceProtocol {
+    func episodes() async throws -> EpisodesApiData
+}
+public protocol ChannelServiceProtocol: MindValleyServiceProtocol {
+    func channels()  async throws-> ChannelsApiData
+}
+public protocol CategoriesServiceProtocol: MindValleyServiceProtocol {
+    func categories() async throws -> CategoriesApiData
+}
+public protocol ImageDownloadingProtocol: MindValleyServiceProtocol {
+    var maxRequest: Int { get set }
+    func can(send url: String) -> Bool
+    func image(for url: String) async throws -> Data
 }
 
 

@@ -6,36 +6,27 @@
 //
 
 import Foundation
+import core_architecture
+import Network
 
 // MARK: - Mocks
 
 /**
  A mock implementation for the HomeViewModeling protocol.
  */
-class MockHomeViewModeling: HomeViewModeling {
-    @Published var error: Error?
-    @Published var isLoading: Bool = false
-    @Published var search: String = ""
-    @Published var movies: [MovieUIM] = []
-    
-    func onAppear() {}
-    
-    func loadNextPage() {}
-}
-/**
- A mock implementation for the MovieDetailViewModeling protocol.
- */
-class MockMovieDetailViewModeling: MovieDetailViewModeling {
-    @Published var movieId: Int = 0
-    @Published var movieDetail: MovieDetailUIM?
-    @Published var error: Error?
-    @Published var isLoading: Bool = false
-    
-    func onAppear() {}
-}
+//class MockHomeViewModeling: HomeViewModeling {
+//    @Published var error: Error?
+//    @Published var isLoading: Bool = false
+//    @Published var search: String = ""
+////    @Published var movies: [MovieUIM] = []
+//    
+//    func onAppear() {}
+//    
+//    func loadNextPage() {}
+//}
 
 /**
- A mock implementation for the MovieServiceProtocol protocol.
+ Function Argument(parameters, returns)
  */
 
 public class MockFunctionArgument<V> {
@@ -60,33 +51,25 @@ public class MockFunctionArgument<V> {
     }
 }
 
-public class MockMovieServiceProtocol: MovieServiceProtocol {
-    
-    public var getPopularQuery: MockFunctionArgument<PopularMovieQueryParameters> = .init()
-    public var getByID: MockFunctionArgument<String> = .init()
-    
-    public var getPopularReturn: MockFunctionArgument<PaginatedResult<Movie>> = .init()
-    public var getByIDReturn: MockFunctionArgument<MovieDetail> = .init()
-    
-    public init() {}
-    
-    public func getPopular(query: PopularMovieQueryParameters) async throws -> PaginatedResult<Movie> {
-        // Implement mock logic for getPopular
-        getPopularQuery.invoked(by: query)
-        if let returnValue = getPopularReturn.argumentLastValue {
-            getPopularReturn.invoked(by: returnValue)
-            return returnValue
-        }
-        return PaginatedResult<Movie>.preview
-    }
-    
-    public func get(by id: String) async throws -> MovieDetail {
-        // Implement mock logic for get(by:)
-        getByID.invoked(by: id)
-        if let returnValue = getByIDReturn.argumentLastValue {
-            getByIDReturn.invoked(by: returnValue)
-            return returnValue
-        }
-        return MovieDetail.preview // Replace MovieDetail() with the actual mock for MovieDetail
+/**
+ A mock implementation for the MockMindValleyServiceProtocol protocol.
+ */
+
+protocol Mockable {
+    associatedtype Parameter
+    associatedtype Returned
+    var parameter: Parameter { get set }
+    var returned: Returned { get set }
+    init(parameter: Parameter, returned: Returned)
+}
+
+public class Mocking<P, R>: Mockable {
+    public typealias Parameter = P
+    public typealias Returned = R
+    public var parameter: P
+    public var returned: R
+    required public init(parameter: P, returned: R) {
+        self.parameter = parameter
+        self.returned = returned
     }
 }

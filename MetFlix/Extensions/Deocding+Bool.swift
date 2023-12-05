@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension KeyedDecodingContainer {
     func decodeCustomBool(key: K) throws -> Bool {
@@ -18,4 +19,3 @@ extension KeyedDecodingContainer {
         }
     }
 }
-

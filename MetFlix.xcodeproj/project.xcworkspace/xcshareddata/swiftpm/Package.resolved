@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/syedqamara/core_architecture.git",
       "state" : {
-        "revision" : "182c26f9b74d130a3101d8e274116e47008b0e5f",
-        "version" : "1.0.30"
+        "revision" : "8a72a54beefa2696667efaab3a092033334db1c4",
+        "version" : "1.0.50"
       }
     },
     {
@@ -34,24 +34,6 @@
       "state" : {
         "revision" : "a6fdff81e57aa26aa75ddafec55183530c52831e",
         "version" : "1.1.2"
-      }
-    },
-    {
-      "identity" : "sdwebimage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/SDWebImage.git",
-      "state" : {
-        "revision" : "1b9a2e902cbde5fdf362faa0f4fd76ea74d74305",
-        "version" : "5.18.5"
-      }
-    },
-    {
-      "identity" : "sdwebimageswiftui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
-      "state" : {
-        "revision" : "5f025e54a03d3d33dff24d7a19331f446f00ed9d",
-        "version" : "2.2.4"
       }
     },
     {
@@ -86,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-snapshot-testing",
       "state" : {
-        "revision" : "4862d48562483d274a2ac7522d905c9237a31a48",
-        "version" : "1.15.0"
+        "branch" : "main",
+        "revision" : "59b663f68e69f27a87b45de48cb63264b8194605"
       }
     },
     {
@@ -97,15 +79,6 @@
       "state" : {
         "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
         "version" : "509.0.2"
-      }
-    },
-    {
-      "identity" : "swiftui-preview-snapshots",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/doordash-oss/swiftui-preview-snapshots",
-      "state" : {
-        "branch" : "main",
-        "revision" : "0f59f24b7adab01b5c4271d42790032506868892"
       }
     },
     {

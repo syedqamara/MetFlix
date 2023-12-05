@@ -12,23 +12,53 @@ import Debugger
 import DebuggerUI
 
 extension SwiftUIViewFactory {
-    enum MetflixInput {
-    case home, movie(Int), breakpoint, debug(NetworkDebuggerActions)
+    enum MetflixAppInput {
+    case home, episodes(EpisodesDataUIM?), channels(ChannelsDataUIM?), categories(CategoriesDataUIM?)
     }
-    func makeView(input: MetflixInput) -> any SwiftUIView {
+    func makeView(input: MetflixAppInput) -> any SwiftUIView {
         switch input {
         case .home:
-            let module = HomeModule(input: .init(vm: HomeViewModel(moviesResult: nil)))
-            return module.view()
-        case .breakpoint:
-            return BreakpointConfigurationsModule(input: .init()).view()
-        case .debug(let action):
-            return NetworkDebugModule(input: action).view()
-        case .movie(let id):
-            var movieDetailVM = MovieDetailViewModel(movieDetail: nil, movieId: 0)
-            movieDetailVM.movieId = id
-            let module = MovieDetailModule(input: .init(movieId: id, vm: movieDetailVM))
-            return module.view()
+            return HomeModule(
+                input: .init(
+                    viewModel: HomeViewModel(
+                        sections: [
+                            .episodes(nil),
+                            .channels(nil),
+                            .categories(nil)
+                        ]
+                    )
+                )
+            )
+            .view()
+        case .channels(let channels):
+            return ChannelsModule(
+                input: .init(
+                    vm: ChannelsViewModel(
+                        channels: channels
+                    )
+                )
+            )
+            .view()
+        case .categories(let categories):
+            return CategoriesModule(
+                input: .init(
+                    vm: CategoriesViewModel(
+                        categories: categories
+                    )
+                )
+            )
+            .view()
+        case .episodes(let episodes):
+            return EpisodesModule(
+                input: .init(
+                    viewModel: EpisodesViewModel(episodes: episodes)
+                )
+            )
+            .view()
+//        case .breakpoint:
+//            return BreakpointConfigurationsModule(input: .init()).view()
+//        case .debug(let action):
+//            return NetworkDebugModule(input: action).view()
         }
     }
 }
