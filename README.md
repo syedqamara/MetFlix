@@ -1,5 +1,14 @@
 # MetFlix Application Architecture Documentation
 
+## Application Screenshots
+
+ | Home (without Debugger) | Breakpoint (Debugger) | Home (with Debugger) |
+ |-------|-------|-------|
+ |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_1.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_1.png" ></img>   |
+ |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_2.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_2.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_2.png" ></img>   |
+ |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
+
+
 ## HomeUIM Module
 
 ### 1.1 Overview
@@ -490,13 +499,6 @@ catch let error {
 
 The "Launch Configurations" section outlines the `launch()` function's role in initializing and configuring crucial components during the MetFlix application launch. This includes setting themes and registering network endpoints, ensuring a smooth and error-handled launch process.
 
-## Debugger
-
- | Home (without Debugger) | Breakpoint (Debugger) | Home (with Debugger) |
- |-------|-------|-------|
- |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_1.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_1.png" ></img>   |
- |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_2.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_2.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_2.png" ></img>   |
- |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
 
 *Author: Syed Qamar Abbas*
 *Project: MetFlix*
