@@ -4,7 +4,7 @@
 
  | Home (without Debugger) | Breakpoint (Debugger) | Home (with Debugger) |
  |-------|-------|-------|
- |  <img width="300" height="600" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_1.png" ></img>   | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/debugger_1.png" ></img>   |
+ |  <img width="300" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="300" src="/MetFlix/Resources/Screenshots/breakpoint_1.png" ></img>   | <img width="300" src="/MetFlix/Resources/Screenshots/debugger_1.png" ></img>   |
  |  <img width="300" height="600" src="/MetFlix/Resources/Screenshots/home_2.png" ></img>  | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_2.png" ></img>   | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/debugger_2.png" ></img>   |
  |  <img width="300" height="600" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
 
@@ -72,12 +72,6 @@
     - [7.2.2 Network Endpoint Registrations](#722-network-endpoint-registrations)
     - [7.2.3 Error Handling](#723-error-handling)
   - [7.3 Conclusion](#73-conclusion)
-
-- [Debugger](#debugger)
-
-*Author: Syed Qamar Abbas*  
-*Project: MetFlix*  
-*Creation Date: 26/11/2023 - 02/12/2023*
 
 ## HomeUIM Module
 
