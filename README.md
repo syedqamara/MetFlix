@@ -2,10 +2,12 @@
 
 ## Application Screenshots
 
- | Home (without InApp Debugger) | Breakpoint (InApp Debugger) | Home (with InApp Debugger) |
+ | **Home (without InApp Debugger)** | **Breakpoint (InApp Debugger)** | **Debugger (View Data)** |
  |-------|-------|-------|
  |  <img width="300" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="300" src="/MetFlix/Resources/Screenshots/breakpoint_1.png" ></img>   | <img width="300" src="/MetFlix/Resources/Screenshots/debugger_1.png" ></img>   |
+ | **Home (without InApp Debugger)** | **Breakpoint Detail (Debugger)** | **Debugger (Edit Data)** |
  |  <img width="300" src="/MetFlix/Resources/Screenshots/home_2.png" ></img>  | <img width="300" src="/MetFlix/Resources/Screenshots/breakpoint_2.png" ></img>   | <img width="300" src="/MetFlix/Resources/Screenshots/debugger_2.png" ></img>   |
+ | **Home (without InApp Debugger)** | **Data Breakpoint (Enabled Debugger)** | **Debugger (Submit Edited Data)** |
  |  <img width="300" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="300" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="300" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
 
 
