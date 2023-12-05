@@ -494,7 +494,9 @@ The "Launch Configurations" section outlines the `launch()` function's role in i
 
  | Home (without Debugger) | Breakpoint (Debugger) | Home (with Debugger) |
  |-------|-------|-------|
- |  <img width="250" height="400" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="250" height="400" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>   | <img width="250" height="400" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>   |
+ |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_1.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_1.png" ></img>   |
+ |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_2.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_2.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_2.png" ></img>   |
+ |  <img width="250" height="600" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="250" height="600" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
 
 *Author: Syed Qamar Abbas*
 *Project: MetFlix*
