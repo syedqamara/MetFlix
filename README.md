@@ -1,6 +1,6 @@
 # MetFlix Application Architecture Documentation
 
-## Doc_Section_1: HomeUIM Module
+## HomeUIM Module
 
 ### 1.1 Overview
 
@@ -61,7 +61,7 @@ The `HomeUIM` module evolves to accommodate additional data models, maintaining 
 
 ---
 
-## Doc_Section_2: HomeAbstract Module
+## HomeAbstract Module
 
 ### 2.1 Overview
 
@@ -130,7 +130,7 @@ The `HomeAbstract` module remains a robust foundation for the Home module, incor
 
 ---
 
-## Doc_Section_3: Implementation Details
+## Implementation Details
 
 ### 3.1 Data Loading
 
@@ -156,8 +156,6 @@ The `HomeAbstract` module remains a robust foundation for the Home module, incor
 - Code sharing is done as a zipped file or a link through Google Drive, Dropbox, or any file-sharing platform.
 - A README file is expected, answering specific questions related to challenges faced and potential future features.
 
-*Author: [Your Name]*
+*Author: Syed Qamar Abbas*
 *Project: MetFlix*
 *Creation Date: 26/11/2023 - 02/12/2023*
-
-(__3__/__3)
