@@ -1,5 +1,7 @@
 # MetFlix Application Architecture Documentation
 
+
+
 ## Application Screenshots
 
  | **Home (without InApp Debugger)** | **Breakpoint (InApp Debugger)** | **Debugger (View Data)** |
@@ -10,6 +12,16 @@
  | **Home (without InApp Debugger)** | **Data Breakpoint (Enabled Debugger)** | **Debugger (Submit Edited Data)** |
  |  <img width="300" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="300" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="300" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
 
+
+## Core Architecture
+
+### Overview
+This application uses `core_architecture` library written by the 
+The Core Architecture of the MetFlix application is built upon the principles of modularity, scalability, and maintainability. It encompasses a set of core modules and libraries that form the foundation of the application's structure.
+
+### Core Architecture Library
+
+The [Core Architecture](https://github.com/metflix/core_architecture) Library is a central repository containing essential components, abstract modules, and utilities that are widely used across different parts of the MetFlix application. This library aims to provide a standardized and consistent set of tools for various functionalities, promoting code reusability and ease of maintenance.
 
 ## Table of Content
 
@@ -74,7 +86,7 @@
     - [7.2.2 Network Endpoint Registrations](#722-network-endpoint-registrations)
     - [7.2.3 Error Handling](#723-error-handling)
   - [7.3 Conclusion](#73-conclusion)
-
+- [Author](#author)
 ## HomeUIM Module
 
 ### 1.1 Overview
@@ -512,7 +524,7 @@ The function proceeds to configure a theme using the `@Configuration` property w
 _theme.wrappedValue = .appTheme
 ```
 
-#### 7.2.1 Network Endpoint Registrations
+#### 7.2.2 Network Endpoint Registrations
 
 Next, the function attempts to register three network endpoints for fetching data related to episodes, channels, and categories. These registrations involve specifying the name, host, endpoint, HTTP method, content type, response type, and additional headers.
 
@@ -548,7 +560,7 @@ try registrar.networkRegister(
 )
 ```
 
-#### 7.2.1 Error Handling
+#### 7.2.3 Error Handling
 
 In case of any errors during the configuration process, the function catches the error and prints a message in debug mode.
 
@@ -565,6 +577,7 @@ catch let error {
 
 The "Launch Configurations" section outlines the `launch()` function's role in initializing and configuring crucial components during the MetFlix application launch. This includes setting themes and registering network endpoints, ensuring a smooth and error-handled launch process.
 
+## Author
 
 *Author: Syed Qamar Abbas*
 *Project: MetFlix*
