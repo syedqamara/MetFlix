@@ -9,6 +9,76 @@
  |  <img width="300" height="600" src="/MetFlix/Resources/Screenshots/home_3.png" ></img>  | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/breakpoint_3.png" ></img>   | <img width="300" height="600" src="/MetFlix/Resources/Screenshots/debugger_3.png" ></img>   |
 
 
+## Table of Content
+
+- [HomeUIM Module](#homeuim-module)
+  - [1.1 Overview](#11-overview)
+  - [1.2 HomeSectionUIM Enumeration](#12-homesectionuim-enumeration)
+    - [1.2.1 DataModelType](#121-datamodeltype)
+    - [1.2.2 Cases](#122-cases)
+    - [1.2.3 Initialization](#123-initialization)
+    - [1.2.4 isSameSection(_) Function](#124-issamesection_-function)
+  - [1.3 Extension: Identifiable](#13-extension-identifiable)
+  - [1.4 Conclusion](#14-conclusion)
+
+- [HomeAbstract Module](#homeabstract-module)
+  - [2.1 Overview](#21-overview)
+  - [2.2 UIModeling Protocol](#22-uimodeling-protocol)
+  - [2.3 HomeViewModeling Protocol](#23-homeviewmodeling-protocol)
+  - [2.4 HomeModuling, HomeViewProtocol, ViewModuling](#24-homemoduling-homeviewprotocol-viewmoduling)
+  - [2.5 Specialized Modules and Protocols](#25-specialized-modules-and-protocols)
+  - [2.6 ServiceProtocol](#26-serviceprotocol)
+  - [2.7 Specialized Service Protocols](#27-specialized-service-protocols)
+  - [2.8 CacheManagerProtocol](#28-cachemanagerprotocol)
+  - [2.9 Conclusion](#29-conclusion)
+
+- [Implementation Details](#implementation-details)
+  - [3.1 Data Loading](#31-data-loading)
+  - [3.2 Scrollable Views](#32-scrollable-views)
+  - [3.3 Unit Tests](#33-unit-tests)
+  - [3.4 Evaluation Criteria](#34-evaluation-criteria)
+  - [3.5 Expected Output](#35-expected-output)
+
+- [Cache Management](#cache-management)
+  - [4.1 Introduction](#41-introduction)
+  - [4.2 Cached Property Wrapper](#42-cached-property-wrapper)
+  - [4.3 CachedPermanent Property Wrapper](#43-cachedpermanent-property-wrapper)
+  - [4.4 Usage](#44-usage)
+    - [4.4.1 Cached Example](#441-cached-example)
+    - [4.4.2 CachedPermanent Example](#442-cachedpermanent-example)
+  - [4.5 Conclusion](#45-conclusion)
+
+- [API Integration](#api-integration)
+  - [5.1 Introduction](#51-introduction)
+  - [5.2 MindValleyEndpoints Enumeration](#52-mindvalleyendpoints-enumeration)
+  - [5.3 Conformances to Pointable](#53-conformances-to-pointable)
+  - [5.4 Extension to Cached](#54-extension-to-cached)
+  - [5.5 Usage](#55-usage)
+    - [5.5.1 Endpoint Enumeration Usage](#551-endpoint-enumeration-usage)
+    - [5.5.2 Cached Initialization with Endpoint](#552-cached-initialization-with-endpoint)
+  - [5.6 Conclusion](#56-conclusion)
+
+- [Dependency Injection](#dependency-injection)
+  - [6.1 Introduction](#61-introduction)
+  - [6.2 Service Dependencies](#62-service-dependencies)
+  - [6.3 DependencyValues Extension](#63-dependencyvalues-extension)
+  - [6.4 Usage with @Dependency](#64-usage-with-dependency)
+  - [6.5 Conclusion](#65-conclusion)
+
+- [Launch Configurations](#launch-configurations)
+  - [7.1 Introduction](#71-introduction)
+  - [7.2 Code Explanation](#72-code-explanation)
+    - [7.2.1 Configuration for DebugUITheme.NetworkDebugModule.KeyValue](#721-configuration-for-debuguithemenetworkdebugmodulekeyvalue)
+    - [7.2.2 Network Endpoint Registrations](#722-network-endpoint-registrations)
+    - [7.2.3 Error Handling](#723-error-handling)
+  - [7.3 Conclusion](#73-conclusion)
+
+- [Debugger](#debugger)
+
+*Author: Syed Qamar Abbas*  
+*Project: MetFlix*  
+*Creation Date: 26/11/2023 - 02/12/2023*
+
 ## HomeUIM Module
 
 ### 1.1 Overview
