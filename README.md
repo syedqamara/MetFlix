@@ -414,13 +414,89 @@ do {
 
 The implementation of dependency injection for MetFlix services, as demonstrated in this section, ensures a modular and testable codebase. The `swift-dependencies` library facilitates the management of service dependencies, providing flexibility for both live and test environments.
 
+## Launch Configurations
+
+### 7.1 Introduction
+
+The "Launch Configurations" section describes the launch configuration process within the MetFlix application. The provided code illustrates the `launch()` function, responsible for configuring and registering essential components, such as network endpoints and themes, during the app launch.
+
+### 7.2 Code Explanation
+
+The `launch()` function begins by using the `@Dependency` property wrapper to obtain an instance of the `registrar`—a crucial component responsible for handling various registrations within the MetFlix application.
+
+```swift
+@Dependency(\.registerar) var registrar
+```
+
+#### 7.2.1 Configuration for DebugUITheme.NetworkDebugModule.KeyValue
+
+The function proceeds to configure a theme using the `@Configuration` property wrapper, specifically for the `DebugUITheme.NetworkDebugModule.KeyValue`. The chosen theme, in this case, is `.appTheme`.
+
+```swift
+@Configuration<DebugUITheme.NetworkDebugModule.KeyValue>(DebuggerUI.networkModuleKeyValueThemeName) var theme: DebugUITheme.NetworkDebugModule.KeyValue?
+_theme.wrappedValue = .appTheme
+```
+
+#### 7.2.1 Network Endpoint Registrations
+
+Next, the function attempts to register three network endpoints for fetching data related to episodes, channels, and categories. These registrations involve specifying the name, host, endpoint, HTTP method, content type, response type, and additional headers.
+
+```swift
+try registrar.networkRegister(
+    name: "Get Episodes Api",
+    host: Config.mindValleyHost,
+    endpoint: MindValleyEndpoints.episodes,
+    method: .get,
+    contentType: .queryParam,
+    responseType: EpisodesApiData.self,
+    headers: [:]
+)
+
+try registrar.networkRegister(
+    name: "Get Channels Api",
+    host: Config.mindValleyHost,
+    endpoint: MindValleyEndpoints.channels,
+    method: .get,
+    contentType: .queryParam,
+    responseType: ChannelsApiData.self,
+    headers: [:]
+)
+
+try registrar.networkRegister(
+    name: "Get Categories Api",
+    host: Config.mindValleyHost,
+    endpoint: MindValleyEndpoints.categories,
+    method: .get,
+    contentType: .queryParam,
+    responseType: CategoriesApiData.self,
+    headers: [:]
+)
+```
+
+#### 7.2.1 Error Handling
+
+In case of any errors during the configuration process, the function catches the error and prints a message in debug mode.
+
+```swift
+catch let error {
+    #if DEBUG
+        print("Launch_Configuration_Error")
+        print(error)
+    #endif
+}
+```
+
+### 7.3 Conclusion
+
+The "Launch Configurations" section outlines the `launch()` function's role in initializing and configuring crucial components during the MetFlix application launch. This includes setting themes and registering network endpoints, ensuring a smooth and error-handled launch process.
 
 ## Debugger
 
  | Home (without Debugger) | Breakpoint (Debugger) | Home (with Debugger) |
  |-------|-------|-------|
- |  <video width="250" height="400" src="" type="video/mp4"></video>  | <video width="250" height="400" src="" type="video/mp4"></video>   | <video width="250" height="400" src="" type="video/mp4"></video>   |
+ |  <img width="250" height="400" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>  | <img width="250" height="400" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>   | <img width="250" height="400" src="/MetFlix/Resources/Screenshots/home_1.png" ></img>   |
 
 *Author: Syed Qamar Abbas*
 *Project: MetFlix*
 *Creation Date: 26/11/2023 - 02/12/2023*
+

@@ -33,20 +33,20 @@ struct MetFlixApp: App {
                         AnyView(
                             viewFactory.makeView(input: .breakpoint)
                         )
-//                        .toolbar {
-//                            ToolbarItem(placement: .principal) {
-//                                HStack {
-//                                    Text("Network Configuration")
-//                                        .robotoFont(style: .bold(.title))
-//                                        .multilineTextAlignment(.leading)
-//                                        .foregroundColor(.white)
-//                                        .shadow(color: .appThemeSecondary, radius: 3, x: 3, y: -3)
-//                                        .fixedSize(horizontal: false, vertical: true)
-//                                    Spacer()
-//                                }
-//                                .ignoresSafeArea(.all, edges: [.top, .bottom])
-//                            }
-//                        }
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                HStack {
+                                    Text("Network Configuration")
+                                        .robotoFont(style: .bold(.normal))
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(.white)
+                                        .shadow(color: .appThemeSecondary, radius: 3, x: 3, y: -3)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                    Spacer()
+                                }
+                                .ignoresSafeArea(.all, edges: [.top, .bottom])
+                            }
+                        }
                     case .application:
                         AnyView(
                             viewFactory.makeView(
