@@ -55,10 +55,6 @@ extension SwiftUIViewFactory {
                 )
             )
             .view()
-//        case .breakpoint:
-//            return BreakpointConfigurationsModule(input: .init()).view()
-//        case .debug(let action):
-//            return NetworkDebugModule(input: action).view()
         }
     }
 }
