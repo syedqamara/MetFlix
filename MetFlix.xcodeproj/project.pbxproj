@@ -41,10 +41,6 @@
 		181800752B1B9F5500D07546 /* RemoteImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181800742B1B9F5500D07546 /* RemoteImageViewModel.swift */; };
 		181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D3E2B13B38D002F5E9B /* Deocding+Bool.swift */; };
 		181E0D412B13B731002F5E9B /* AbstractProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D402B13B731002F5E9B /* AbstractProtocols.swift */; };
-		181E0D482B13C0DE002F5E9B /* core_architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D472B13C0DE002F5E9B /* core_architecture */; };
-		181E0D4A2B13C0DE002F5E9B /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D492B13C0DE002F5E9B /* Debugger */; };
-		181E0D4C2B13C0DE002F5E9B /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4B2B13C0DE002F5E9B /* DebuggerUI */; };
-		181E0D4E2B13C0DE002F5E9B /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D4D2B13C0DE002F5E9B /* Network */; };
 		181E0D522B13C0DE002F5E9B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 181E0D512B13C0DE002F5E9B /* Lottie */; };
 		181E0D582B13C72E002F5E9B /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D452B13BFDE002F5E9B /* Dependencies.swift */; };
 		181E0D592B13C734002F5E9B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E0D422B13BF0F002F5E9B /* Mocks.swift */; };
@@ -101,10 +97,6 @@
 		186950D02B0E5BB300323E71 /* MetFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950CF2B0E5BB300323E71 /* MetFlixUITests.swift */; };
 		186950D22B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950D12B0E5BB300323E71 /* MetFlixUITestsLaunchTests.swift */; };
 		186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950EF2B0E5F0800323E71 /* AppFactory.swift */; };
-		186950F52B0E614300323E71 /* core_architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 186950F42B0E614300323E71 /* core_architecture */; };
-		186950F72B0E614300323E71 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = 186950F62B0E614300323E71 /* Debugger */; };
-		186950F92B0E614300323E71 /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 186950F82B0E614300323E71 /* DebuggerUI */; };
-		186950FB2B0E614300323E71 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 186950FA2B0E614300323E71 /* Network */; };
 		186950FD2B0E7EF300323E71 /* App+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186950FC2B0E7EF300323E71 /* App+Dependencies.swift */; };
 		186951022B0E845D00323E71 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951012B0E845D00323E71 /* Endpoints.swift */; };
 		186951042B0E857F00323E71 /* LaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186951032B0E857F00323E71 /* LaunchConfiguration.swift */; };
@@ -259,10 +251,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186950F52B0E614300323E71 /* core_architecture in Frameworks */,
-				186950FB2B0E614300323E71 /* Network in Frameworks */,
-				186950F72B0E614300323E71 /* Debugger in Frameworks */,
-				186950F92B0E614300323E71 /* DebuggerUI in Frameworks */,
 				186951212B0EC56000323E71 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,11 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181E0D482B13C0DE002F5E9B /* core_architecture in Frameworks */,
-				181E0D4E2B13C0DE002F5E9B /* Network in Frameworks */,
-				181E0D4A2B13C0DE002F5E9B /* Debugger in Frameworks */,
 				183C2A872B1E9A77000FADFE /* SnapshotTesting in Frameworks */,
-				181E0D4C2B13C0DE002F5E9B /* DebuggerUI in Frameworks */,
 				181E0D522B13C0DE002F5E9B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,10 +678,6 @@
 			);
 			name = MetFlix;
 			packageProductDependencies = (
-				186950F42B0E614300323E71 /* core_architecture */,
-				186950F62B0E614300323E71 /* Debugger */,
-				186950F82B0E614300323E71 /* DebuggerUI */,
-				186950FA2B0E614300323E71 /* Network */,
 				186951202B0EC56000323E71 /* Lottie */,
 			);
 			productName = MetFlix;
@@ -719,10 +699,6 @@
 			);
 			name = MetFlixTests;
 			packageProductDependencies = (
-				181E0D472B13C0DE002F5E9B /* core_architecture */,
-				181E0D492B13C0DE002F5E9B /* Debugger */,
-				181E0D4B2B13C0DE002F5E9B /* DebuggerUI */,
-				181E0D4D2B13C0DE002F5E9B /* Network */,
 				181E0D512B13C0DE002F5E9B /* Lottie */,
 				183C2A862B1E9A77000FADFE /* SnapshotTesting */,
 			);
@@ -781,7 +757,6 @@
 			);
 			mainGroup = 186950A82B0E5BB100323E71;
 			packageReferences = (
-				186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */,
 				1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				183C2A7E2B1E986A000FADFE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
@@ -1259,14 +1234,6 @@
 				kind = branch;
 			};
 		};
-		186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/syedqamara/core_architecture.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.50;
-			};
-		};
 		1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -1278,26 +1245,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		181E0D472B13C0DE002F5E9B /* core_architecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = core_architecture;
-		};
-		181E0D492B13C0DE002F5E9B /* Debugger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = Debugger;
-		};
-		181E0D4B2B13C0DE002F5E9B /* DebuggerUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = DebuggerUI;
-		};
-		181E0D4D2B13C0DE002F5E9B /* Network */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = Network;
-		};
 		181E0D512B13C0DE002F5E9B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1869511F2B0EC56000323E71 /* XCRemoteSwiftPackageReference "lottie-ios" */;
@@ -1307,26 +1254,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 183C2A7E2B1E986A000FADFE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
-		};
-		186950F42B0E614300323E71 /* core_architecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = core_architecture;
-		};
-		186950F62B0E614300323E71 /* Debugger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = Debugger;
-		};
-		186950F82B0E614300323E71 /* DebuggerUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = DebuggerUI;
-		};
-		186950FA2B0E614300323E71 /* Network */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 186950DE2B0E5C0F00323E71 /* XCRemoteSwiftPackageReference "core_architecture" */;
-			productName = Network;
 		};
 		186951202B0EC56000323E71 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
