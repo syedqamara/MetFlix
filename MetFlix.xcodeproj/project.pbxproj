@@ -102,6 +102,11 @@
 		18EE82692B460DE90003EE44 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = 18EE82682B460DE90003EE44 /* Debugger */; };
 		18EE826B2B460DE90003EE44 /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18EE826A2B460DE90003EE44 /* DebuggerUI */; };
 		18EE826D2B460DE90003EE44 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 18EE826C2B460DE90003EE44 /* Network */; };
+		18EE82732B4611550003EE44 /* _View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE826F2B4611550003EE44 /* _View.swift */; };
+		18EE82742B4611550003EE44 /* _Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE82702B4611550003EE44 /* _Module.swift */; };
+		18EE82752B4611550003EE44 /* _UIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE82712B4611550003EE44 /* _UIM.swift */; };
+		18EE82762B4611550003EE44 /* _ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE82722B4611550003EE44 /* _ViewModel.swift */; };
+		18EE82782B4612AB0003EE44 /* _Abstracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE82772B4612AB0003EE44 /* _Abstracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +220,11 @@
 		1869515F2B1034E600323E71 /* AppStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateModel.swift; sourceTree = "<group>"; };
 		186951672B10CB4100323E71 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		18EE82642B460D2E0003EE44 /* core_architecture */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = core_architecture; path = ../../core_architecture; sourceTree = "<group>"; };
+		18EE826F2B4611550003EE44 /* _View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _View.swift; sourceTree = "<group>"; };
+		18EE82702B4611550003EE44 /* _Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Module.swift; sourceTree = "<group>"; };
+		18EE82712B4611550003EE44 /* _UIM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _UIM.swift; sourceTree = "<group>"; };
+		18EE82722B4611550003EE44 /* _ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _ViewModel.swift; sourceTree = "<group>"; };
+		18EE82772B4612AB0003EE44 /* _Abstracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Abstracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,6 +576,7 @@
 		186951342B0EC92A00323E71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18EE826E2B4611550003EE44 /* Template */,
 				1818003B2B1A674D00D07546 /* Home */,
 			);
 			path = Modules;
@@ -586,6 +597,18 @@
 				18EE82642B460D2E0003EE44 /* core_architecture */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		18EE826E2B4611550003EE44 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				18EE826F2B4611550003EE44 /* _View.swift */,
+				18EE82772B4612AB0003EE44 /* _Abstracts.swift */,
+				18EE82702B4611550003EE44 /* _Module.swift */,
+				18EE82712B4611550003EE44 /* _UIM.swift */,
+				18EE82722B4611550003EE44 /* _ViewModel.swift */,
+			);
+			path = Template;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -766,6 +789,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EE82762B4611550003EE44 /* _ViewModel.swift in Sources */,
+				18EE82782B4612AB0003EE44 /* _Abstracts.swift in Sources */,
 				1818002E2B1A5F5300D07546 /* Categories+Preview.swift in Sources */,
 				186950F02B0E5F0800323E71 /* AppFactory.swift in Sources */,
 				186951512B0FDB9D00323E71 /* Config.swift in Sources */,
@@ -779,6 +804,7 @@
 				181800352B1A5FC500D07546 /* Episode+Preview.swift in Sources */,
 				183C2A682B1D384E000FADFE /* Previewer.swift in Sources */,
 				181800462B1A91C500D07546 /* HomeUIM.swift in Sources */,
+				18EE82742B4611550003EE44 /* _Module.swift in Sources */,
 				181E0D3F2B13B38D002F5E9B /* Deocding+Bool.swift in Sources */,
 				183C2A662B1D37B3000FADFE /* Color+Extension.swift in Sources */,
 				181800332B1A5F9C00D07546 /* Channel+Preview.swift in Sources */,
@@ -790,9 +816,11 @@
 				183C2A642B1D379B000FADFE /* String+Extension.swift in Sources */,
 				1869511B2B0EC36D00323E71 /* AppRemoteAssets.swift in Sources */,
 				181800402B1A917500D07546 /* HomeModule.swift in Sources */,
+				18EE82732B4611550003EE44 /* _View.swift in Sources */,
 				186951042B0E857F00323E71 /* LaunchConfiguration.swift in Sources */,
 				181800382B1A62EA00D07546 /* MindValleyService.swift in Sources */,
 				181E0D592B13C734002F5E9B /* Mocks.swift in Sources */,
+				18EE82752B4611550003EE44 /* _UIM.swift in Sources */,
 				181800282B1A5B3900D07546 /* Episode.swift in Sources */,
 				186951172B0EBED600323E71 /* CacheManager.swift in Sources */,
 				183C2A772B1E7A09000FADFE /* MockViewModel.swift in Sources */,

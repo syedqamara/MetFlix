@@ -8,7 +8,7 @@
 import Foundation
 import core_architecture
 
-struct _Module<V: ViewModeling>: ViewModuling {
+struct _Module<V: _ViewModeling>: ViewModuling {
     typealias ViewType = _View<V>
     private let input: ModuleInput
     init(input: ModuleInput) {
@@ -21,7 +21,7 @@ extension _Module {
         let viewModel: V
     }
     
-    func view() -> HomeView<V> {
+    func view() -> _View<V> {
         _View(
             viewModel: input.viewModel
         )
