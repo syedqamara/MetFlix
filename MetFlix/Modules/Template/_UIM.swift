@@ -1,5 +1,5 @@
 //
-//  HomeUIM.swift
+//  _UIM.swift
 //  MetFlix
 //
 //  Created by Apple on 02/12/2023.
@@ -9,11 +9,8 @@ import Foundation
 import core_architecture
 
 
-public enum HomeSectionUIM: UIModel {
+public enum _UIM: UIModel {
     public struct DataModelType {
-        public var episodes: EpisodesApiData?
-        public var channels: ChannelsApiData?
-        public var categories: CategoriesApiData?
         public var error: Error?
     }
     
@@ -27,7 +24,7 @@ case none, error(Error)
             self = .none
         }
     }
-    func isSameSection(_ section: HomeSectionUIM) -> Bool {
+    func isSameSection(_ section: _UIM) -> Bool {
         switch self {
         case .none:
             if case .none = section {
@@ -42,7 +39,7 @@ case none, error(Error)
     }
 }
 
-extension HomeSectionUIM: Identifiable {
+extension _UIM: Identifiable {
     public var id: String {
         switch self {
         case .none:

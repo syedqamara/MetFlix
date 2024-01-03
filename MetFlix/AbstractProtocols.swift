@@ -37,55 +37,6 @@ public protocol HomeViewProtocol: SwiftUIView where ViewModelType: HomeViewModel
 
 // MARK: - EpisodesModuling Protocol
 
-/// A protocol for modules in the episodes section of the MetFlix app.
-public protocol EpisodesModuling: ViewModuling where ViewType: EpisodesViewProtocol {}
-
-// MARK: - EpisodesViewProtocol Protocol
-
-/// A protocol for views in the episodes section of the MetFlix app.
-public protocol EpisodesViewProtocol: SwiftUIView where ViewModelType: EpisodesViewModeling {}
-
-// MARK: - EpisodesViewModeling Protocol
-
-/// A protocol for view models in the episodes section of the MetFlix app.
-public protocol EpisodesViewModeling: ViewModeling {
-    var episodes: EpisodesDataUIM? { get }
-}
-
-// MARK: - CategoriesModuling Protocol
-
-/// A protocol for modules in the categories section of the MetFlix app.
-public protocol CategoriesModuling: ViewModuling where ViewType: CategoriesViewProtocol {}
-
-// MARK: - CategoriesViewProtocol Protocol
-
-/// A protocol for views in the categories section of the MetFlix app.
-public protocol CategoriesViewProtocol: SwiftUIView where ViewModelType: CategoriesViewModeling {}
-
-// MARK: - CategoriesViewModeling Protocol
-
-/// A protocol for view models in the categories section of the MetFlix app.
-public protocol CategoriesViewModeling: ViewModeling {
-    var categories: CategoriesDataUIM? { get }
-}
-
-// MARK: - ChannelsModuling Protocol
-
-/// A protocol for modules in the channels section of the MetFlix app.
-public protocol ChannelsModuling: ViewModuling where ViewType: ChannelsViewProtocol {}
-
-// MARK: - ChannelsViewProtocol Protocol
-
-/// A protocol for views in the channels section of the MetFlix app.
-public protocol ChannelsViewProtocol: SwiftUIView where ViewModelType: ChannelsViewModeling {}
-
-// MARK: - ChannelsViewModeling Protocol
-
-/// A protocol for view models in the channels section of the MetFlix app.
-public protocol ChannelsViewModeling: ViewModeling {
-    var channels: ChannelsDataUIM? { get }
-}
-
 // MARK: - Service Protocols
 
 // MARK: ServiceProtocol Protocol

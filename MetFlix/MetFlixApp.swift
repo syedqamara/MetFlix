@@ -29,7 +29,7 @@ struct MetFlixApp: App {
                     Color.appTheme
                         .ignoreSafeAreaForAlliOSVersions()
                     switch selectedCommand {
-                    case .breakpoint:
+                    case .debugger:
                         AnyView(
                             viewFactory.makeView(input: .breakpoint)
                         )

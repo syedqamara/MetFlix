@@ -30,6 +30,7 @@ func launch() {
             method: .get,
             contentType: .queryParam,
             responseType: EpisodesApiData.self,
+            cachePolicy: .noCache,
             headers: [:]
         )
         try registrar.networkRegister(
@@ -39,6 +40,7 @@ func launch() {
             method: .get,
             contentType: .queryParam,
             responseType: ChannelsApiData.self,
+            cachePolicy: .noCache,
             headers: [:]
         )
         try registrar.networkRegister(
@@ -48,6 +50,7 @@ func launch() {
             method: .get,
             contentType: .queryParam,
             responseType: CategoriesApiData.self,
+            cachePolicy: .noCache,
             headers: [:]
         )
         
